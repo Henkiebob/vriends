@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A54CB6220455D38007B68A4 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A54CB6120455D38007B68A4 /* AddFriendViewController.swift */; };
+		0A54CB6520456116007B68A4 /* vriends.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A54CB6320456116007B68A4 /* vriends.xcdatamodeld */; };
 		0A9FA031204446A7002D993F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9FA030204446A7002D993F /* AppDelegate.swift */; };
 		0A9FA033204446A7002D993F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9FA032204446A7002D993F /* ViewController.swift */; };
 		0A9FA036204446A7002D993F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9FA034204446A7002D993F /* Main.storyboard */; };
 		0A9FA038204446A7002D993F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9FA037204446A7002D993F /* Assets.xcassets */; };
 		0A9FA03B204446A7002D993F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9FA039204446A7002D993F /* LaunchScreen.storyboard */; };
+		0A9FA04520446CDA002D993F /* Vriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9FA04420446CDA002D993F /* Vriends.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A54CB6120455D38007B68A4 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
+		0A54CB6420456116007B68A4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		0A9FA02D204446A7002D993F /* Vriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A9FA030204446A7002D993F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A9FA032204446A7002D993F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,7 @@
 		0A9FA037204446A7002D993F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A9FA03A204446A7002D993F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A9FA03C204446A7002D993F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A9FA04420446CDA002D993F /* Vriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vriends.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +62,12 @@
 			children = (
 				0A9FA030204446A7002D993F /* AppDelegate.swift */,
 				0A9FA032204446A7002D993F /* ViewController.swift */,
+				0A54CB6120455D38007B68A4 /* AddFriendViewController.swift */,
+				0A9FA04420446CDA002D993F /* Vriends.swift */,
 				0A9FA034204446A7002D993F /* Main.storyboard */,
 				0A9FA037204446A7002D993F /* Assets.xcassets */,
 				0A9FA039204446A7002D993F /* LaunchScreen.storyboard */,
+				0A54CB6320456116007B68A4 /* vriends.xcdatamodeld */,
 				0A9FA03C204446A7002D993F /* Info.plist */,
 			);
 			path = Vriends;
@@ -137,7 +146,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A9FA033204446A7002D993F /* ViewController.swift in Sources */,
+				0A54CB6220455D38007B68A4 /* AddFriendViewController.swift in Sources */,
 				0A9FA031204446A7002D993F /* AppDelegate.swift in Sources */,
+				0A9FA04520446CDA002D993F /* Vriends.swift in Sources */,
+				0A54CB6520456116007B68A4 /* vriends.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +334,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0A54CB6320456116007B68A4 /* vriends.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0A54CB6420456116007B68A4 /* Model.xcdatamodel */,
+			);
+			currentVersion = 0A54CB6420456116007B68A4 /* Model.xcdatamodel */;
+			path = vriends.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0A9FA025204446A7002D993F /* Project object */;
 }
