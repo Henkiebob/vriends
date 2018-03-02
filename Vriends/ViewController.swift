@@ -10,14 +10,19 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var lastSeenLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var friends : [Friend] = []
+    
+    var lastSeenTime = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -37,6 +42,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         // reload!
         tableView.reloadData()
+        
+        //print(friends[0].birthdate!)
+        //yayy you got friends
+        //print("you have " + String(friends.count) + " friends" )
+        
+        //Checks Last seen date and date now and calculates the diffrence
+        let calendar = NSCalendar.current
+        let date1 = calendar.startOfDay(for: friends[0].lastSeen!)
+        let date2 = calendar.startOfDay(for: Date())
+        
+        let components = calendar.dateComponents([.day], from: date1, to: date2)
+        lastSeenTime = String(describing: components)
+        print (lastSeenTime)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,9 +62,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        
+        //This makes it so there are multiple labels in the cell to fill in the information
+        let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! FriendCell
         let friend = friends[indexPath.row]
-        cell.textLabel?.text = friend.name!
+        cell.friendNameLabel?.text = friend.name!
+        //This shows US Date format which sucks
+        cell.birthDateLabel?.text = String(describing: friend.birthdate!)
+        //lastSeenTime contains days: <amount> LeapYear: true or false. Lets try to change that so we only get that amount
+        cell.lastSeenDateLabel?.text = "Days not seen: " + lastSeenTime
         
         // This doesn't show any birthdate, somehow i dunno man
         //cell.textLabel?.text =  DateFormatter().string(from: friend.birthdate!)

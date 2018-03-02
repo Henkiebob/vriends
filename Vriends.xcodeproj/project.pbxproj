@@ -15,6 +15,7 @@
 		0A9FA038204446A7002D993F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9FA037204446A7002D993F /* Assets.xcassets */; };
 		0A9FA03B204446A7002D993F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9FA039204446A7002D993F /* LaunchScreen.storyboard */; };
 		0A9FA04520446CDA002D993F /* Vriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9FA04420446CDA002D993F /* Vriends.swift */; };
+		DA1D98842048C9620004BB78 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D98832048C9620004BB78 /* FriendCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		0A9FA03A204446A7002D993F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A9FA03C204446A7002D993F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A9FA04420446CDA002D993F /* Vriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vriends.swift; sourceTree = "<group>"; };
+		DA1D98832048C9620004BB78 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				0A9FA039204446A7002D993F /* LaunchScreen.storyboard */,
 				0A54CB6320456116007B68A4 /* vriends.xcdatamodeld */,
 				0A9FA03C204446A7002D993F /* Info.plist */,
+				DA1D98832048C9620004BB78 /* FriendCell.swift */,
 			);
 			path = Vriends;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A9FA033204446A7002D993F /* ViewController.swift in Sources */,
+				DA1D98842048C9620004BB78 /* FriendCell.swift in Sources */,
 				0A54CB6220455D38007B68A4 /* AddFriendViewController.swift in Sources */,
 				0A9FA031204446A7002D993F /* AppDelegate.swift in Sources */,
 				0A9FA04520446CDA002D993F /* Vriends.swift in Sources */,

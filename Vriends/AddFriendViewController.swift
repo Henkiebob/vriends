@@ -10,8 +10,9 @@ import UIKit
 
 class AddFriendViewController: UIViewController {
 
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var friendNameTextField: UITextField!
+    @IBOutlet weak var birthDatePicker: UIDatePicker!
+    @IBOutlet weak var lastSeenDatePicker: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +30,13 @@ class AddFriendViewController: UIViewController {
         let friend = Friend(context: context)
         
         
-        if(textField.text != nil) {
+        if(friendNameTextField.text != nil) {
             
-            print(datePicker.date)
-            friend.name = textField.text
-            friend.birthdate = datePicker.date
-            friend.lastSeen = Date()
+            print(birthDatePicker.date)
+            friend.name = friendNameTextField.text
+            friend.birthdate = birthDatePicker.date
+            friend.lastSeen = lastSeenDatePicker.date
+            
         }
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
