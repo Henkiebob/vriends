@@ -17,11 +17,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var lastSeenTime = ""
     
+    let formatter = DateFormatter()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
+        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.dateStyle = .short
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -48,13 +53,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //print("you have " + String(friends.count) + " friends" )
         
         //Checks Last seen date and date now and calculates the diffrence
-        let calendar = NSCalendar.current
-        let date1 = calendar.startOfDay(for: friends[0].lastSeen!)
-        let date2 = calendar.startOfDay(for: Date())
-        
-        let components = calendar.dateComponents([.day], from: date1, to: date2)
-        lastSeenTime = String(describing: components)
-        print (lastSeenTime)
+        if friends.count != 0{
+            let calendar = NSCalendar.current
+            let date1 = calendar.startOfDay(for: friends[0].lastSeen!)
+            let date2 = calendar.startOfDay(for: Date())
+            let components = calendar.dateComponents([.day], from: date1, to: date2)
+            lastSeenTime = String(describing: components)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -66,9 +71,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //This makes it so there are multiple labels in the cell to fill in the information
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! FriendCell
         let friend = friends[indexPath.row]
+        let birthDate = formatter.string(from: friend.birthdate!)
         cell.friendNameLabel?.text = friend.name!
-        //This shows US Date format which sucks
-        cell.birthDateLabel?.text = String(describing: friend.birthdate!)
+        cell.birthDateLabel?.text = birthDate
         //lastSeenTime contains days: <amount> LeapYear: true or false. Lets try to change that so we only get that amount
         cell.lastSeenDateLabel?.text = "Days not seen: " + lastSeenTime
         
