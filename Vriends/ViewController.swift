@@ -55,13 +55,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //print("you have " + String(friends.count) + " friends" )
         
         //Checks Last seen date and date now and calculates the diffrence
-//        if friends.count != 0{
-//            let calendar = NSCalendar.current
-//            let date1 = calendar.startOfDay(for: friends[1].lastSeen!)
-//            let date2 = calendar.startOfDay(for: Date())
-//            let components = calendar.dateComponents([.day], from: date1, to: date2)
-//            lastSeenTime = String(describing: components)
-//        }
+        if friends.count != 0{
+            let calendar = NSCalendar.current
+            let date1 = calendar.startOfDay(for: friends[0].lastSeen!)
+            let date2 = calendar.startOfDay(for: Date())
+            let components = calendar.dateComponents([.day], from: date1, to: date2)
+            lastSeenTime = String(describing: components.day!)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
