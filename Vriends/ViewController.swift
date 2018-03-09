@@ -15,6 +15,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tableView: UITableView!
     var friends : [Friend] = []
     
+    var addFriend = AddFriendViewController()
+    
     var lastSeenTime = ""
     
     let formatter = DateFormatter()
@@ -53,13 +55,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //print("you have " + String(friends.count) + " friends" )
         
         //Checks Last seen date and date now and calculates the diffrence
-        if friends.count != 0{
-            let calendar = NSCalendar.current
-            let date1 = calendar.startOfDay(for: friends[1].lastSeen!)
-            let date2 = calendar.startOfDay(for: Date())
-            let components = calendar.dateComponents([.day], from: date1, to: date2)
-            lastSeenTime = String(describing: components)
-        }
+//        if friends.count != 0{
+//            let calendar = NSCalendar.current
+//            let date1 = calendar.startOfDay(for: friends[1].lastSeen!)
+//            let date2 = calendar.startOfDay(for: Date())
+//            let components = calendar.dateComponents([.day], from: date1, to: date2)
+//            lastSeenTime = String(describing: components)
+//        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -76,6 +78,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.birthDateLabel?.text = birthDate
         //lastSeenTime contains days: <amount> LeapYear: true or false. Lets try to change that so we only get that amount
         cell.lastSeenDateLabel?.text = "Days not seen: " + lastSeenTime
+        cell.backgroundColor = addFriend.uiColorFromHex(rgbValue: Int(friends[indexPath.row].favoriteColor!)!)
         
         // This doesn't show any birthdate, somehow i dunno man
         //cell.textLabel?.text =  DateFormatter().string(from: friend.birthdate!)
