@@ -25,8 +25,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         tableView.dataSource = self
         tableView.delegate = self
-        formatter.dateFormat = "dd/MM/yyyy"
-        formatter.dateStyle = .short
+        formatter.dateFormat = "dd/mm/yyyy"
+        formatter.dateStyle = .long
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -55,7 +55,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //Checks Last seen date and date now and calculates the diffrence
         if friends.count != 0{
             let calendar = NSCalendar.current
-            let date1 = calendar.startOfDay(for: friends[0].lastSeen!)
+            let date1 = calendar.startOfDay(for: friends[1].lastSeen!)
             let date2 = calendar.startOfDay(for: Date())
             let components = calendar.dateComponents([.day], from: date1, to: date2)
             lastSeenTime = String(describing: components)
