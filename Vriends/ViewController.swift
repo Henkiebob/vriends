@@ -18,8 +18,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var addFriend = AddFriendViewController()
     
     var lastSeenTime = ""
+    var lastSeenArray:[String] = []
     
     let formatter = DateFormatter()
+    
+    var i = 0
     
     
     override func viewDidLoad() {
@@ -56,11 +59,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         //Checks Last seen date and date now and calculates the diffrence
         if friends.count != 0{
+            for friend in friends{
             let calendar = NSCalendar.current
-            let date1 = calendar.startOfDay(for: friends[0].lastSeen!)
+            let date1 = calendar.startOfDay(for: friend.lastSeen!)
             let date2 = calendar.startOfDay(for: Date())
             let components = calendar.dateComponents([.day], from: date1, to: date2)
             lastSeenTime = String(describing: components.day!)
+                lastSeenArray.append(lastSeenTime)
+                print(lastSeenArray)
+            }
         }
     }
     
@@ -76,9 +83,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let birthDate = formatter.string(from: friend.birthdate!)
         cell.friendNameLabel?.text = friend.name!
         cell.birthDateLabel?.text = birthDate
-        //lastSeenTime contains days: <amount> LeapYear: true or false. Lets try to change that so we only get that amount
-        cell.lastSeenDateLabel?.text = "Days not seen: " + lastSeenTime
+        cell.lastSeenDateLabel?.text = "Days not seen: " + String(lastSeenArray[indexPath.row])
         cell.backgroundColor = addFriend.uiColorFromHex(rgbValue: Int(friends[indexPath.row].favoriteColor!)!)
+        
+        switch (lastSeenArray[indexPath.row]) {
+        case "1":
+            cell.greyScaleBackground.alpha = 0.1
+        case "5":
+            cell.greyScaleBackground.alpha = 0.7
+        default:
+            cell.greyScaleBackground.alpha = 0
+        }
         
         // This doesn't show any birthdate, somehow i dunno man
         //cell.textLabel?.text =  DateFormatter().string(from: friend.birthdate!)

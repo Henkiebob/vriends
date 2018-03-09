@@ -13,4 +13,5 @@ class FriendCell: UITableViewCell{
     @IBOutlet weak var friendNameLabel: UILabel!
     @IBOutlet weak var birthDateLabel: UILabel!
     @IBOutlet weak var lastSeenDateLabel: UILabel!
+    @IBOutlet weak var greyScaleBackground: UIView!
 }

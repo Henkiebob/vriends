@@ -42,7 +42,8 @@ class AddFriendViewController: UIViewController {
             print(birthDatePicker.date)
             friend.name = friendNameTextField.text
             friend.birthdate = birthDatePicker.date
-            friend.lastSeen = Date()
+            let coupleOfDaysBack = Calendar.current.date(byAdding: .day, value: -5, to: Date())
+            friend.lastSeen = coupleOfDaysBack
             friend.favoriteColor = String(colorArray[Int(slider.value)])
 
         }
