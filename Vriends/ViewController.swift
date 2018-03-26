@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var lastSeenLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var friends : [Friend] = []
+    var flower: [String] = ["F_00.png","F_01.png", "F_02.png", "F_03.png", "F_04.png", "F_05.png", "F_06.png", "F_07.png", "F_08.png", "F_09.png", "F_10.png", "F_11.png", "F_12.png"]
     
     var addFriend = AddFriendViewController()
     
@@ -85,6 +86,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.birthDateLabel?.text = birthDate
         cell.lastSeenDateLabel?.text = "Days not seen: " + String(lastSeenArray[indexPath.row])
         cell.backgroundColor = addFriend.uiColorFromHex(rgbValue: Int(friends[indexPath.row].favoriteColor!)!)
+        cell.leaf.image = UIImage(named: flower[5])
         
         switch (lastSeenArray[indexPath.row]) {
         case "1":

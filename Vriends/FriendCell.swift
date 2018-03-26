@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class FriendCell: UITableViewCell{
+    @IBOutlet weak var leaf: UIImageView!
     @IBOutlet weak var friendNameLabel: UILabel!
     @IBOutlet weak var birthDateLabel: UILabel!
     @IBOutlet weak var lastSeenDateLabel: UILabel!
