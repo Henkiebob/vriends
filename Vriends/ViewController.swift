@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var lastSeenLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var friends : [Friend] = []
-    var flower: [String] = ["F_00.png","F_01.png", "F_02.png", "F_03.png", "F_04.png", "F_05.png", "F_06.png", "F_07.png", "F_08.png", "F_09.png", "F_10.png", "F_11.png", "F_12.png"]
+    var flower: [String] = ["F_12.png","F_11.png", "F_10.png", "F_09.png", "F_08.png", "F_07.png", "F_06.png", "F_05.png", "F_04.png", "F_03.png", "F_02.png", "F_01.png", "F_00.png"]
     
     var addFriend = AddFriendViewController()
     
@@ -24,7 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let formatter = DateFormatter()
     
     var i = 0
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,9 +66,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let date2 = calendar.startOfDay(for: Date())
             let components = calendar.dateComponents([.day], from: date1, to: date2)
             lastSeenTime = String(describing: components.day!)
-                lastSeenArray.append(lastSeenTime)
-                print(lastSeenArray)
-            }
+            lastSeenArray.append(lastSeenTime)
+        }
+            print (lastSeenArray)
         }
     }
     
@@ -86,7 +86,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.birthDateLabel?.text = birthDate
         cell.lastSeenDateLabel?.text = "Days not seen: " + String(lastSeenArray[indexPath.row])
         cell.backgroundColor = addFriend.uiColorFromHex(rgbValue: Int(friends[indexPath.row].favoriteColor!)!)
-        cell.leaf.image = UIImage(named: flower[5])
+        let badFriend = Int(lastSeenArray[indexPath.row])! / Int(friend.wishToSee!)!
+        //print(badFriend)
+        cell.leaf.image = UIImage(named: flower[badFriend])
         
         switch (lastSeenArray[indexPath.row]) {
         case "1":
@@ -96,9 +98,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         default:
             cell.greyScaleBackground.alpha = 0
         }
-        
-        // This doesn't show any birthdate, somehow i dunno man
-        //cell.textLabel?.text =  DateFormatter().string(from: friend.birthdate!)
         return cell
     }
     
@@ -115,7 +114,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             reload()
         }
     }
-    
     // You really should get some friends 🔥 (sick burn)
     func getFriends() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext

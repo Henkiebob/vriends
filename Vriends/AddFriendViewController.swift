@@ -14,10 +14,13 @@ class AddFriendViewController: UIViewController {
     @IBOutlet weak var birthDatePicker: UIDatePicker!
 
     @IBOutlet weak var selectedColor: UIView!
-    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var colorSlider: UISlider!
+    @IBOutlet weak var wishSlider: UISlider!
+    @IBOutlet weak var test: UILabel!
     
     // RRGGBB hex colors in the same order as the image
     let colorArray = [ 0x000000, 0xfe0000, 0xff7900, 0xffb900, 0xffde00, 0xfcff00, 0xd2ff00, 0x05c000, 0x00c0a7, 0x0600ff, 0x6700bf, 0x9500c0, 0xbf0199, 0xffffff ]
+    let wishDateArray = [7,14,31,32]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +34,20 @@ class AddFriendViewController: UIViewController {
     }
     
     @IBAction func sliderChanged(_ sender: Any) {
-        selectedColor.backgroundColor = uiColorFromHex(rgbValue: colorArray[Int(slider.value)])
+        selectedColor.backgroundColor = uiColorFromHex(rgbValue: colorArray[Int(colorSlider.value)])
+    }
+    @IBAction func otherSliderChanged(_ sender: Any) {
+        switch Int(wishSlider.value) {
+        case 0:
+            test.text = "Elke week"
+        case 1:
+            test.text = "Twee keer per maand"
+        case 2:
+            test.text = "Één keer per maand"
+        default:
+            test.text = "Minder dan één keer per maand"
+        }
+        //test.text = String(wishDateArray[Int(wishSlider.value)])
     }
     
     @IBAction func AddFriend(_ sender: Any) {
@@ -42,9 +58,10 @@ class AddFriendViewController: UIViewController {
             print(birthDatePicker.date)
             friend.name = friendNameTextField.text
             friend.birthdate = birthDatePicker.date
-            let coupleOfDaysBack = Calendar.current.date(byAdding: .day, value: -5, to: Date())
+            let coupleOfDaysBack = Calendar.current.date(byAdding: .day, value: -23, to: Date())
             friend.lastSeen = coupleOfDaysBack
-            friend.favoriteColor = String(colorArray[Int(slider.value)])
+            friend.favoriteColor = String(colorArray[Int(colorSlider.value)])
+            friend.wishToSee = String(wishDateArray[Int(wishSlider.value)])
 
         }
         
