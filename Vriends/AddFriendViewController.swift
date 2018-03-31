@@ -68,6 +68,7 @@ class AddFriendViewController: UIViewController {
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
         navigationController!.popViewController(animated: true)
+
     }
     
     

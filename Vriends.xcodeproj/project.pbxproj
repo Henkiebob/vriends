@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A54CB6220455D38007B68A4 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A54CB6120455D38007B68A4 /* AddFriendViewController.swift */; };
 		0A54CB6520456116007B68A4 /* vriends.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A54CB6320456116007B68A4 /* vriends.xcdatamodeld */; };
+		0A890495206F81D800A1C7EA /* VriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A890494206F81D800A1C7EA /* VriendViewController.swift */; };
 		0A9FA031204446A7002D993F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9FA030204446A7002D993F /* AppDelegate.swift */; };
 		0A9FA033204446A7002D993F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9FA032204446A7002D993F /* ViewController.swift */; };
 		0A9FA036204446A7002D993F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9FA034204446A7002D993F /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		0A54CB6120455D38007B68A4 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		0A54CB6420456116007B68A4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		0A890494206F81D800A1C7EA /* VriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VriendViewController.swift; sourceTree = "<group>"; };
 		0A9FA02D204446A7002D993F /* Vriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A9FA030204446A7002D993F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A9FA032204446A7002D993F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				0A54CB6320456116007B68A4 /* vriends.xcdatamodeld */,
 				0A9FA03C204446A7002D993F /* Info.plist */,
 				DA1D98832048C9620004BB78 /* FriendCell.swift */,
+				0A890494206F81D800A1C7EA /* VriendViewController.swift */,
 			);
 			path = Vriends;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A890495206F81D800A1C7EA /* VriendViewController.swift in Sources */,
 				0A9FA033204446A7002D993F /* ViewController.swift in Sources */,
 				DA1D98842048C9620004BB78 /* FriendCell.swift in Sources */,
 				0A54CB6220455D38007B68A4 /* AddFriendViewController.swift in Sources */,
