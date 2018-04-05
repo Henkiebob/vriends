@@ -107,7 +107,6 @@
         <!--Vriend View Controller-->
         <scene sceneID="AOK-En-yzf">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7J6-km-sWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="DgY-2b-dWQ" customClass="VriendViewController" customModule="Vriends" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="moc-hy-O7c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -138,6 +137,7 @@
                         <outlet property="textfield" destination="Ef1-Tm-h6M" id="2VI-fQ-SDX"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7J6-km-sWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-340" y="1093"/>
         </scene>
@@ -165,72 +165,121 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pBF-ES-Q88">
-                                <rect key="frame" x="162" y="248" width="90" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                            </view>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Voeg een nieuwe vriend toe! (yay!)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mAU-ed-Fvq">
-                                <rect key="frame" x="40" y="84" width="334" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRn-qa-iqi">
-                                <rect key="frame" x="20" y="102" width="406" height="162"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <date key="date" timeIntervalSinceReferenceDate="699201927.12234998">
-                                    <!--2023-02-27 14:45:27 +0000-->
-                                </date>
-                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
-                                    <!--1970-01-01 11:00:00 +0000-->
-                                </date>
-                                <date key="maximumDate" timeIntervalSinceReferenceDate="567946800">
-                                    <!--2018-12-31 11:00:00 +0000-->
-                                </date>
-                                <connections>
-                                    <action selector="saveDate:" destination="Swo-1Z-FKh" eventType="valueChanged" id="BLQ-ZA-O4F"/>
-                                </connections>
-                            </datePicker>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="colorpicker" translatesAutoresizingMaskIntoConstraints="NO" id="c3X-ZN-yyF">
-                                <rect key="frame" x="26" y="317" width="375" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="7" minValue="0.5" maxValue="13.5" translatesAutoresizingMaskIntoConstraints="NO" id="C7k-UL-Gdd">
-                                <rect key="frame" x="18" y="388" width="378" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="sliderChanged:" destination="3Ue-Za-6ao" eventType="valueChanged" id="p5Y-dA-Rqt"/>
-                                </connections>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Q6-zN-zWO">
-                                <rect key="frame" x="20" y="483" width="299" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.5" maxValue="3.5" translatesAutoresizingMaskIntoConstraints="NO" id="0ne-LZ-fcL">
-                                <rect key="frame" x="18" y="440" width="378" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="otherSliderChanged:" destination="3Ue-Za-6ao" eventType="valueChanged" id="Msk-Ac-2EO"/>
-                                </connections>
-                            </slider>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJT-Yg-DxK">
-                                <rect key="frame" x="139" y="519" width="136" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Voeg vriend toe">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="AddFriend:" destination="3Ue-Za-6ao" eventType="touchUpInside" id="0aK-x8-MIT"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXS-ah-1eD">
+                                <rect key="frame" x="0.0" y="64" width="414" height="812"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Voeg een nieuwe vriend toe! (yay!)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mAU-ed-Fvq">
+                                        <rect key="frame" x="0.0" y="0.0" width="244" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRn-qa-iqi">
+                                        <rect key="frame" x="3" y="54" width="406" height="162"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="162" id="g8y-BF-n52"/>
+                                            <constraint firstAttribute="width" constant="406" id="ins-0C-Jhr"/>
+                                        </constraints>
+                                        <date key="date" timeIntervalSinceReferenceDate="699201927.12234998">
+                                            <!--2023-02-27 14:45:27 +0000-->
+                                        </date>
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                            <!--1970-01-01 11:00:00 +0000-->
+                                        </date>
+                                        <date key="maximumDate" timeIntervalSinceReferenceDate="567946800">
+                                            <!--2018-12-31 11:00:00 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="saveDate:" destination="Swo-1Z-FKh" eventType="valueChanged" id="BLQ-ZA-O4F"/>
+                                        </connections>
+                                    </datePicker>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colorpicker" translatesAutoresizingMaskIntoConstraints="NO" id="c3X-ZN-yyF">
+                                        <rect key="frame" x="20" y="319" width="375" height="63"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="63" id="Y8B-XY-vUB"/>
+                                        </constraints>
+                                    </imageView>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="7" minValue="0.5" maxValue="13.5" translatesAutoresizingMaskIntoConstraints="NO" id="C7k-UL-Gdd">
+                                        <rect key="frame" x="19" y="404" width="378" height="30"/>
+                                        <connections>
+                                            <action selector="sliderChanged:" destination="3Ue-Za-6ao" eventType="valueChanged" id="p5Y-dA-Rqt"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Q6-zN-zWO">
+                                        <rect key="frame" x="21" y="533" width="299" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJT-Yg-DxK">
+                                        <rect key="frame" x="140" y="562" width="134" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="2CW-gz-qDG"/>
+                                            <constraint firstAttribute="height" constant="38" id="aw2-aA-oOP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="Voeg vriend toe">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="AddFriend:" destination="3Ue-Za-6ao" eventType="touchUpInside" id="0aK-x8-MIT"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="pBF-ES-Q88">
+                                        <rect key="frame" x="158" y="224" width="90" height="72"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="72" id="7UX-ck-keT"/>
+                                            <constraint firstAttribute="width" constant="90" id="m3v-yR-R8R"/>
+                                        </constraints>
+                                    </view>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.5" maxValue="3.5" translatesAutoresizingMaskIntoConstraints="NO" id="0ne-LZ-fcL">
+                                        <rect key="frame" x="18" y="472" width="378" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="aFZ-oS-ydA"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="otherSliderChanged:" destination="3Ue-Za-6ao" eventType="valueChanged" id="Msk-Ac-2EO"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="CRn-qa-iqi" secondAttribute="trailing" constant="5" id="17o-Ue-7az"/>
+                                    <constraint firstItem="mAU-ed-Fvq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JXS-ah-1eD" secondAttribute="leading" id="29v-Eh-uRE"/>
+                                    <constraint firstItem="c3X-ZN-yyF" firstAttribute="centerX" secondItem="mJT-Yg-DxK" secondAttribute="centerX" id="2Wu-xt-lFX"/>
+                                    <constraint firstItem="pBF-ES-Q88" firstAttribute="top" secondItem="CRn-qa-iqi" secondAttribute="bottom" constant="8" symbolic="YES" id="4AB-Pg-0CN"/>
+                                    <constraint firstItem="0ne-LZ-fcL" firstAttribute="top" secondItem="JXS-ah-1eD" secondAttribute="top" constant="472" id="5ZE-Fw-CUA"/>
+                                    <constraint firstItem="3Q6-zN-zWO" firstAttribute="leading" secondItem="C7k-UL-Gdd" secondAttribute="leading" id="AlE-ty-OrG"/>
+                                    <constraint firstItem="CRn-qa-iqi" firstAttribute="top" secondItem="JXS-ah-1eD" secondAttribute="top" constant="54" id="BcZ-hX-ogb"/>
+                                    <constraint firstItem="mJT-Yg-DxK" firstAttribute="top" secondItem="3Q6-zN-zWO" secondAttribute="bottom" constant="8" symbolic="YES" id="Gib-IF-k8H"/>
+                                    <constraint firstItem="c3X-ZN-yyF" firstAttribute="leading" secondItem="JXS-ah-1eD" secondAttribute="leading" constant="20" id="OaF-gP-hLD"/>
+                                    <constraint firstItem="c3X-ZN-yyF" firstAttribute="centerX" secondItem="0ne-LZ-fcL" secondAttribute="centerX" id="OlA-1j-q7w"/>
+                                    <constraint firstItem="c3X-ZN-yyF" firstAttribute="centerX" secondItem="C7k-UL-Gdd" secondAttribute="centerX" id="ZuD-cz-fBB"/>
+                                    <constraint firstItem="mJT-Yg-DxK" firstAttribute="top" secondItem="JXS-ah-1eD" secondAttribute="top" constant="562" id="c2y-Fr-0Kr"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Q6-zN-zWO" secondAttribute="trailing" constant="94" id="cm2-q1-rvg"/>
+                                    <constraint firstItem="mAU-ed-Fvq" firstAttribute="top" secondItem="JXS-ah-1eD" secondAttribute="top" id="hjs-f4-7YJ"/>
+                                    <constraint firstItem="3Q6-zN-zWO" firstAttribute="top" secondItem="0ne-LZ-fcL" secondAttribute="bottom" constant="32" id="mIq-p9-Lql"/>
+                                    <constraint firstItem="c3X-ZN-yyF" firstAttribute="leading" secondItem="0ne-LZ-fcL" secondAttribute="leading" id="q2K-Zr-HiT"/>
+                                    <constraint firstItem="C7k-UL-Gdd" firstAttribute="top" secondItem="c3X-ZN-yyF" secondAttribute="bottom" constant="22" id="qSq-3L-08w"/>
+                                    <constraint firstItem="mAU-ed-Fvq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JXS-ah-1eD" secondAttribute="leading" id="s3f-zf-f5g"/>
+                                    <constraint firstItem="CRn-qa-iqi" firstAttribute="leading" secondItem="JXS-ah-1eD" secondAttribute="leading" constant="3" id="skn-sP-Oly"/>
+                                    <constraint firstAttribute="trailing" secondItem="mAU-ed-Fvq" secondAttribute="trailing" constant="170" id="tDb-ib-p3I"/>
+                                    <constraint firstItem="c3X-ZN-yyF" firstAttribute="centerX" secondItem="JXS-ah-1eD" secondAttribute="centerX" id="tTl-mF-RZV"/>
+                                    <constraint firstItem="pBF-ES-Q88" firstAttribute="leading" secondItem="JXS-ah-1eD" secondAttribute="leading" constant="158" id="tUs-Bn-0ZA"/>
+                                    <constraint firstAttribute="bottom" secondItem="CRn-qa-iqi" secondAttribute="bottom" constant="596" id="tuy-XP-wzY"/>
+                                    <constraint firstItem="c3X-ZN-yyF" firstAttribute="top" secondItem="pBF-ES-Q88" secondAttribute="bottom" constant="23" id="uBT-4c-btV"/>
+                                    <constraint firstItem="0ne-LZ-fcL" firstAttribute="top" secondItem="C7k-UL-Gdd" secondAttribute="bottom" constant="39" id="wLB-Uo-7Bi"/>
+                                    <constraint firstItem="c3X-ZN-yyF" firstAttribute="trailing" secondItem="C7k-UL-Gdd" secondAttribute="trailing" id="xd2-84-iCv"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="JXS-ah-1eD" secondAttribute="bottom" constant="-140" id="1sE-du-llW"/>
+                            <constraint firstAttribute="trailing" secondItem="JXS-ah-1eD" secondAttribute="trailing" id="4Tv-JI-zGQ"/>
+                            <constraint firstItem="JXS-ah-1eD" firstAttribute="top" secondItem="sbk-BM-Bys" secondAttribute="top" id="jps-cx-f9m"/>
+                            <constraint firstItem="JXS-ah-1eD" firstAttribute="leading" secondItem="gf0-ez-bjZ" secondAttribute="leading" id="ojH-Z5-vKi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="sbk-BM-Bys"/>
                     </view>
                     <connections>
