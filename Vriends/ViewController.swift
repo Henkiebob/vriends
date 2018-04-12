@@ -129,6 +129,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
     }
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "test"
+        {
+            let friend = friends[0].name
+            
+            
+        }
+    }*/
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "test", let destination = segue.destination as? VriendViewController {
+            if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
+                var friend = friends[indexPath.row]
+                destination.friend = friend
+            }
+        }
+    }
 
 }
 

@@ -71,7 +71,7 @@
                                             <outlet property="greyScaleBackground" destination="w2e-jG-5Af" id="POP-WA-2Tm"/>
                                             <outlet property="lastSeenDateLabel" destination="OTj-78-Ln5" id="RpX-NI-ugx"/>
                                             <outlet property="leaf" destination="2g5-4B-HWM" id="FJ0-Y5-omX"/>
-                                            <segue destination="J9p-gf-Mtd" kind="show" id="s4m-C6-F9p">
+                                            <segue destination="J9p-gf-Mtd" kind="show" identifier="test" animates="NO" id="s4m-C6-F9p">
                                                 <segue key="commit" inheritsFrom="parent" id="j4O-N9-z0P"/>
                                                 <segue key="preview" inheritsFrom="commit" id="sIf-QT-Fzl"/>
                                             </segue>
@@ -141,21 +141,33 @@
             </objects>
             <point key="canvasLocation" x="-340" y="1093"/>
         </scene>
-        <!--View Controller-->
+        <!--Vriend View Controller-->
         <scene sceneID="uOQ-wS-ahU">
             <objects>
-                <viewController id="J9p-gf-Mtd" sceneMemberID="viewController">
+                <viewController id="J9p-gf-Mtd" customClass="VriendViewController" customModule="Vriends" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ddG-Dh-2TN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSi-at-62f">
+                                <rect key="frame" x="34" y="163" width="345" height="156"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="P5o-kO-lP1"/>
                     </view>
                     <navigationItem key="navigationItem" id="RLJ-S6-QEQ"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="zSi-at-62f" id="efp-wl-4fF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZp-es-VEP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="472" y="896"/>
+            <point key="canvasLocation" x="471.01449275362324" y="895.92391304347836"/>
         </scene>
         <!--Add Friend View Controller-->
         <scene sceneID="RVb-Mf-OvK">

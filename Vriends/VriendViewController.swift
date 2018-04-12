@@ -9,11 +9,19 @@
 import UIKit
 
 class VriendViewController: UIViewController {
+    
+    var friend:Friend!
+
+    @IBOutlet weak var nameLabel: UILabel!
+    
     @IBOutlet weak var textfield: UITextView!
     @IBOutlet weak var button: UIButton!
     
     @IBAction func saveGift(_ sender: UIButton) {
         
+    }
+    override func viewDidLoad() {
+        nameLabel.text = friend.name
     }
     
 }
