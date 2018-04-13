@@ -17,11 +17,28 @@ class VriendViewController: UIViewController {
     @IBOutlet weak var textfield: UITextView!
     @IBOutlet weak var button: UIButton!
     
+    @IBOutlet weak var imageView: UIImageView!
+    
     @IBAction func saveGift(_ sender: UIButton) {
         
     }
     override func viewDidLoad() {
         nameLabel.text = friend.name
+        
+        let gifManager = SwiftyGifManager.defaultManager
+        let gif = UIImage(gifName: "Flower")
+        self.imageView.setGifImage(gif, manager: gifManager, loopCount: 1)
+        self.imageView.delegate = (self as SwiftyGifDelegate)
+        
+        let imageWidth: CGFloat = 60
+        let imageHeight: CGFloat = 60
+        
+        imageView.frame = CGRect(x: 20, y: 300, width: imageWidth, height: imageHeight)
+        view.addSubview(imageView)
     }
-    
+}
+extension VriendViewController: SwiftyGifDelegate {
+    func gifDidLoop(sender: UIImageView) {
+        self.imageView.currentImage = UIImage(named: "F_12")
+    }
 }

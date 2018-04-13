@@ -34,6 +34,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         formatter.dateFormat = "dd/mm/yyyy"
         formatter.dateStyle = .long
         
+
         // Do any additional setup after loading the view, typically from a nib.
     }
     

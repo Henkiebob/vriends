@@ -17,6 +17,11 @@
 		0A9FA03B204446A7002D993F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9FA039204446A7002D993F /* LaunchScreen.storyboard */; };
 		0A9FA04520446CDA002D993F /* Vriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9FA04420446CDA002D993F /* Vriends.swift */; };
 		DA1D98842048C9620004BB78 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D98832048C9620004BB78 /* FriendCell.swift */; };
+		DA9C855D2080B661007C7795 /* SwiftyGifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C855C2080B661007C7795 /* SwiftyGifManager.swift */; };
+		DA9C855F2080B664007C7795 /* UIImage+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C855E2080B664007C7795 /* UIImage+SwiftyGif.swift */; };
+		DA9C85612080B666007C7795 /* UIImageView+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C85602080B666007C7795 /* UIImageView+SwiftyGif.swift */; };
+		DA9C85692080BC8E007C7795 /* TestGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = DA9C85672080BC8E007C7795 /* TestGif.gif */; };
+		DA9C856A2080BC8E007C7795 /* Flower.gif in Resources */ = {isa = PBXBuildFile; fileRef = DA9C85682080BC8E007C7795 /* Flower.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,11 @@
 		0A9FA03C204446A7002D993F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A9FA04420446CDA002D993F /* Vriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vriends.swift; sourceTree = "<group>"; };
 		DA1D98832048C9620004BB78 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		DA9C855C2080B661007C7795 /* SwiftyGifManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyGifManager.swift; sourceTree = "<group>"; };
+		DA9C855E2080B664007C7795 /* UIImage+SwiftyGif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+SwiftyGif.swift"; sourceTree = "<group>"; };
+		DA9C85602080B666007C7795 /* UIImageView+SwiftyGif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+SwiftyGif.swift"; sourceTree = "<group>"; };
+		DA9C85672080BC8E007C7795 /* TestGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = TestGif.gif; path = Vriends/Gifs/TestGif.gif; sourceTree = SOURCE_ROOT; };
+		DA9C85682080BC8E007C7795 /* Flower.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Flower.gif; path = Vriends/Gifs/Flower.gif; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +74,8 @@
 		0A9FA02F204446A7002D993F /* Vriends */ = {
 			isa = PBXGroup;
 			children = (
+				DA9C85642080B819007C7795 /* Gifs */,
+				DA9C855B2080B646007C7795 /* SwiftyGif */,
 				0A9FA030204446A7002D993F /* AppDelegate.swift */,
 				0A9FA032204446A7002D993F /* ViewController.swift */,
 				0A54CB6120455D38007B68A4 /* AddFriendViewController.swift */,
@@ -77,6 +89,26 @@
 				0A890494206F81D800A1C7EA /* VriendViewController.swift */,
 			);
 			path = Vriends;
+			sourceTree = "<group>";
+		};
+		DA9C855B2080B646007C7795 /* SwiftyGif */ = {
+			isa = PBXGroup;
+			children = (
+				DA9C855E2080B664007C7795 /* UIImage+SwiftyGif.swift */,
+				DA9C85602080B666007C7795 /* UIImageView+SwiftyGif.swift */,
+				DA9C855C2080B661007C7795 /* SwiftyGifManager.swift */,
+			);
+			path = SwiftyGif;
+			sourceTree = "<group>";
+		};
+		DA9C85642080B819007C7795 /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				DA9C85682080BC8E007C7795 /* Flower.gif */,
+				DA9C85672080BC8E007C7795 /* TestGif.gif */,
+			);
+			name = Gifs;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +171,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A9FA03B204446A7002D993F /* LaunchScreen.storyboard in Resources */,
+				DA9C856A2080BC8E007C7795 /* Flower.gif in Resources */,
+				DA9C85692080BC8E007C7795 /* TestGif.gif in Resources */,
 				0A9FA038204446A7002D993F /* Assets.xcassets in Resources */,
 				0A9FA036204446A7002D993F /* Main.storyboard in Resources */,
 			);
@@ -151,13 +185,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA9C855D2080B661007C7795 /* SwiftyGifManager.swift in Sources */,
 				0A890495206F81D800A1C7EA /* VriendViewController.swift in Sources */,
 				0A9FA033204446A7002D993F /* ViewController.swift in Sources */,
 				DA1D98842048C9620004BB78 /* FriendCell.swift in Sources */,
+				DA9C855F2080B664007C7795 /* UIImage+SwiftyGif.swift in Sources */,
 				0A54CB6220455D38007B68A4 /* AddFriendViewController.swift in Sources */,
 				0A9FA031204446A7002D993F /* AppDelegate.swift in Sources */,
 				0A9FA04520446CDA002D993F /* Vriends.swift in Sources */,
 				0A54CB6520456116007B68A4 /* vriends.xcdatamodeld in Sources */,
+				DA9C85612080B666007C7795 /* UIImageView+SwiftyGif.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
