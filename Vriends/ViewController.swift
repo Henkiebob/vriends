@@ -61,15 +61,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         //Checks Last seen date and date now and calculates the diffrence
         if friends.count != 0{
-            for friend in friends{
-            let calendar = NSCalendar.current
-            let date1 = calendar.startOfDay(for: friend.lastSeen!)
-            let date2 = calendar.startOfDay(for: Date())
-            let components = calendar.dateComponents([.day], from: date1, to: date2)
-            lastSeenTime = String(describing: components.day!)
-            lastSeenArray.append(lastSeenTime)
-        }
-            print (lastSeenArray)
+            for friend in friends {
+                let calendar = NSCalendar.current
+                let date1 = calendar.startOfDay(for: friend.lastSeen!)
+                let date2 = calendar.startOfDay(for: Date())
+                let components = calendar.dateComponents([.day], from: date1, to: date2)
+                lastSeenTime = String(describing: components.day!)
+                lastSeenArray.append(lastSeenTime)
+            }
         }
     }
     
@@ -92,9 +91,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.lastSeenDateLabel?.text = "Days not seen: " + String(lastSeenArray[indexPath.row])
         cell.backgroundColor = addFriend.uiColorFromHex(rgbValue: Int(friends[indexPath.row].favoriteColor!)!)
         let badFriend = Int(lastSeenArray[indexPath.row])! / Int(friend.wishToSee!)!
-        //print(badFriend)
         cell.leaf.image = UIImage(named: flower[badFriend])
-        
+                
         switch (lastSeenArray[indexPath.row]) {
         case "1":
             cell.greyScaleBackground.alpha = 0.1

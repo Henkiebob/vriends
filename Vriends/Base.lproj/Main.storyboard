@@ -268,6 +268,18 @@
                                             <action selector="otherSliderChanged:" destination="3Ue-Za-6ao" eventType="valueChanged" id="Msk-Ac-2EO"/>
                                         </connections>
                                     </slider>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k7s-F2-YwT">
+                                        <rect key="frame" x="303" y="438" width="49" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Wanneer deze optie aanstaat zal er een bloem worden geladen die status van jullie vriendschap symboliseert" label="Help mij herrinneren"/>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vriendschap bijhouden" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9mo-JV-LMk">
+                                        <rect key="frame" x="20" y="443" width="176" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="CRn-qa-iqi" secondAttribute="trailing" constant="5" id="17o-Ue-7az"/>
@@ -314,6 +326,7 @@
                         <outlet property="friendNameTextField" destination="mAU-ed-Fvq" id="3T6-wP-AhP"/>
                         <outlet property="selectedColor" destination="pBF-ES-Q88" id="0pc-X3-yvN"/>
                         <outlet property="test" destination="3Q6-zN-zWO" id="3NA-Y1-Mb3"/>
+                        <outlet property="uiSwitch" destination="k7s-F2-YwT" id="9ug-YS-DNl"/>
                         <outlet property="wishSlider" destination="0ne-LZ-fcL" id="OW0-gt-Fum"/>
                     </connections>
                 </viewController>

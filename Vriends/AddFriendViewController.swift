@@ -17,6 +17,7 @@ class AddFriendViewController: UIViewController {
     @IBOutlet weak var colorSlider: UISlider!
     @IBOutlet weak var wishSlider: UISlider!
     @IBOutlet weak var test: UILabel!
+    @IBOutlet weak var uiSwitch: UISwitch!
     
     // RRGGBB hex colors in the same order as the image
     let colorArray = [ 0x000000, 0xfe0000, 0xff7900, 0xffb900, 0xffde00, 0xfcff00, 0xd2ff00, 0x05c000, 0x00c0a7, 0x0600ff, 0x6700bf, 0x9500c0, 0xbf0199, 0xffffff ]
@@ -53,19 +54,25 @@ class AddFriendViewController: UIViewController {
     @IBAction func AddFriend(_ sender: Any) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let friend = Friend(context: context)
-        let gift = Gift(context: context)
-        
-        gift.note = "Taart 2"
+//        let gift = Gift(context: context)
+//
+//        gift.note = "Taart 2"
         
         if(friendNameTextField.text != nil) {
-            print(birthDatePicker.date)
             friend.name = friendNameTextField.text
             friend.birthdate = birthDatePicker.date
             let coupleOfDaysBack = Calendar.current.date(byAdding: .day, value: -23, to: Date())
             friend.lastSeen = coupleOfDaysBack
             friend.favoriteColor = String(colorArray[Int(colorSlider.value)])
             friend.wishToSee = String(wishDateArray[Int(wishSlider.value)])
-            friend.addToGift(gift)
+            
+            if(uiSwitch.isOn){
+                friend.track = true
+            }
+            else {
+                friend.track = false
+            }
+//            friend.addToGift(gift)
         }
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
