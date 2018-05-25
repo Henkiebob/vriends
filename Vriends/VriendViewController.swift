@@ -13,6 +13,7 @@ class VriendViewController: UIViewController {
     var friend:Friend!
 
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var giftLabel: UILabel!
     
     @IBOutlet weak var textfield: UITextView!
     @IBOutlet weak var button: UIButton!
@@ -24,6 +25,12 @@ class VriendViewController: UIViewController {
     }
     override func viewDidLoad() {
         nameLabel.text = friend.name
+        
+        if let gift = friend.gift {
+            for case let gift as Gift in gift {
+                giftLabel.text = gift.note
+            }
+        }
         
         let gifManager = SwiftyGifManager.defaultManager
         let gif = UIImage(gifName: "Flower")

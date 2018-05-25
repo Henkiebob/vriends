@@ -53,6 +53,9 @@ class AddFriendViewController: UIViewController {
     @IBAction func AddFriend(_ sender: Any) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let friend = Friend(context: context)
+        let gift = Gift(context: context)
+        
+        gift.note = "Taart 2"
         
         if(friendNameTextField.text != nil) {
             print(birthDatePicker.date)
@@ -62,7 +65,7 @@ class AddFriendViewController: UIViewController {
             friend.lastSeen = coupleOfDaysBack
             friend.favoriteColor = String(colorArray[Int(colorSlider.value)])
             friend.wishToSee = String(wishDateArray[Int(wishSlider.value)])
-
+            friend.addToGift(gift)
         }
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()

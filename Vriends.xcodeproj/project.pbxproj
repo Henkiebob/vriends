@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A08405920B815EA00CF1F43 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A08405820B815EA00CF1F43 /* Friend.swift */; };
 		0A54CB6220455D38007B68A4 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A54CB6120455D38007B68A4 /* AddFriendViewController.swift */; };
 		0A54CB6520456116007B68A4 /* vriends.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A54CB6320456116007B68A4 /* vriends.xcdatamodeld */; };
 		0A890495206F81D800A1C7EA /* VriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A890494206F81D800A1C7EA /* VriendViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A08405820B815EA00CF1F43 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		0A54CB6120455D38007B68A4 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		0A54CB6420456116007B68A4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		0A890494206F81D800A1C7EA /* VriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VriendViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				0A9FA037204446A7002D993F /* Assets.xcassets */,
 				0A9FA039204446A7002D993F /* LaunchScreen.storyboard */,
 				0A54CB6320456116007B68A4 /* vriends.xcdatamodeld */,
+				0A08405820B815EA00CF1F43 /* Friend.swift */,
 				0A9FA03C204446A7002D993F /* Info.plist */,
 				DA1D98832048C9620004BB78 /* FriendCell.swift */,
 				0A890494206F81D800A1C7EA /* VriendViewController.swift */,
@@ -195,6 +198,7 @@
 				0A9FA04520446CDA002D993F /* Vriends.swift in Sources */,
 				0A54CB6520456116007B68A4 /* vriends.xcdatamodeld in Sources */,
 				DA9C85612080B666007C7795 /* UIImageView+SwiftyGif.swift in Sources */,
+				0A08405920B815EA00CF1F43 /* Friend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
