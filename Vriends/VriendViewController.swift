@@ -15,7 +15,6 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
     var giftsArray: [String] = []
 
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var giftLabel: UILabel!
     
     @IBOutlet weak var textfield: UITextView!
     @IBOutlet weak var button: UIButton!
@@ -28,11 +27,11 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
     }
     override func viewDidLoad() {
         nameLabel.text = friend.name
+        print(friend.name)
         giftTableView.dataSource = self
         giftTableView.delegate = self
         if let gift = friend.gift {
             for case let gift as Gift in gift {
-                giftLabel.text = gift.note
                 giftsArray.append(gift.note!)
 //                print(giftsArray)
             }
@@ -56,5 +55,11 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         print(gift)
         cell.giftLabel.text = gift
         return cell
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addGiftSegue", let destination = segue.destination as? GiftViewController {
+                var friend = self.friend
+                destination.friend = friend
+        }
     }
 }
