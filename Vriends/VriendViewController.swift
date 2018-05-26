@@ -8,9 +8,11 @@
 
 import UIKit
 
-class VriendViewController: UIViewController {
+class VriendViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var friend:Friend!
+    
+    var giftsArray: [String] = []
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var giftLabel: UILabel!
@@ -18,6 +20,7 @@ class VriendViewController: UIViewController {
     @IBOutlet weak var textfield: UITextView!
     @IBOutlet weak var button: UIButton!
     
+    @IBOutlet weak var giftTableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
     
     @IBAction func saveGift(_ sender: UIButton) {
@@ -25,27 +28,33 @@ class VriendViewController: UIViewController {
     }
     override func viewDidLoad() {
         nameLabel.text = friend.name
-        
+        giftTableView.dataSource = self
+        giftTableView.delegate = self
         if let gift = friend.gift {
             for case let gift as Gift in gift {
                 giftLabel.text = gift.note
+                giftsArray.append(gift.note!)
+//                print(giftsArray)
             }
         }
-        
-        let gifManager = SwiftyGifManager.defaultManager
-        let gif = UIImage(gifName: "Flower")
-        self.imageView.setGifImage(gif, manager: gifManager, loopCount: 1)
-        self.imageView.delegate = (self as SwiftyGifDelegate)
-        
-        let imageWidth: CGFloat = 60
-        let imageHeight: CGFloat = 60
-        
-        imageView.frame = CGRect(x: 20, y: 300, width: imageWidth, height: imageHeight)
-        view.addSubview(imageView)
     }
-}
-extension VriendViewController: SwiftyGifDelegate {
-    func gifDidLoop(sender: UIImageView) {
-        self.imageView.currentImage = UIImage(named: "F_12")
+    
+    func tableView(_ giftTableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return giftsArray.count
+    }
+
+    func tableView(_ giftTableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //print("row selected: \(indexPath.row)")
+    }
+
+    func tableView(_ giftTableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        //This makes it so there are multiple labels in the cell to fill in the information
+        let cell = giftTableView.dequeueReusableCell(withIdentifier: "giftCell", for: indexPath) as! giftsCells
+        
+        let gift = giftsArray[indexPath.row]
+        print(gift)
+        cell.giftLabel.text = gift
+        return cell
     }
 }

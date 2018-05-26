@@ -6,15 +6,15 @@
         <attribute name="lastSeen" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wishToSee" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="gift" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Gift" inverseName="friend" inverseEntity="Gift" syncable="YES"/>
+        <relationship name="gift" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Gift" inverseName="gift" inverseEntity="Gift" syncable="YES"/>
     </entity>
     <entity name="Gift" representedClassName="Gift" syncable="YES" codeGenerationType="class">
         <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reminder" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="friend" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Friend" inverseName="gift" inverseEntity="Friend" syncable="YES"/>
+        <relationship name="gift" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Friend" inverseName="gift" inverseEntity="Friend" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Friend" positionX="-63" positionY="-18" width="128" height="30"/>
-        <element name="Gift" positionX="-54" positionY="-9" width="128" height="90"/>
+        <element name="Friend" positionX="-54" positionY="-9" width="128" height="135"/>
+        <element name="Gift" positionX="-36" positionY="9" width="128" height="90"/>
     </elements>
 </model>
