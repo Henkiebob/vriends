@@ -73,7 +73,7 @@
                                             <outlet property="leaf" destination="2g5-4B-HWM" id="FJ0-Y5-omX"/>
                                             <segue destination="J9p-gf-Mtd" kind="presentation" identifier="mainToProfileSegue" modalPresentationStyle="pageSheet" id="s4m-C6-F9p">
                                                 <segue key="commit" inheritsFrom="parent" id="j4O-N9-z0P"/>
-                                                <segue key="preview" inheritsFrom="commit" id="sIf-QT-Fzl"/>
+                                                <segue key="preview" destination="J9p-gf-Mtd" identifier="mainToProfileSegue" id="sIf-QT-Fzl"/>
                                             </segue>
                                         </connections>
                                     </tableViewCell>
@@ -404,7 +404,7 @@
         <image name="colorpicker" width="700" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="s4m-C6-F9p"/>
+        <segue reference="aIK-4P-g0r"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
