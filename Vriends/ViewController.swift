@@ -15,7 +15,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var lastSeenLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    var friends : [Friend] = []
+    var friends: [Friend] = []
     var flower: [String] = ["F_12.png","F_11.png", "F_10.png", "F_09.png", "F_08.png", "F_07.png", "F_06.png", "F_05.png", "F_04.png", "F_03.png", "F_02.png", "F_01.png", "F_00.png"]
     
     var addFriend = AddFriendViewController()
@@ -26,7 +26,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let formatter = DateFormatter()
     
     var i = 0
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -152,7 +152,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }*/
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "test", let destination = segue.destination as? VriendViewController {
+        if segue.identifier == "mainToProfileSegue", let destination = segue.destination as? VriendViewController {
             if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
                 let friend = friends[indexPath.row]
                 destination.friend = friend

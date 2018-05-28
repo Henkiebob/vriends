@@ -26,6 +26,7 @@ class AddFriendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
     }
 
@@ -54,7 +55,7 @@ class AddFriendViewController: UIViewController {
     @IBAction func AddFriend(_ sender: Any) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let friend = Friend(context: context)
-//        let gift = Gift(context: context)
+        let gift = Gift(context: context)
 //
 //        gift.note = "Taart 2"
         

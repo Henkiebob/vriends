@@ -16,3 +16,6 @@ class FriendCell: UITableViewCell{
     @IBOutlet weak var lastSeenDateLabel: UILabel!
     @IBOutlet weak var greyScaleBackground: UIView!
 }
+class giftsCells: UITableViewCell {
+    @IBOutlet weak var giftLabel: UILabel!
+}
