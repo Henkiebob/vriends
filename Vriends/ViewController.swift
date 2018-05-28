@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import JJFloatingActionButton
+
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var lastSeenLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -34,6 +36,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         formatter.dateFormat = "dd/mm/yyyy"
         formatter.dateStyle = .long
         
+        
+        let actionButton = JJFloatingActionButton()
+        
+        actionButton.addItem(title: "Add Gift", image: UIImage(named: "First")?.withRenderingMode(.alwaysTemplate)) { item in
+            // do something
+        }
+        
+        actionButton.addItem(title: "Add Note", image: UIImage(named: "Second")?.withRenderingMode(.alwaysTemplate)) { item in
+            // do something
+        }
+        
+        actionButton.display(inViewController: self)
 
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -48,6 +62,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
     
+
     func reload() {
         // if this returns nothing.. 😢
         getFriends()
@@ -92,7 +107,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.backgroundColor = addFriend.uiColorFromHex(rgbValue: Int(friends[indexPath.row].favoriteColor!)!)
         let badFriend = Int(lastSeenArray[indexPath.row])! / Int(friend.wishToSee!)!
         cell.leaf.image = UIImage(named: flower[badFriend])
-                
+        
         switch (lastSeenArray[indexPath.row]) {
         case "1":
             cell.greyScaleBackground.alpha = 0.1
@@ -139,7 +154,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "test", let destination = segue.destination as? VriendViewController {
             if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
-                var friend = friends[indexPath.row]
+                let friend = friends[indexPath.row]
                 destination.friend = friend
             }
         }
