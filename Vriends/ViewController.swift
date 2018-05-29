@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import JJFloatingActionButton
-
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -35,23 +33,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.delegate = self
         formatter.dateFormat = "dd/mm/yyyy"
         formatter.dateStyle = .long
-        
-        
-        let actionButton = JJFloatingActionButton()
-        
-        actionButton.addItem(title: "Add Gift", image: UIImage(named: "First")?.withRenderingMode(.alwaysTemplate)) { item in
-            // do something
-        }
-        
-        actionButton.addItem(title: "Add Note", image: UIImage(named: "Second")?.withRenderingMode(.alwaysTemplate)) { item in
-            // do something
-        }
-        
-        actionButton.display(inViewController: self)
-
-        // Do any additional setup after loading the view, typically from a nib.
     }
-    
+    func dismiss(_ segue: UIStoryboardSegue) {
+        self.dismiss(animated: true, completion: nil)
+    }
     override func viewWillAppear(_ animated: Bool) {
         reload()
     }

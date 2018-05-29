@@ -1,5 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '11.0'
+project '../Vriends.xcodeproj'
 use_frameworks!
 
 target 'Vriends' do

@@ -17,22 +17,23 @@ class GiftViewController: UIViewController{
     @IBOutlet weak var giftNoteTextView: UITextView!
     
     override func viewDidLoad() {
-        print(friend.name)
     }
     
     @IBAction func AddGift(_ sender: Any) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        print(friend.name)
        
         let gift = Gift(context: context)
         
-        gift.note = giftTitleTextField.text
-        gift.title = giftNoteTextView.text
+        gift.title = giftTitleTextField.text
+        gift.note = giftNoteTextView.text
         
         print(gift)
             
         friend.addToGift(gift)
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        self.dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "addGiftToProfileSegue", sender: nil)
+        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addGiftToProfileSegue", let destination = segue.destination as? VriendViewController {
