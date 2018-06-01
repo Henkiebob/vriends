@@ -9,10 +9,15 @@
 import UIKit
 import Social
 import MobileCoreServices
+import CoreMedia
 
 class ShareViewController: SLComposeServiceViewController {
     
+    
     var userDecks = [Deck]()
+    let userDefaults = UserDefaults(suiteName: "group.nl.vriends")
+
+//    let defaults = UserDefaults.standard
     fileprivate var selectedDeck: Deck?
 
     override func isContentValid() -> Bool {
@@ -46,6 +51,13 @@ class ShareViewController: SLComposeServiceViewController {
    override func viewDidLoad() {
     
         // Loading friends and adding them to the sharetable as options
+    
+//        savedArray = defaults.object(forKey: "SavedFriends") as! [String]
+    let savedArray = userDefaults?.object(forKey: "SavedFriends") as? [String] ?? [String]()
+        for object in savedArray{
+            print(object)
+        }
+    
         for i in 1...3 {
             let deck = Deck()
             deck.title = "Vriend \(i)"

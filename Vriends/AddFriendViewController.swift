@@ -12,6 +12,8 @@ class AddFriendViewController: UIViewController {
 
     @IBOutlet weak var friendNameTextField: UITextField!
     @IBOutlet weak var birthDatePicker: UIDatePicker!
+    
+    var viewController = ViewController?
 
     @IBOutlet weak var selectedColor: UIView!
     @IBOutlet weak var colorSlider: UISlider!
@@ -77,7 +79,7 @@ class AddFriendViewController: UIViewController {
         }
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        
+        ADataManager.shared.viewController.friendNames.append(friend.name!)
         navigationController!.popViewController(animated: true)
 
     }
