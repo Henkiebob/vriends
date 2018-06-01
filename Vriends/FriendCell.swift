@@ -14,8 +14,13 @@ class FriendCell: UITableViewCell{
     @IBOutlet weak var friendNameLabel: UILabel!
     @IBOutlet weak var birthDateLabel: UILabel!
     @IBOutlet weak var lastSeenDateLabel: UILabel!
-    @IBOutlet weak var greyScaleBackground: UIView!
 }
-class giftsCells: UITableViewCell {
-    @IBOutlet weak var giftLabel: UILabel!
+class giftCells: UITableViewCell {
+    @IBOutlet weak var giftTitle: UILabel!
+    @IBOutlet weak var giftNote: UILabel!
+}
+class noteCell: UITableViewCell {
+    @IBOutlet weak var noteTitle: UILabel!
+    @IBOutlet weak var noteText: UILabel!
+    
 }

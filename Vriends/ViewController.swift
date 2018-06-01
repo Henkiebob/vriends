@@ -93,14 +93,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let badFriend = Int(lastSeenArray[indexPath.row])! / Int(friend.wishToSee!)!
         cell.leaf.image = UIImage(named: flower[badFriend])
         
-        switch (lastSeenArray[indexPath.row]) {
-        case "1":
-            cell.greyScaleBackground.alpha = 0.1
-        case "5":
-            cell.greyScaleBackground.alpha = 0.7
-        default:
-            cell.greyScaleBackground.alpha = 0
-        }
         return cell
     }
     

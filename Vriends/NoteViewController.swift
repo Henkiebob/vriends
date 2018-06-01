@@ -1,13 +1,20 @@
 //
-//  CardViewController.swift
-//  CardsUI
+//  GiftViewController.swift
+//  Vriends
 //
-//  Created by Eugène Peschard on 24/04/2017.
+//  Created by Geart Otten on 26/05/2018.
+//  Copyright © 2018 Tjerk Dijkstra. All rights reserved.
 //
 
 import UIKit
 
-class testViewController: UIViewController {
+class NoteViewController: UIViewController {
+    
+    var friend: Friend!
+    var vriendViewController: VriendViewController!
+    
+    @IBOutlet weak var noteTitle: UITextField!
+    @IBOutlet weak var noteInfo: UITextView!
     
     var darkStatusBar = true
     let fullView: CGFloat = 100
@@ -41,10 +48,25 @@ class testViewController: UIViewController {
         roundViews()
     }
     
-    @IBAction func test(_ sender: Any) {
+    @IBAction func dismissButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
+    @IBAction func addNote(_ sender: Any) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let note = Note(context: context)
+        
+        note.title = noteTitle.text
+        note.text = noteInfo.text
+        
+        friend.addToNote(note)
+        
+        DataManager.shared.vriendViewController.notesArray.append(note)
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        DataManager.shared.vriendViewController.noteTableView.reloadData()
+        dismiss(animated: true, completion: nil)
+        
+    }
     @objc func panGesture(_ recognizer: UIPanGestureRecognizer) {
         
         let translation = recognizer.translation(in: self.view)
@@ -81,7 +103,7 @@ class testViewController: UIViewController {
 
 // MARK: - UIViewControllerTransitioningDelegate methods
 
-extension testViewController: UIViewControllerTransitioningDelegate {
+extension NoteViewController: UIViewControllerTransitioningDelegate {
     
     func presentationController(forPresented presented: UIViewController,
                                 presenting: UIViewController?,
@@ -108,6 +130,7 @@ extension testViewController: UIViewControllerTransitioningDelegate {
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         if dismissed == self {
+            
             return CardAnimationController(isPresenting: false)
         } else {
             return nil
