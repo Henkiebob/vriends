@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A02327220BF1F0700FC9E5E /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A02327120BF1F0700FC9E5E /* ShareViewController.swift */; };
+		0A02327520BF1F0700FC9E5E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A02327320BF1F0700FC9E5E /* MainInterface.storyboard */; };
+		0A02327920BF1F0700FC9E5E /* ShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0A02326F20BF1F0700FC9E5E /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0A02327F20BF20B000FC9E5E /* ShareScript.js in Resources */ = {isa = PBXBuildFile; fileRef = 0A02327E20BF20B000FC9E5E /* ShareScript.js */; };
+		0A02328120BF33FC00FC9E5E /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A02328020BF33FC00FC9E5E /* Deck.swift */; };
+		0A02328320BF343300FC9E5E /* ShareSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A02328220BF343300FC9E5E /* ShareSelectViewController.swift */; };
 		0A08405920B815EA00CF1F43 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A08405820B815EA00CF1F43 /* Friend.swift */; };
 		0A08406A20B8477500CF1F43 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0A08406920B8477500CF1F43 /* Podfile */; };
 		0A54CB6220455D38007B68A4 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A54CB6120455D38007B68A4 /* AddFriendViewController.swift */; };
@@ -32,7 +38,38 @@
 		DA9C856A2080BC8E007C7795 /* Flower.gif in Resources */ = {isa = PBXBuildFile; fileRef = DA9C85682080BC8E007C7795 /* Flower.gif */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0A02327720BF1F0700FC9E5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A9FA025204446A7002D993F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A02326E20BF1F0700FC9E5E;
+			remoteInfo = ShareExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0A02327D20BF1F0700FC9E5E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0A02327920BF1F0700FC9E5E /* ShareExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0A02326F20BF1F0700FC9E5E /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A02327120BF1F0700FC9E5E /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		0A02327420BF1F0700FC9E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		0A02327620BF1F0700FC9E5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A02327E20BF20B000FC9E5E /* ShareScript.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = ShareScript.js; sourceTree = "<group>"; };
+		0A02328020BF33FC00FC9E5E /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		0A02328220BF343300FC9E5E /* ShareSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSelectViewController.swift; sourceTree = "<group>"; };
 		0A08405820B815EA00CF1F43 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		0A08406920B8477500CF1F43 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		0A54CB6120455D38007B68A4 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +100,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0A02326C20BF1F0700FC9E5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0A9FA02A204446A7002D993F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -74,10 +118,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A02327020BF1F0700FC9E5E /* ShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				0A02327120BF1F0700FC9E5E /* ShareViewController.swift */,
+				0A02327320BF1F0700FC9E5E /* MainInterface.storyboard */,
+				0A02327620BF1F0700FC9E5E /* Info.plist */,
+				0A02327E20BF20B000FC9E5E /* ShareScript.js */,
+				0A02328020BF33FC00FC9E5E /* Deck.swift */,
+				0A02328220BF343300FC9E5E /* ShareSelectViewController.swift */,
+			);
+			path = ShareExtension;
+			sourceTree = "<group>";
+		};
 		0A9FA024204446A7002D993F = {
 			isa = PBXGroup;
 			children = (
 				0A9FA02F204446A7002D993F /* Vriends */,
+				0A02327020BF1F0700FC9E5E /* ShareExtension */,
 				0A9FA02E204446A7002D993F /* Products */,
 				1ACFA57638587DE00F9F42E2 /* Pods */,
 				18B80A6973BBF4F9B5F5AF6B /* Frameworks */,
@@ -88,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				0A9FA02D204446A7002D993F /* Vriends.app */,
+				0A02326F20BF1F0700FC9E5E /* ShareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,6 +218,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0A02326E20BF1F0700FC9E5E /* ShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A02327C20BF1F0700FC9E5E /* Build configuration list for PBXNativeTarget "ShareExtension" */;
+			buildPhases = (
+				0A02326B20BF1F0700FC9E5E /* Sources */,
+				0A02326C20BF1F0700FC9E5E /* Frameworks */,
+				0A02326D20BF1F0700FC9E5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareExtension;
+			productName = ShareExtension;
+			productReference = 0A02326F20BF1F0700FC9E5E /* ShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		0A9FA02C204446A7002D993F /* Vriends */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A9FA03F204446A7002D993F /* Build configuration list for PBXNativeTarget "Vriends" */;
@@ -168,10 +244,12 @@
 				0A9FA02A204446A7002D993F /* Frameworks */,
 				0A9FA02B204446A7002D993F /* Resources */,
 				100F87768E2A010964C855E6 /* [CP] Embed Pods Frameworks */,
+				0A02327D20BF1F0700FC9E5E /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0A02327820BF1F0700FC9E5E /* PBXTargetDependency */,
 			);
 			name = Vriends;
 			productName = Vriends;
@@ -184,10 +262,14 @@
 		0A9FA025204446A7002D993F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Tjerk Dijkstra";
 				TargetAttributes = {
+					0A02326E20BF1F0700FC9E5E = {
+						CreatedOnToolsVersion = 9.3.1;
+						ProvisioningStyle = Automatic;
+					};
 					0A9FA02C204446A7002D993F = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -208,11 +290,21 @@
 			projectRoot = "";
 			targets = (
 				0A9FA02C204446A7002D993F /* Vriends */,
+				0A02326E20BF1F0700FC9E5E /* ShareExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0A02326D20BF1F0700FC9E5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A02327520BF1F0700FC9E5E /* MainInterface.storyboard in Resources */,
+				0A02327F20BF20B000FC9E5E /* ShareScript.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0A9FA02B204446A7002D993F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -268,6 +360,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0A02326B20BF1F0700FC9E5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A02328120BF33FC00FC9E5E /* Deck.swift in Sources */,
+				0A02328320BF343300FC9E5E /* ShareSelectViewController.swift in Sources */,
+				0A02327220BF1F0700FC9E5E /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0A9FA029204446A7002D993F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -293,7 +395,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0A02327820BF1F0700FC9E5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0A02326E20BF1F0700FC9E5E /* ShareExtension */;
+			targetProxy = 0A02327720BF1F0700FC9E5E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		0A02327320BF1F0700FC9E5E /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A02327420BF1F0700FC9E5E /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		0A9FA034204446A7002D993F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -313,6 +431,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0A02327A20BF1F0700FC9E5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P9KK68PA63;
+				INFOPLIST_FILE = ShareExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = NHL.Vriends.ShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0A02327B20BF1F0700FC9E5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P9KK68PA63;
+				INFOPLIST_FILE = ShareExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = NHL.Vriends.ShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		0A9FA03D204446A7002D993F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -428,6 +580,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 34C0CE98276C5A7A0792FFA6 /* Pods-Vriends.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P9KK68PA63;
@@ -444,6 +597,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF7C97660F5BA575F2AD9A2B /* Pods-Vriends.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P9KK68PA63;
@@ -459,6 +613,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0A02327C20BF1F0700FC9E5E /* Build configuration list for PBXNativeTarget "ShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A02327A20BF1F0700FC9E5E /* Debug */,
+				0A02327B20BF1F0700FC9E5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0A9FA028204446A7002D993F /* Build configuration list for PBXProject "Vriends" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -91,7 +91,7 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         giftTableView.delegate = self
         if let gift = friend.gift {
             for case let gift as Gift in gift {
-                giftsArray.append(gift.title!)
+                //giftsArray.append(gift.title!)
             }
         }
         

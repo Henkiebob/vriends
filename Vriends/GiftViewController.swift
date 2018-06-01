@@ -24,7 +24,7 @@ class GiftViewController: UIViewController{
        
         let gift = Gift(context: context)
         
-        gift.title = giftTitleTextField.text
+        //gift.title = giftTitleTextField.text
         gift.note = giftNoteTextView.text
         
         print(gift)
