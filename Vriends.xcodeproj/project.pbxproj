@@ -28,14 +28,15 @@
 		DA1D98842048C9620004BB78 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D98832048C9620004BB78 /* FriendCell.swift */; };
 		DA32EBF520BCA717003B5032 /* CardPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32EBF420BCA717003B5032 /* CardPresentationController.swift */; };
 		DA32EBF720BCA79F003B5032 /* CardAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32EBF620BCA79F003B5032 /* CardAnimationController.swift */; };
-		DA32EBF920BCBAA0003B5032 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32EBF820BCBAA0003B5032 /* CardViewController.swift */; };
 		DA53848820B9E3730055D5BD /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA53848720B9E3730055D5BD /* RoundedView.swift */; };
-		DA55FF2D20BC2B0400689A6F /* GiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55FF2C20BC2B0400689A6F /* GiftViewController.swift */; };
+		DA7C194720C2DBBC00BF16C7 /* GiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7C194620C2DBBC00BF16C7 /* GiftTableViewController.swift */; };
 		DA9C855D2080B661007C7795 /* SwiftyGifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C855C2080B661007C7795 /* SwiftyGifManager.swift */; };
 		DA9C855F2080B664007C7795 /* UIImage+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C855E2080B664007C7795 /* UIImage+SwiftyGif.swift */; };
 		DA9C85612080B666007C7795 /* UIImageView+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C85602080B666007C7795 /* UIImageView+SwiftyGif.swift */; };
 		DA9C85692080BC8E007C7795 /* TestGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = DA9C85672080BC8E007C7795 /* TestGif.gif */; };
 		DA9C856A2080BC8E007C7795 /* Flower.gif in Resources */ = {isa = PBXBuildFile; fileRef = DA9C85682080BC8E007C7795 /* Flower.gif */; };
+		DA9F634C20C1850D009C84C8 /* GiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9F634B20C1850D009C84C8 /* GiftViewController.swift */; };
+		DA9F635020C19777009C84C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9FA037204446A7002D993F /* Assets.xcassets */; };
 		DAEA897920C037BA00D439AE /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEA897820C037B900D439AE /* NoteViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,14 +91,15 @@
 		DA1D98832048C9620004BB78 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		DA32EBF420BCA717003B5032 /* CardPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresentationController.swift; sourceTree = "<group>"; };
 		DA32EBF620BCA79F003B5032 /* CardAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAnimationController.swift; sourceTree = "<group>"; };
-		DA32EBF820BCBAA0003B5032 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		DA53848720B9E3730055D5BD /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
-		DA55FF2C20BC2B0400689A6F /* GiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftViewController.swift; sourceTree = "<group>"; };
+		DA7C194620C2DBBC00BF16C7 /* GiftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftTableViewController.swift; sourceTree = "<group>"; };
 		DA9C855C2080B661007C7795 /* SwiftyGifManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyGifManager.swift; sourceTree = "<group>"; };
 		DA9C855E2080B664007C7795 /* UIImage+SwiftyGif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+SwiftyGif.swift"; sourceTree = "<group>"; };
 		DA9C85602080B666007C7795 /* UIImageView+SwiftyGif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+SwiftyGif.swift"; sourceTree = "<group>"; };
 		DA9C85672080BC8E007C7795 /* TestGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = TestGif.gif; path = Vriends/Gifs/TestGif.gif; sourceTree = SOURCE_ROOT; };
 		DA9C85682080BC8E007C7795 /* Flower.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Flower.gif; path = Vriends/Gifs/Flower.gif; sourceTree = SOURCE_ROOT; };
+		DA9F634B20C1850D009C84C8 /* GiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftViewController.swift; sourceTree = "<group>"; };
+		DA9F634D20C186DB009C84C8 /* Vriends.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vriends.entitlements; sourceTree = "<group>"; };
 		DAEA897820C037B900D439AE /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,18 +158,18 @@
 		0A9FA02F204446A7002D993F /* Vriends */ = {
 			isa = PBXGroup;
 			children = (
+				DA9F634D20C186DB009C84C8 /* Vriends.entitlements */,
 				0A08406920B8477500CF1F43 /* Podfile */,
 				DA9C85642080B819007C7795 /* Gifs */,
 				DA9C855B2080B646007C7795 /* SwiftyGif */,
 				0A9FA030204446A7002D993F /* AppDelegate.swift */,
 				0A9FA032204446A7002D993F /* ViewController.swift */,
 				DAEA897820C037B900D439AE /* NoteViewController.swift */,
-				DA55FF2C20BC2B0400689A6F /* GiftViewController.swift */,
+				DA9F634B20C1850D009C84C8 /* GiftViewController.swift */,
 				DA32EBF620BCA79F003B5032 /* CardAnimationController.swift */,
 				DA32EBF420BCA717003B5032 /* CardPresentationController.swift */,
 				0A54CB6120455D38007B68A4 /* AddFriendViewController.swift */,
 				0A9FA04420446CDA002D993F /* Vriends.swift */,
-				DA32EBF820BCBAA0003B5032 /* CardViewController.swift */,
 				0A9FA034204446A7002D993F /* Main.storyboard */,
 				0A9FA037204446A7002D993F /* Assets.xcassets */,
 				0A9FA039204446A7002D993F /* LaunchScreen.storyboard */,
@@ -177,6 +179,7 @@
 				DA1D98832048C9620004BB78 /* FriendCell.swift */,
 				0A890494206F81D800A1C7EA /* VriendViewController.swift */,
 				DA53848720B9E3730055D5BD /* RoundedView.swift */,
+				DA7C194620C2DBBC00BF16C7 /* GiftTableViewController.swift */,
 			);
 			path = Vriends;
 			sourceTree = "<group>";
@@ -276,6 +279,11 @@
 					0A9FA02C204446A7002D993F = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -304,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A02327520BF1F0700FC9E5E /* MainInterface.storyboard in Resources */,
+				DA9F635020C19777009C84C8 /* Assets.xcassets in Resources */,
 				0A02327F20BF20B000FC9E5E /* ShareScript.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,17 +389,17 @@
 				DA9C855D2080B661007C7795 /* SwiftyGifManager.swift in Sources */,
 				0A890495206F81D800A1C7EA /* VriendViewController.swift in Sources */,
 				0A9FA033204446A7002D993F /* ViewController.swift in Sources */,
+				DA7C194720C2DBBC00BF16C7 /* GiftTableViewController.swift in Sources */,
 				DA1D98842048C9620004BB78 /* FriendCell.swift in Sources */,
 				DA9C855F2080B664007C7795 /* UIImage+SwiftyGif.swift in Sources */,
-				DA55FF2D20BC2B0400689A6F /* GiftViewController.swift in Sources */,
 				0A54CB6220455D38007B68A4 /* AddFriendViewController.swift in Sources */,
+				DA9F634C20C1850D009C84C8 /* GiftViewController.swift in Sources */,
 				DA53848820B9E3730055D5BD /* RoundedView.swift in Sources */,
 				0A9FA031204446A7002D993F /* AppDelegate.swift in Sources */,
 				DAEA897920C037BA00D439AE /* NoteViewController.swift in Sources */,
 				0A9FA04520446CDA002D993F /* Vriends.swift in Sources */,
 				0A54CB6520456116007B68A4 /* vriends.xcdatamodeld in Sources */,
 				DA32EBF720BCA79F003B5032 /* CardAnimationController.swift in Sources */,
-				DA32EBF920BCBAA0003B5032 /* CardViewController.swift in Sources */,
 				DA9C85612080B666007C7795 /* UIImageView+SwiftyGif.swift in Sources */,
 				DA32EBF520BCA717003B5032 /* CardPresentationController.swift in Sources */,
 				0A08405920B815EA00CF1F43 /* Friend.swift in Sources */,
@@ -439,13 +448,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P9KK68PA63;
+				DEVELOPMENT_TEAM = EBSX6CSZNX;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = NHL.Vriends.ShareExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = Vriends.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -456,13 +467,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P9KK68PA63;
+				DEVELOPMENT_TEAM = EBSX6CSZNX;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = NHL.Vriends.ShareExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = Vriends.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -586,12 +599,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Vriends/Vriends.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P9KK68PA63;
+				DEVELOPMENT_TEAM = EBSX6CSZNX;
 				INFOPLIST_FILE = Vriends/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = NHL.Vriends;
+				PRODUCT_BUNDLE_IDENTIFIER = Vriends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -603,12 +619,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Vriends/Vriends.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P9KK68PA63;
+				DEVELOPMENT_TEAM = EBSX6CSZNX;
 				INFOPLIST_FILE = Vriends/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = NHL.Vriends;
+				PRODUCT_BUNDLE_IDENTIFIER = Vriends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

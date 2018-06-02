@@ -11,4 +11,5 @@ import Foundation
 final class Deck {
     var id: String?
     var title: String?
+    var url: String?
 }

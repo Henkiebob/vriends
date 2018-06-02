@@ -19,7 +19,7 @@ class giftCells: UITableViewCell {
     @IBOutlet weak var giftTitle: UILabel!
     @IBOutlet weak var giftNote: UILabel!
 }
-class noteCell: UITableViewCell {
+class noteCells: UITableViewCell {
     @IBOutlet weak var noteTitle: UILabel!
     @IBOutlet weak var noteText: UILabel!
     

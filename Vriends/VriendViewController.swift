@@ -23,6 +23,7 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var button: UIButton!
     
     @IBOutlet weak var giftTableView: UITableView!
+    @IBOutlet weak var noteTableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
@@ -33,8 +34,8 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         nameLabel.text = friend.name
         giftTableView.dataSource = self
         giftTableView.delegate = self
-//        noteTableView.dataSource = self
-//        noteTableView.delegate = self
+        noteTableView.dataSource = self
+        noteTableView.delegate = self
         
         if let giftForFriend = friend.gift {
             giftsArray = giftForFriend.map({$0}) as! [Gift]
@@ -71,18 +72,36 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    func tableView(_ giftTableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (friend.gift?.count)!
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var count = 1
+        
+        if tableView == self.giftTableView{
+            count = giftsArray.count
+        }else{
+            count = notesArray.count
+        }
+        return count
     }
 
-    func tableView(_ giftTableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        //This makes it so there are multiple labels in the cell to fill in the information
-        let cell = giftTableView.dequeueReusableCell(withIdentifier: "giftCell", for: indexPath) as! giftCells
+        var cell: giftCells!
+        var notecell: noteCells!
+        
+        if tableView == self.giftTableView{//This makes it so there are multiple labels in the cell to fill in the information
+         cell = tableView.dequeueReusableCell(withIdentifier: "giftCell", for: indexPath) as! giftCells
         cell.giftTitle.text = giftsArray[indexPath.row].title
         cell.giftNote.text = giftsArray[indexPath.row].note
-
         return cell
+        }else if tableView == self.noteTableView {
+            notecell = tableView.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath) as! noteCells
+            notecell.noteTitle.text = notesArray[indexPath.row].title
+            notecell.noteText.text = notesArray[indexPath.row].text
+        return notecell
+
+        }
+        return cell
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
