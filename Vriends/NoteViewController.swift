@@ -61,7 +61,7 @@ class NoteViewController: UIViewController {
         
         friend.addToNote(note)
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
-    DataManager.shared.vriendViewController.notesArray.append(note)
+        DataManager.shared.vriendViewController.notesArray.append(note)
     
     DataManager.shared.vriendViewController.noteTableView.reloadData()
         dismiss(animated: true, completion: nil)

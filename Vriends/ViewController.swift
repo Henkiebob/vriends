@@ -13,7 +13,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var lastSeenLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    let userDefaults = UserDefaults(suiteName: "group.nl.vriends")
+    
+//    let defaults = UserDefaults.standard
+    
     var friends: [Friend] = []
+    var friendNames: [String] = []
+    
     var flower: [String] = ["F_12.png","F_11.png", "F_10.png", "F_09.png", "F_08.png", "F_07.png", "F_06.png", "F_05.png", "F_04.png", "F_03.png", "F_02.png", "F_01.png", "F_00.png"]
     
     var addFriend = AddFriendViewController()
@@ -24,19 +30,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let formatter = DateFormatter()
     
     var i = 0
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tableView.dataSource = self
         tableView.delegate = self
         formatter.dateFormat = "dd/mm/yyyy"
         formatter.dateStyle = .long
+        
+        ADataManager.shared.viewController = self
     }
+    
     func dismiss(_ segue: UIStoryboardSegue) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         reload()
     }
@@ -54,22 +63,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         // reload!
         tableView.reloadData()
-        
-        //print(friends[0].birthdate!)
-        //yayy you got friends
-        //print("you have " + String(friends.count) + " friends" )
-        
-        //Checks Last seen date and date now and calculates the diffrence
-        if friends.count != 0{
-            for friend in friends {
-                let calendar = NSCalendar.current
-                let date1 = calendar.startOfDay(for: friend.lastSeen!)
-                let date2 = calendar.startOfDay(for: Date())
-                let components = calendar.dateComponents([.day], from: date1, to: date2)
-                lastSeenTime = String(describing: components.day!)
-                lastSeenArray.append(lastSeenTime)
-            }
-        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -88,10 +81,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let birthDate = formatter.string(from: friend.birthdate!)
         cell.friendNameLabel?.text = friend.name!
         cell.birthDateLabel?.text = birthDate
-        cell.lastSeenDateLabel?.text = "Days not seen: " + String(lastSeenArray[indexPath.row])
+//        cell.lastSeenDateLabel?.text = "Days not seen: " + String(lastSeenArray[indexPath.row])
         cell.backgroundColor = addFriend.uiColorFromHex(rgbValue: Int(friends[indexPath.row].favoriteColor!)!)
-        let badFriend = Int(lastSeenArray[indexPath.row])! / Int(friend.wishToSee!)!
-        cell.leaf.image = UIImage(named: flower[badFriend])
+//        let badFriend = Int(lastSeenArray[indexPath.row])! / Int(friend.wishToSee!)!
+//        cell.leaf.image = UIImage(named: flower[badFriend])
         
         return cell
     }
@@ -119,6 +112,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             print("I can't fetch any friends from the database, hah loser!")
         }
         
+        fillFriendArray()
     }
     /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "test"
@@ -128,6 +122,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
         }
     }*/
+    
+    func fillFriendArray() {
+        if friends.count != 0 {
+            for friend in friends {
+                let calendar = NSCalendar.current
+                let date1 = calendar.startOfDay(for: friend.lastSeen!)
+                let date2 = calendar.startOfDay(for: Date())
+                let components = calendar.dateComponents([.day], from: date1, to: date2)
+                lastSeenTime = String(describing: components.day!)
+                lastSeenArray.append(lastSeenTime)
+                
+                if(friendNames.count == 0){
+                    friendNames.append(friend.name!)
+                }
+               
+            }
+        }
+        userDefaults?.set(friendNames, forKey: "SavedFriends")
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "mainToProfileSegue", let destination = segue.destination as? VriendViewController {
             if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
@@ -137,5 +151,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
 
+}
+
+class ADataManager {
+    static let shared = ADataManager()
+    var viewController = ViewController()
 }
 
