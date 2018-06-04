@@ -8,14 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var lastSeenLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+//    @IBOutlet weak var tableView: UITableView!
     let userDefaults = UserDefaults(suiteName: "group.nl.vriends")
     
 //    let defaults = UserDefaults.standard
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var friends: [Friend] = []
     var friendNames: [String] = []
@@ -34,10 +33,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.dataSource = self
-        tableView.delegate = self
+        collectionView.dataSource = self
+        collectionView.delegate = self
+//        tableView.dataSource = self
+//        tableView.delegate = self
         formatter.dateFormat = "dd/mm/yyyy"
         formatter.dateStyle = .long
+        
         
         ADataManager.shared.viewController = self
     }
@@ -62,46 +64,65 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         getFriends()
         
         // reload!
-        tableView.reloadData()
+//        tableView.reloadData()
+        collectionView.reloadData()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return friends.count
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //print("row selected: \(indexPath.row)")
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        //This makes it so there are multiple labels in the cell to fill in the information
-        let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! FriendCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "friendCollectionCell", for: indexPath) as! friendCollectionCell
+        
         let friend = friends[indexPath.row]
-        let birthDate = formatter.string(from: friend.birthdate!)
-        cell.friendNameLabel?.text = friend.name!
-        cell.birthDateLabel?.text = birthDate
-//        cell.lastSeenDateLabel?.text = "Days not seen: " + String(lastSeenArray[indexPath.row])
+        let badFriend = Int(lastSeenArray[indexPath.row])! / Int(friend.wishToSee!)!
+        
+        cell.layer.cornerRadius = 8
+        
+        cell.leaf.image = UIImage(named: flower[badFriend])
+        cell.nameLabel?.text = friend.name!
         cell.backgroundColor = addFriend.uiColorFromHex(rgbValue: Int(friends[indexPath.row].favoriteColor!)!)
-//        let badFriend = Int(lastSeenArray[indexPath.row])! / Int(friend.wishToSee!)!
-//        cell.leaf.image = UIImage(named: flower[badFriend])
         
         return cell
     }
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return friends.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//        //This makes it so there are multiple labels in the cell to fill in the information
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! FriendCell
+//        let friend = friends[indexPath.row]
+//        let birthDate = formatter.string(from: friend.birthdate!)
+//        cell.friendNameLabel?.text = friend.name!
+//        cell.birthDateLabel?.text = birthDate
+////        cell.lastSeenDateLabel?.text = "Days not seen: " + String(lastSeenArray[indexPath.row])
+//        cell.backgroundColor = addFriend.uiColorFromHex(rgbValue: Int(friends[indexPath.row].favoriteColor!)!)
+////        let badFriend = Int(lastSeenArray[indexPath.row])! / Int(friend.wishToSee!)!
+////        cell.leaf.image = UIImage(named: flower[badFriend])
+//
+//        return cell
+//    }
+//
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//
+//        if editingStyle == .delete{
+//            let friend = friends[indexPath.row]
+//            context.delete(friend)
+//
+//            // save
+//            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+//
+//            reload()
+//        }
+//    }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        if editingStyle == .delete{
-            let friend = friends[indexPath.row]
-            context.delete(friend)
-            
-            // save
-            (UIApplication.shared.delegate as! AppDelegate).saveContext()
-            
-            reload()
-        }
-    }
+
+
     // You really should get some friends 🔥 (sick burn)
     func getFriends() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -114,14 +135,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         fillFriendArray()
     }
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "test"
-        {
-            let friend = friends[0].name
-            
-            
-        }
-    }*/
+
     
     func fillFriendArray() {
         if friends.count != 0 {
@@ -144,7 +158,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "mainToProfileSegue", let destination = segue.destination as? VriendViewController {
-            if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
+            if let cell = sender as? UICollectionViewCell, let indexPath = collectionView.indexPath(for: cell) {
                 let friend = friends[indexPath.row]
                 destination.friend = friend
             }

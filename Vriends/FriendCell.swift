@@ -24,3 +24,8 @@ class noteCells: UITableViewCell {
     @IBOutlet weak var noteText: UILabel!
     
 }
+class friendCollectionCell: UICollectionViewCell{
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var leaf: UIImageView!
+    
+}
