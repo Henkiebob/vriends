@@ -27,5 +27,8 @@ class noteCells: UITableViewCell {
 class friendCollectionCell: UICollectionViewCell{
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var leaf: UIImageView!
-    
+}
+
+class colorCollectionCell: UICollectionViewCell{
+    @IBOutlet weak var selectedImage: UIImageView!
 }

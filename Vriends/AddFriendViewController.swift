@@ -10,26 +10,36 @@ import UIKit
 
 class AddFriendViewController: UIViewController {
 
+    @IBOutlet weak var nameAndTrackingView: UIView!
+    
     @IBOutlet weak var friendNameTextField: UITextField!
     @IBOutlet weak var birthDatePicker: UIDatePicker!
     
     var viewController = ViewController?.self
 
-    @IBOutlet weak var selectedColor: UIView!
-    @IBOutlet weak var colorSlider: UISlider!
+    var selectedColor: String = ""
     @IBOutlet weak var wishSlider: UISlider!
     @IBOutlet weak var test: UILabel!
     @IBOutlet weak var uiSwitch: UISwitch!
+    @IBOutlet weak var colorCollectionView: UICollectionView!
     
     // RRGGBB hex colors in the same order as the image
-    let colorArray = [ 0x000000, 0xfe0000, 0xff7900, 0xffb900, 0xffde00, 0xfcff00, 0xd2ff00, 0x05c000, 0x00c0a7, 0x0600ff, 0x6700bf, 0x9500c0, 0xbf0199, 0xffffff ]
+    let colorArray = [ 0xFF5E5E, 0xFFB84C, 0x38D96F, 0x7CD0EA, 0x44A9F2, 0xAC7ADE, 0xD95050, 0xD99341, 0x30B85E, 0x69B1C7, 0x3A90CE, 0x9268BD]
     let wishDateArray = [7,14,31,32]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        test.text = "Één keer per maand"
+        birthDatePicker.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1)
+        colorCollectionView.delegate = self
+        colorCollectionView.dataSource = self
+        colorCollectionView.allowsMultipleSelection = false
         
-        // Do any additional setup after loading the view.
+        self.nameAndTrackingView.layer.borderWidth = 1
+        self.nameAndTrackingView.layer.borderColor = UIColor(red: 0.91, green: 0.92, blue: 0.92, alpha: 1).cgColor
+        //let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        
+//        view.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,9 +47,6 @@ class AddFriendViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func sliderChanged(_ sender: Any) {
-        selectedColor.backgroundColor = uiColorFromHex(rgbValue: colorArray[Int(colorSlider.value)])
-    }
     @IBAction func otherSliderChanged(_ sender: Any) {
         switch Int(wishSlider.value) {
         case 0:
@@ -57,16 +64,13 @@ class AddFriendViewController: UIViewController {
     @IBAction func AddFriend(_ sender: Any) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let friend = Friend(context: context)
-        let gift = Gift(context: context)
-//
-//        gift.note = "Taart 2"
         
         if(friendNameTextField.text != nil) {
             friend.name = friendNameTextField.text
             friend.birthdate = birthDatePicker.date
             let coupleOfDaysBack = Calendar.current.date(byAdding: .day, value: -23, to: Date())
             friend.lastSeen = coupleOfDaysBack
-            friend.favoriteColor = String(colorArray[Int(colorSlider.value)])
+            friend.favoriteColor = selectedColor
             friend.wishToSee = String(wishDateArray[Int(wishSlider.value)])
             
             if(uiSwitch.isOn){
@@ -75,13 +79,11 @@ class AddFriendViewController: UIViewController {
             else {
                 friend.track = false
             }
-//            friend.addToGift(gift)
         }
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         ADataManager.shared.viewController.friendNames.append(friend.name!)
         navigationController!.popViewController(animated: true)
-
     }
     
     
@@ -94,6 +96,11 @@ class AddFriendViewController: UIViewController {
         
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+
     
     /*
     // MARK: - Navigation
@@ -105,4 +112,30 @@ class AddFriendViewController: UIViewController {
     }
     */
 
+}
+extension AddFriendViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return colorArray.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "colorCollectionCell", for: indexPath)
+        cell.layer.cornerRadius = 22.5
+
+        cell.backgroundColor = uiColorFromHex(rgbValue: Int(colorArray[indexPath.row]))
+        
+        
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let cell = collectionView.cellForItem(at: indexPath) as! colorCollectionCell
+        selectedColor = String(colorArray[indexPath.row])
+        cell.selectedImage.image = UIImage(named: "selected-color")
+    }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! colorCollectionCell
+        
+        cell.selectedImage.image = nil
+    }
 }

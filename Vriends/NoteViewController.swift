@@ -15,6 +15,8 @@ class NoteViewController: UIViewController {
     
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var noteInfo: UITextView!
+    @IBOutlet weak var save: UIButton!
+    
     
     var darkStatusBar = true
     let fullView: CGFloat = 100
@@ -44,8 +46,15 @@ class NoteViewController: UIViewController {
         
         let panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(panGesture(_:)))
         view.addGestureRecognizer(panGesture)
-        
+        let parent = self.view
+        save.translatesAutoresizingMaskIntoConstraints = false
+        save.widthAnchor.constraint(equalToConstant: 42).isActive = true
+        save.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        save.leadingAnchor.constraint(equalTo: (parent?.leadingAnchor)!, constant: (parent?.frame.width)! - (save.frame.width + 20)).isActive = true
+        print((parent?.frame.width)! - (save.frame.width + 20))
+        save.topAnchor.constraint(equalTo: (parent?.topAnchor)!, constant: 29).isActive = true
         roundViews()
+        
     }
     
     @IBAction func dismissButton(_ sender: Any) {

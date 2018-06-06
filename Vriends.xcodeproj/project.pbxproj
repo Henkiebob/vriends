@@ -15,7 +15,6 @@
 		0A08405920B815EA00CF1F43 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A08405820B815EA00CF1F43 /* Friend.swift */; };
 		0A08406A20B8477500CF1F43 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0A08406920B8477500CF1F43 /* Podfile */; };
 		0A0C42F620C1981D00BB0F89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9FA037204446A7002D993F /* Assets.xcassets */; };
-		0A0C42F920C1984800BB0F89 /* GiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0C42F820C1984800BB0F89 /* GiftViewController.swift */; };
 		0A51B3BD20C18A7100DF28DF /* ShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0A02326F20BF1F0700FC9E5E /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0A54CB6220455D38007B68A4 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A54CB6120455D38007B68A4 /* AddFriendViewController.swift */; };
 		0A54CB6520456116007B68A4 /* vriends.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A54CB6320456116007B68A4 /* vriends.xcdatamodeld */; };
@@ -38,7 +37,6 @@
 		DA9C85692080BC8E007C7795 /* TestGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = DA9C85672080BC8E007C7795 /* TestGif.gif */; };
 		DA9C856A2080BC8E007C7795 /* Flower.gif in Resources */ = {isa = PBXBuildFile; fileRef = DA9C85682080BC8E007C7795 /* Flower.gif */; };
 		DA9F634C20C1850D009C84C8 /* GiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9F634B20C1850D009C84C8 /* GiftViewController.swift */; };
-		DA9F635020C19777009C84C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9FA037204446A7002D993F /* Assets.xcassets */; };
 		DAEA897920C037BA00D439AE /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEA897820C037B900D439AE /* NoteViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,8 +73,7 @@
 		0A02328020BF33FC00FC9E5E /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		0A02328220BF343300FC9E5E /* ShareSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSelectViewController.swift; sourceTree = "<group>"; };
 		0A08405820B815EA00CF1F43 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
-		0A08406920B8477500CF1F43 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		0A0C42F820C1984800BB0F89 /* GiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftViewController.swift; sourceTree = "<group>"; };
+		0A08406920B8477500CF1F43 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		0A51B3BF20C1971100DF28DF /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension.entitlements; sourceTree = "<group>"; };
 		0A54CB6120455D38007B68A4 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		0A54CB6420456116007B68A4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -104,7 +101,6 @@
 		DA9C85672080BC8E007C7795 /* TestGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = TestGif.gif; path = Vriends/Gifs/TestGif.gif; sourceTree = SOURCE_ROOT; };
 		DA9C85682080BC8E007C7795 /* Flower.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Flower.gif; path = Vriends/Gifs/Flower.gif; sourceTree = SOURCE_ROOT; };
 		DA9F634B20C1850D009C84C8 /* GiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftViewController.swift; sourceTree = "<group>"; };
-		DA9F634D20C186DB009C84C8 /* Vriends.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vriends.entitlements; sourceTree = "<group>"; };
 		DAEA897820C037B900D439AE /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -294,6 +290,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 						};
 					};
 				};
@@ -459,8 +458,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EBSX6CSZNX;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
@@ -479,8 +478,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EBSX6CSZNX;
 				INFOPLIST_FILE = ShareExtension/Info.plist;

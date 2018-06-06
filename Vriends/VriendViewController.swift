@@ -9,7 +9,7 @@
 import UIKit
 import JJFloatingActionButton
 
-class VriendViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class VriendViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, UIActionSheetDelegate {
     
     var friend:Friend!
     var gift: Gift!
@@ -57,6 +57,7 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         }
         
         let actionButton = JJFloatingActionButton()
+        actionButton.buttonColor = UIColor(red: 0.27, green: 0.66, blue: 0.95, alpha: 1)
         actionButton.layer.shadowColor = UIColor.black.cgColor
         actionButton.layer.shadowOffset = CGSize(width: 0, height: 1)
         actionButton.layer.shadowOpacity = Float(0.4)
@@ -82,7 +83,31 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
+    @IBAction func deleteVriend(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "Are you sure?", message: "", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
+            print(action)
+        }
+        alertController.addAction(cancelAction)
+        
+        let destroyAction = UIAlertAction(title: "Delete", style: .destructive) { action in
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+            context.delete(self.friend)
+
+                // save
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            self.navigationController?.popViewController(animated: true)
+
+        }
+        
+        alertController.addAction(destroyAction)
+        
+        self.present(alertController, animated: true) {
+        }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var count = 1
         

@@ -35,8 +35,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
         collectionView.dataSource = self
         collectionView.delegate = self
-//        tableView.dataSource = self
-//        tableView.delegate = self
         formatter.dateFormat = "dd/mm/yyyy"
         formatter.dateStyle = .long
         
@@ -87,42 +85,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         return cell
     }
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return friends.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        //This makes it so there are multiple labels in the cell to fill in the information
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! FriendCell
-//        let friend = friends[indexPath.row]
-//        let birthDate = formatter.string(from: friend.birthdate!)
-//        cell.friendNameLabel?.text = friend.name!
-//        cell.birthDateLabel?.text = birthDate
-////        cell.lastSeenDateLabel?.text = "Days not seen: " + String(lastSeenArray[indexPath.row])
-//        cell.backgroundColor = addFriend.uiColorFromHex(rgbValue: Int(friends[indexPath.row].favoriteColor!)!)
-////        let badFriend = Int(lastSeenArray[indexPath.row])! / Int(friend.wishToSee!)!
-////        cell.leaf.image = UIImage(named: flower[badFriend])
-//
-//        return cell
-//    }
-//
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//
-//        if editingStyle == .delete{
-//            let friend = friends[indexPath.row]
-//            context.delete(friend)
-//
-//            // save
-//            (UIApplication.shared.delegate as! AppDelegate).saveContext()
-//
-//            reload()
-//        }
-//    }
-    
-
-
     // You really should get some friends 🔥 (sick burn)
     func getFriends() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
