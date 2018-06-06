@@ -51,7 +51,6 @@ class NoteViewController: UIViewController {
         save.widthAnchor.constraint(equalToConstant: 42).isActive = true
         save.heightAnchor.constraint(equalToConstant: 24).isActive = true
         save.leadingAnchor.constraint(equalTo: (parent?.leadingAnchor)!, constant: (parent?.frame.width)! - (save.frame.width + 20)).isActive = true
-        print((parent?.frame.width)! - (save.frame.width + 20))
         save.topAnchor.constraint(equalTo: (parent?.topAnchor)!, constant: 29).isActive = true
         roundViews()
         
