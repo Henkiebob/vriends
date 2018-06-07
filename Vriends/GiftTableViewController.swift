@@ -14,12 +14,10 @@ class GiftTableViewController: UITableViewController {
     @IBOutlet weak var giftTableView: UITableView!
     
     var friend: Friend!
-    
     var giftsArray: [Gift] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(friend)
         
 //        if let giftForFriend = friend.gift {
 //            giftsArray = giftForFriend.map({$0}) as! [Gift]

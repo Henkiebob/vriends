@@ -13,11 +13,7 @@ import CoreMedia
 
 class ShareViewController: SLComposeServiceViewController {
     
-    
     var userDecks = [Deck]()
-    let userDefaults = UserDefaults(suiteName: "group.nl.vriends")
-
-//    let defaults = UserDefaults.standard
     fileprivate var selectedDeck: Deck?
 
     override func isContentValid() -> Bool {
@@ -51,19 +47,12 @@ class ShareViewController: SLComposeServiceViewController {
    override func viewDidLoad() {
     
         // Loading friends and adding them to the sharetable as options
-    
-//        savedArray = defaults.object(forKey: "SavedFriends") as! [String]
-    let savedArray = userDefaults?.object(forKey: "SavedFriends") as? [String] ?? [String]()
-        for object in savedArray{
-            print(object)
-        }
-    
+        // MARK get friends and add them to userdecks
         for i in 1...3 {
             let deck = Deck()
             deck.title = "Vriend \(i)"
             userDecks.append(deck)
         }
-    
         selectedDeck = userDecks.first
     
         let extensionItem = extensionContext?.inputItems.first as! NSExtensionItem
@@ -75,7 +64,7 @@ class ShareViewController: SLComposeServiceViewController {
                 OperationQueue.main.addOperation {
                     if let results = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
                         let urlString = results["URL"] as? String,
-                        let url = NSURL(string: urlString) {
+                        let _ = NSURL(string: urlString) {
                         print("URL retrieved: \(urlString)")
                     }
                 }
