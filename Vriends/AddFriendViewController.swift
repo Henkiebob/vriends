@@ -62,7 +62,9 @@ class AddFriendViewController: UIViewController {
     }
     
     @IBAction func AddFriend(_ sender: Any) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        // MARK hier moet dus een andere context komen
+        
         let friend = Friend(context: context)
         
         if(friendNameTextField.text != nil) {
@@ -81,7 +83,7 @@ class AddFriendViewController: UIViewController {
             }
         }
         
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        CoreDataStack.instance.saveContext()
         ADataManager.shared.viewController.friendNames.append(friend.name!)
         navigationController!.popViewController(animated: true)
     }
