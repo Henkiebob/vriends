@@ -17,7 +17,6 @@ class NoteViewController: UIViewController {
     @IBOutlet weak var noteInfo: UITextView!
     @IBOutlet weak var save: UIButton!
     
-    
     var darkStatusBar = true
     let fullView: CGFloat = 100
     var partialView: CGFloat {

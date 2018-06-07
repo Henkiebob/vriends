@@ -26,20 +26,9 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var noteTableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
     
-    let userDefaults = UserDefaults(suiteName: "group.nl.vriends")
-    
-    let defaults = UserDefaults.standard
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("test")
-        
-        let savedArray = userDefaults?.object(forKey: "SavedFriends") as? [String] ?? [String]()
 
-        for object in savedArray{
-            print(object)
-        }
-        
         DataManager.shared.vriendViewController = self
         
         nameLabel.text = friend.name

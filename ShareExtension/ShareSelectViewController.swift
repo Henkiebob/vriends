@@ -21,10 +21,10 @@ class ShareSelectViewController : UIViewController {
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        tableView.dataSource = self as! UITableViewDataSource
+        tableView.dataSource = self as UITableViewDataSource
         tableView.backgroundColor = .clear
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Identifiers.DeckCell)
-        tableView.delegate = self as! UITableViewDelegate
+        tableView.delegate = self as UITableViewDelegate
         return tableView
     }()
     

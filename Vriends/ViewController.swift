@@ -10,24 +10,15 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-//    @IBOutlet weak var tableView: UITableView!
-    let userDefaults = UserDefaults(suiteName: "group.nl.vriends")
-    
-//    let defaults = UserDefaults.standard
     @IBOutlet weak var collectionView: UICollectionView!
     
     var friends: [Friend] = []
     var friendNames: [String] = []
-    
     var flower: [String] = ["F_12.png","F_11.png", "F_10.png", "F_09.png", "F_08.png", "F_07.png", "F_06.png", "F_05.png", "F_04.png", "F_03.png", "F_02.png", "F_01.png", "F_00.png"]
-    
     var addFriend = AddFriendViewController()
-    
     var lastSeenTime = ""
     var lastSeenArray:[String] = []
-    
     let formatter = DateFormatter()
-    
     var i = 0
 
     override func viewDidLoad() {
@@ -37,7 +28,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collectionView.delegate = self
         formatter.dateFormat = "dd/mm/yyyy"
         formatter.dateStyle = .long
-        
         
         ADataManager.shared.viewController = self
     }
@@ -50,19 +40,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         reload()
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
     func reload() {
         // if this returns nothing.. 😢
         getFriends()
-        
-        // reload!
-//        tableView.reloadData()
+
         collectionView.reloadData()
     }
     
@@ -85,6 +71,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         return cell
     }
+    
     // You really should get some friends 🔥 (sick burn)
     func getFriends() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -98,7 +85,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         fillFriendArray()
     }
 
-    
     func fillFriendArray() {
         if friends.count != 0 {
             for friend in friends {
@@ -115,7 +101,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                
             }
         }
-        userDefaults?.set(friendNames, forKey: "SavedFriends")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -126,7 +111,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             }
         }
     }
-
+    
 }
 
 class ADataManager {
