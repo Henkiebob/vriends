@@ -8,15 +8,16 @@
 
 import UIKit
 
-class NoteViewController: UIViewController {
+class NoteViewController: UIViewController, UITextViewDelegate {
     
     var friend: Friend!
     var vriendViewController: VriendViewController!
     
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var noteInfo: UITextView!
-    @IBOutlet weak var save: UIButton!
-    
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton!
     
     var darkStatusBar = true
     let fullView: CGFloat = 100
@@ -43,18 +44,48 @@ class NoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(panGesture(_:)))
         view.addGestureRecognizer(panGesture)
-        let parent = self.view
-        save.translatesAutoresizingMaskIntoConstraints = false
-        save.widthAnchor.constraint(equalToConstant: 42).isActive = true
-        save.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        save.leadingAnchor.constraint(equalTo: (parent?.leadingAnchor)!, constant: (parent?.frame.width)! - (save.frame.width + 20)).isActive = true
-        save.topAnchor.constraint(equalTo: (parent?.topAnchor)!, constant: 29).isActive = true
+        
+        noteInfo.text = "Your note here"
+        noteInfo.textColor = .lightGray
+        
+        noteInfo.delegate = self
+        setAnchorToViews()
+
         roundViews()
         
     }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func setAnchorToViews() {
+        let parent = self.view
+        saveButton.translatesAutoresizingMaskIntoConstraints = false
+        saveButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        saveButton.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        saveButton.rightAnchor.constraint(equalTo: (parent?.rightAnchor)!, constant: -20).isActive = true
+        saveButton.topAnchor.constraint(equalTo: (parent?.topAnchor)!, constant: 28).isActive = true
+       
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        titleLabel.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: (parent?.centerXAnchor)!, constant: -(titleLabel.frame.width / 2)).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: (parent?.topAnchor)!, constant: 29).isActive = true
+        
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        backButton.widthAnchor.constraint(equalToConstant: 12).isActive = true
+        backButton.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        backButton.leftAnchor.constraint(equalTo: (parent?.leftAnchor)!, constant: 20).isActive = true
+        backButton.topAnchor.constraint(equalTo: (parent?.topAnchor)!, constant: 29).isActive = true
+        
+    }
+    
     
     @IBAction func dismissButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)

@@ -37,8 +37,8 @@ class AddFriendViewController: UIViewController {
         
         self.nameAndTrackingView.layer.borderWidth = 1
         self.nameAndTrackingView.layer.borderColor = UIColor(red: 0.91, green: 0.92, blue: 0.92, alpha: 1).cgColor
-        //let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+//        
 //        view.addGestureRecognizer(tap)
     }
 
@@ -83,6 +83,7 @@ class AddFriendViewController: UIViewController {
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         ADataManager.shared.viewController.friendNames.append(friend.name!)
+        ADataManager.shared.viewController.collectionView.reloadData()
         navigationController!.popViewController(animated: true)
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
 //    @IBOutlet weak var tableView: UITableView!
     let userDefaults = UserDefaults(suiteName: "group.nl.vriends")
@@ -38,8 +38,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         formatter.dateFormat = "dd/mm/yyyy"
         formatter.dateStyle = .long
         
+        let parent = self.view
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.widthAnchor.constraint(equalToConstant: (parent?.frame.width)!).isActive = true
+        collectionView.heightAnchor.constraint(equalToConstant: (parent?.frame.height)!).isActive = true
+        collectionView.topAnchor.constraint(equalTo: (parent?.topAnchor)!, constant: 20).isActive = true
         
         ADataManager.shared.viewController = self
+        
     }
     
     func dismiss(_ segue: UIStoryboardSegue) {
@@ -65,7 +71,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 //        tableView.reloadData()
         collectionView.reloadData()
     }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return friends.count
     }
@@ -73,7 +78,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "friendCollectionCell", for: indexPath) as! friendCollectionCell
-        
+
         let friend = friends[indexPath.row]
         let badFriend = Int(lastSeenArray[indexPath.row])! / Int(friend.wishToSee!)!
         
@@ -83,7 +88,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         cell.nameLabel?.text = friend.name!
         cell.backgroundColor = addFriend.uiColorFromHex(rgbValue: Int(friends[indexPath.row].favoriteColor!)!)
         
+        print(cell.frame.width , cell.frame.height)
+//        cell.heightAnchor.constraint(equalToConstant: cell.frame.width).isActive = true
+        
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let parent2 = collectionView
+        return CGSize(width: parent2.frame.width / 2 - 20, height: parent2.frame.width / 2 - 20)
     }
     // You really should get some friends 🔥 (sick burn)
     func getFriends() {
