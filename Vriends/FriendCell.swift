@@ -9,12 +9,6 @@
 import Foundation
 import UIKit
 
-class FriendCell: UITableViewCell{
-    @IBOutlet weak var leaf: UIImageView!
-    @IBOutlet weak var friendNameLabel: UILabel!
-    @IBOutlet weak var birthDateLabel: UILabel!
-    @IBOutlet weak var lastSeenDateLabel: UILabel!
-}
 class giftCells: UITableViewCell {
     @IBOutlet weak var giftTitle: UILabel!
     @IBOutlet weak var giftNote: UILabel!
