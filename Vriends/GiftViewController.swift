@@ -52,7 +52,7 @@ class GiftViewController: UIViewController {
     }
     
     @IBAction func addGift(_ sender: Any) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = CoreDataStack.instance.managedObjectContext
         
         let gift = Gift(context: context)
         
@@ -60,7 +60,7 @@ class GiftViewController: UIViewController {
         gift.note = giftInfo.text
         
         friend.addToGift(gift)
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        CoreDataStack.instance.saveContext()
         DataManager.shared.vriendViewController.giftsArray.append(gift)
         
         DataManager.shared.vriendViewController.giftTableView.reloadData()

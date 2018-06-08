@@ -91,7 +91,7 @@ class NoteViewController: UIViewController, UITextViewDelegate {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func addNote(_ sender: Any) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = CoreDataStack.instance.managedObjectContext
         
         let note = Note(context: context)
         
@@ -99,7 +99,7 @@ class NoteViewController: UIViewController, UITextViewDelegate {
         note.text = noteInfo.text
         
         friend.addToNote(note)
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        CoreDataStack.instance.saveContext()
         DataManager.shared.vriendViewController.notesArray.append(note)
     
     DataManager.shared.vriendViewController.noteTableView.reloadData()

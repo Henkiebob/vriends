@@ -62,7 +62,7 @@ class AddFriendViewController: UIViewController {
     }
     
     @IBAction func AddFriend(_ sender: Any) {
-        //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = CoreDataStack.instance.managedObjectContext
         // MARK hier moet dus een andere context komen
         
         let friend = Friend(context: context)

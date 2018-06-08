@@ -30,6 +30,7 @@
 		DA1D98842048C9620004BB78 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D98832048C9620004BB78 /* FriendCell.swift */; };
 		DA32EBF520BCA717003B5032 /* CardPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32EBF420BCA717003B5032 /* CardPresentationController.swift */; };
 		DA32EBF720BCA79F003B5032 /* CardAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32EBF620BCA79F003B5032 /* CardAnimationController.swift */; };
+		DA37D3B720CA8E7B002D7E16 /* vriends.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A54CB6320456116007B68A4 /* vriends.xcdatamodeld */; };
 		DA53848820B9E3730055D5BD /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA53848720B9E3730055D5BD /* RoundedView.swift */; };
 		DA7C194720C2DBBC00BF16C7 /* GiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7C194620C2DBBC00BF16C7 /* GiftTableViewController.swift */; };
 		DA9C855D2080B661007C7795 /* SwiftyGifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C855C2080B661007C7795 /* SwiftyGifManager.swift */; };
@@ -391,6 +392,7 @@
 				0A02328320BF343300FC9E5E /* ShareSelectViewController.swift in Sources */,
 				0A02327220BF1F0700FC9E5E /* ShareViewController.swift in Sources */,
 				0A59361C20C9C7EC002A6AAC /* CoreDataStack.swift in Sources */,
+				DA37D3B720CA8E7B002D7E16 /* vriends.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,11 +465,11 @@
 				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EBSX6CSZNX;
+				DEVELOPMENT_TEAM = 7U2CF25QL7;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Vriends.ShareExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = Vriends.Geart.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -483,11 +485,11 @@
 				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EBSX6CSZNX;
+				DEVELOPMENT_TEAM = 7U2CF25QL7;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Vriends.ShareExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = Vriends.Geart.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -616,10 +618,10 @@
 				CODE_SIGN_ENTITLEMENTS = Vriends/Vriends.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EBSX6CSZNX;
+				DEVELOPMENT_TEAM = 7U2CF25QL7;
 				INFOPLIST_FILE = Vriends/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Vriends;
+				PRODUCT_BUNDLE_IDENTIFIER = Vriends.Geart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -636,10 +638,10 @@
 				CODE_SIGN_ENTITLEMENTS = Vriends/Vriends.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EBSX6CSZNX;
+				DEVELOPMENT_TEAM = 7U2CF25QL7;
 				INFOPLIST_FILE = Vriends/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Vriends;
+				PRODUCT_BUNDLE_IDENTIFIER = Vriends.Geart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

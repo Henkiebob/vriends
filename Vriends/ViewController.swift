@@ -29,11 +29,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         formatter.dateFormat = "dd/mm/yyyy"
         formatter.dateStyle = .long
         
+        //Anchors make collection view as big as the screen its on
         let parent = self.view
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.widthAnchor.constraint(equalToConstant: (parent?.frame.width)!).isActive = true
         collectionView.heightAnchor.constraint(equalToConstant: (parent?.frame.height)!).isActive = true
-        collectionView.topAnchor.constraint(equalTo: (parent?.topAnchor)!, constant: 20).isActive = true
         
         ADataManager.shared.viewController = self
         
@@ -86,7 +86,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     // You really should get some friends 🔥 (sick burn)
     func getFriends() {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = CoreDataStack.instance.managedObjectContext
         do {
             friends = try context.fetch(Friend.fetchRequest())
         }

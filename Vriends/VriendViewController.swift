@@ -82,12 +82,12 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         alertController.addAction(cancelAction)
         
         let destroyAction = UIAlertAction(title: "Delete", style: .destructive) { action in
-            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let context = CoreDataStack.instance.managedObjectContext
 
             context.delete(self.friend)
 
                 // save
-            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            CoreDataStack.instance.saveContext()
             self.navigationController?.popViewController(animated: true)
 
         }

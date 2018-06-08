@@ -12,10 +12,10 @@ import MobileCoreServices
 import CoreMedia
 
 class ShareViewController: SLComposeServiceViewController {
+    var vriends: [Friend] = []
     
     var userDecks = [Deck]()
     fileprivate var selectedDeck: Deck?
-
     override func isContentValid() -> Bool {
         // Do validation of contentText and/or NSExtensionContext attachments here
         return true
@@ -44,13 +44,20 @@ class ShareViewController: SLComposeServiceViewController {
         return nil
     }
     
-   override func viewDidLoad() {
-    
+    override func viewDidLoad() {
+        let context = CoreDataStack.instance.managedObjectContext
+        do {
+            vriends = try context.fetch(Friend.fetchRequest())
+        }
+        catch {
+            print("I can't fetch any friends from the database, hah loser!")
+        }
+        
         // Loading friends and adding them to the sharetable as options
         // MARK get friends and add them to userdecks
-        for i in 1...3 {
+        for friend in vriends {
             let deck = Deck()
-            deck.title = "Vriend \(i)"
+            deck.title = friend.name
             userDecks.append(deck)
         }
         selectedDeck = userDecks.first
