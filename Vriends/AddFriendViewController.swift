@@ -58,13 +58,10 @@ class AddFriendViewController: UIViewController {
         default:
             test.text = "Minder dan één keer per maand"
         }
-        //test.text = String(wishDateArray[Int(wishSlider.value)])
     }
     
     @IBAction func AddFriend(_ sender: Any) {
         let context = CoreDataStack.instance.managedObjectContext
-        // MARK hier moet dus een andere context komen
-        
         let friend = Friend(context: context)
         
         if(friendNameTextField.text != nil) {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -58,32 +58,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
         collectionView.reloadData()
     }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return friends.count
-    }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "friendCollectionCell", for: indexPath) as! friendCollectionCell
-
-        let friend = friends[indexPath.row]
-        let badFriend = Int(lastSeenArray[indexPath.row])! / Int(friend.wishToSee!)!
-        
-        cell.layer.cornerRadius = 8
-        
-        cell.leaf.image = UIImage(named: flower[badFriend])
-        cell.nameLabel?.text = friend.name!
-        cell.backgroundColor = addFriend.uiColorFromHex(rgbValue: Int(friends[indexPath.row].favoriteColor!)!)
-        
-        print(cell.frame.width , cell.frame.height)
-//        cell.heightAnchor.constraint(equalToConstant: cell.frame.width).isActive = true
-        
-        return cell
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let parent2 = collectionView
-        return CGSize(width: parent2.frame.width / 2 - 20, height: parent2.frame.width / 2 - 20)
-    }
     // You really should get some friends 🔥 (sick burn)
     func getFriends() {
         let context = CoreDataStack.instance.managedObjectContext
@@ -93,8 +68,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         catch {
             print("I can't fetch any friends from the database, hah loser!")
         }
-        
-        fillFriendArray()
     }
 
     func fillFriendArray() {
@@ -122,6 +95,87 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 destination.friend = friend
             }
         }
+    }
+    
+}
+
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! friendCollectionCell
+
+        let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureReconizer:)))
+        
+        lpgr.minimumPressDuration = 0.5
+        lpgr.delaysTouchesBegan = true
+        lpgr.delegate = self
+        
+        cell.addGestureRecognizer(lpgr)
+    }
+    
+    @objc func handleLongPress(gestureReconizer : UILongPressGestureRecognizer!) {
+        
+        if gestureReconizer.state != .ended {
+            let p = gestureReconizer.location(in: self.collectionView)
+            
+            if let indexPath = self.collectionView.indexPathForItem(at: p) {
+                let cell = self.collectionView.cellForItem(at: indexPath) as! friendCollectionCell
+                
+                cell.leaf.image = UIImage(named: flower[0])
+       
+                    var images = [UIImage]()
+                    
+                    var i = 11
+                    while i > 0 {
+                        i = i - 1
+                        images.append(UIImage(named: flower[i])!)
+                    }
+                
+                    cell.leaf.animationImages = images
+                    cell.leaf.animationDuration = 2
+                    cell.leaf.animationRepeatCount = 1
+                    cell.leaf.startAnimating()
+            
+                    let friend = friends[indexPath.row]
+                    friend.lastSeen = Date()
+//                    print(lastSeenArray)
+                    CoreDataStack.instance.saveContext()
+            }
+            return
+        }
+        
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return friends.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "friendCollectionCell", for: indexPath) as! friendCollectionCell
+        
+        let friend = friends[indexPath.row]
+        
+        // compare dates and generate lastseendate
+        let calendar = NSCalendar.current
+        let date1 = calendar.startOfDay(for: friend.lastSeen!)
+        let date2 = calendar.startOfDay(for: Date())
+        let components = calendar.dateComponents([.day], from: date1, to: date2)
+        
+        let badFriend = components.day! / Int(friend.wishToSee!)!
+        
+        cell.layer.cornerRadius = 8
+        
+        cell.leaf.image = UIImage(named: flower[badFriend])
+        cell.nameLabel?.text = friend.name!
+        cell.backgroundColor = addFriend.uiColorFromHex(rgbValue: Int(friends[indexPath.row].favoriteColor!)!)
+        
+        print(cell.frame.width , cell.frame.height)
+        //        cell.heightAnchor.constraint(equalToConstant: cell.frame.width).isActive = true
+        
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let parent2 = collectionView
+        return CGSize(width: parent2.frame.width / 2 - 20, height: parent2.frame.width / 2 - 20)
     }
     
 }
