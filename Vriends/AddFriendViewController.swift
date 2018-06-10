@@ -5,7 +5,6 @@
 //  Created by Tjerk Dijkstra on 27/02/2018.
 //  Copyright © 2018 Tjerk Dijkstra. All rights reserved.
 //
-
 import UIKit
 
 class AddFriendViewController: UIViewController {
@@ -29,6 +28,7 @@ class AddFriendViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let parent = self.view
         test.text = "Één keer per maand"
         birthDatePicker.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1)
         colorCollectionView.delegate = self
@@ -37,6 +37,16 @@ class AddFriendViewController: UIViewController {
         
         self.nameAndTrackingView.layer.borderWidth = 1
         self.nameAndTrackingView.layer.borderColor = UIColor(red: 0.91, green: 0.92, blue: 0.92, alpha: 1).cgColor
+        
+        
+//        nameAndTrackingView.fullWidth(parent: parent!)
+        colorCollectionView.frame.size.width = self.view.frame.width
+        nameAndTrackingView.frame.size.width = self.view.frame.width
+        print(colorCollectionView.frame.width)
+        setAnchors()
+//        uiSwitch.topAnchor.constraint(equalTo: (parent?.topAnchor)!, constant: 28).isActive = true
+
+//        uiSwitch.rightSide(parent: nameAndTrackingView)
 //        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
 //        
 //        view.addGestureRecognizer(tap)
@@ -45,6 +55,19 @@ class AddFriendViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    func setAnchors(){
+        let container = nameAndTrackingView!
+        uiSwitch.translatesAutoresizingMaskIntoConstraints = false
+        uiSwitch.bottomAnchor.constraint(equalTo: container.layoutMarginsGuide.bottomAnchor).isActive = true
+        uiSwitch.rightAnchor.constraint(equalTo: container.layoutMarginsGuide.rightAnchor).isActive = true
+        
+        friendNameTextField.translatesAutoresizingMaskIntoConstraints = false
+        friendNameTextField.topAnchor.constraint(equalTo: container.topAnchor, constant: 12).isActive = true
+        friendNameTextField.leftAnchor.constraint(equalTo: container.leftAnchor, constant: 18).isActive = true
+        friendNameTextField.fullWidth(parent: container)
+        
+        wishSlider.frame.size.width = container.frame.width - 28
     }
     
     @IBAction func otherSliderChanged(_ sender: Any) {
@@ -113,19 +136,23 @@ class AddFriendViewController: UIViewController {
     */
 
 }
-extension AddFriendViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+extension AddFriendViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return colorArray.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "colorCollectionCell", for: indexPath)
-        cell.layer.cornerRadius = 22.5
+        cell.layer.cornerRadius = cell.frame.width / 2
 
         cell.backgroundColor = uiColorFromHex(rgbValue: Int(colorArray[indexPath.row]))
         
         
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let parent = collectionView
+        return CGSize(width: (parent.frame.width / 6) - 20, height: (parent.frame.width / 6) - 20)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         

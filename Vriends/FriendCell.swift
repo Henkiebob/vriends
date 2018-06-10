@@ -19,6 +19,7 @@ class noteCells: UITableViewCell {
     
 }
 class friendCollectionCell: UICollectionViewCell{
+    @IBOutlet weak var lastSeenLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var leaf: UIImageView!
 }

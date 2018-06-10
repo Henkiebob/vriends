@@ -151,9 +151,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "friendCollectionCell", for: indexPath) as! friendCollectionCell
-        
+        cell.nameLabel.fullWidth(parent: cell)
         let friend = friends[indexPath.row]
-        
+        let parent = collectionView
         // compare dates and generate lastseendate
         let calendar = NSCalendar.current
         let date1 = calendar.startOfDay(for: friend.lastSeen!)
@@ -161,15 +161,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let components = calendar.dateComponents([.day], from: date1, to: date2)
         
         let badFriend = components.day! / Int(friend.wishToSee!)!
-        
+        cell.lastSeenLabel.text = String(badFriend) + " days ago"
         cell.layer.cornerRadius = 8
         
         cell.leaf.image = UIImage(named: flower[badFriend])
+        
         cell.nameLabel?.text = friend.name!
         cell.backgroundColor = addFriend.uiColorFromHex(rgbValue: Int(friends[indexPath.row].favoriteColor!)!)
-        
-        print(cell.frame.width , cell.frame.height)
-        //        cell.heightAnchor.constraint(equalToConstant: cell.frame.width).isActive = true
         
         return cell
     }
