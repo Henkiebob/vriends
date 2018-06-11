@@ -16,7 +16,7 @@ class CoreDataStack {
         //        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         //NSURL *storeURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.mycontainer"];
         
-        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.geart.vriends")
+        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.tjerk.vriends")
         
         //        let url = urls[urls.count-1]
         print("Connecting to SQLite-database at \(url!)")

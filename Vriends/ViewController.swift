@@ -122,29 +122,19 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                 let cell = self.collectionView.cellForItem(at: indexPath) as! friendCollectionCell
                 
                 cell.leaf.image = UIImage(named: flower[0])
-       
-                    var images = [UIImage]()
-                    
-                    var i = 11
-                    while i > 0 {
-                        i = i - 1
-                        images.append(UIImage(named: flower[i])!)
-                    }
+   
+                let friend = friends[indexPath.row]
+                friend.lastSeen = Date()
                 
-                    cell.leaf.animationImages = images
-                    cell.leaf.animationDuration = 2
-                    cell.leaf.animationRepeatCount = 1
-                    cell.leaf.startAnimating()
-            
-                    let friend = friends[indexPath.row]
-                    friend.lastSeen = Date()
-//                    print(lastSeenArray)
-                    CoreDataStack.instance.saveContext()
+                cell.leaf.rotate360Degrees()
+                CoreDataStack.instance.saveContext()
             }
             return
         }
         
     }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return friends.count
     }
@@ -179,6 +169,21 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return CGSize(width: parent2.frame.width / 2 - 20, height: parent2.frame.width / 2 - 20)
     }
     
+}
+
+extension UIView {
+    func rotate360Degrees(duration: CFTimeInterval = 0.5, completionDelegate: AnyObject? = nil) {
+        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        rotateAnimation.fromValue = 0.0
+        rotateAnimation.toValue = CGFloat(Double.pi * 5.0)
+        rotateAnimation.duration = duration
+        
+        
+        if let delegate: AnyObject = completionDelegate {
+            rotateAnimation.delegate = delegate as? CAAnimationDelegate
+        }
+        self.layer.add(rotateAnimation, forKey: nil)
+    }
 }
 
 class ADataManager {
