@@ -32,6 +32,7 @@
 		DA32EBF720BCA79F003B5032 /* CardAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32EBF620BCA79F003B5032 /* CardAnimationController.swift */; };
 		DA37D3B720CA8E7B002D7E16 /* vriends.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A54CB6320456116007B68A4 /* vriends.xcdatamodeld */; };
 		DA37D3B920CC5176002D7E16 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA37D3B820CC5176002D7E16 /* UIViewExtension.swift */; };
+		DA3C808720D326BB009B36E9 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C808620D326BB009B36E9 /* IntExtension.swift */; };
 		DA53848820B9E3730055D5BD /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA53848720B9E3730055D5BD /* RoundedView.swift */; };
 		DA7C194720C2DBBC00BF16C7 /* GiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7C194620C2DBBC00BF16C7 /* GiftTableViewController.swift */; };
 		DA9C855D2080B661007C7795 /* SwiftyGifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C855C2080B661007C7795 /* SwiftyGifManager.swift */; };
@@ -97,6 +98,7 @@
 		DA32EBF420BCA717003B5032 /* CardPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresentationController.swift; sourceTree = "<group>"; };
 		DA32EBF620BCA79F003B5032 /* CardAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAnimationController.swift; sourceTree = "<group>"; };
 		DA37D3B820CC5176002D7E16 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		DA3C808620D326BB009B36E9 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		DA53848720B9E3730055D5BD /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		DA7C194620C2DBBC00BF16C7 /* GiftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftTableViewController.swift; sourceTree = "<group>"; };
 		DA9C855C2080B661007C7795 /* SwiftyGifManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyGifManager.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				0A9FA037204446A7002D993F /* Assets.xcassets */,
 				0A9FA039204446A7002D993F /* LaunchScreen.storyboard */,
 				0A54CB6320456116007B68A4 /* vriends.xcdatamodeld */,
+				DA3C808620D326BB009B36E9 /* IntExtension.swift */,
 				0A08405820B815EA00CF1F43 /* Friend.swift */,
 				0A9FA03C204446A7002D993F /* Info.plist */,
 				DA1D98832048C9620004BB78 /* FriendCell.swift */,
@@ -413,6 +416,7 @@
 				0A54CB6220455D38007B68A4 /* AddFriendViewController.swift in Sources */,
 				DA9F634C20C1850D009C84C8 /* GiftViewController.swift in Sources */,
 				DA53848820B9E3730055D5BD /* RoundedView.swift in Sources */,
+				DA3C808720D326BB009B36E9 /* IntExtension.swift in Sources */,
 				0A9FA031204446A7002D993F /* AppDelegate.swift in Sources */,
 				DAEA897920C037BA00D439AE /* NoteViewController.swift in Sources */,
 				0A54CB6520456116007B68A4 /* vriends.xcdatamodeld in Sources */,

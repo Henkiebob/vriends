@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GiftViewController: UIViewController {
+class GiftViewController: UIViewController, UITextViewDelegate {
     
     var friend: Friend!
     var vriendViewController: VriendViewController!
@@ -48,9 +48,20 @@ class GiftViewController: UIViewController {
         
         let panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(panGesture(_:)))
         view.addGestureRecognizer(panGesture)
+        giftInfo.text = "Your note here"
+        giftInfo.textColor = .lightGray
+        
+        giftInfo.delegate = self
         
         roundViews()
         setAnchorToViews()
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
     }
     func setAnchorToViews() {
         let parent = self.view

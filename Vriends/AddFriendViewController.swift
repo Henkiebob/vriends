@@ -92,7 +92,12 @@ class AddFriendViewController: UIViewController {
             friend.name = friendNameTextField.text
             friend.birthdate = birthDatePicker.date
             friend.lastSeen = Date()
-            friend.favoriteColor = selectedColor
+            if(selectedColor == ""){
+                friend.favoriteColor = String(colorArray[Int.random(range: 0...12)])
+                print(friend.favoriteColor)
+            }else{
+                friend.favoriteColor = selectedColor
+            }
             friend.wishToSee = String(wishDateArray[Int(wishSlider.value)])
             
             if(uiSwitch.isOn){
