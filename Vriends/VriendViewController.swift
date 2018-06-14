@@ -13,29 +13,52 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
     
     var friend:Friend!
     var gift: Gift!
+    @IBOutlet weak var lastSeenLabel: UILabel!
+    @IBOutlet weak var birthdayLabel: UILabel!
+    var lastTimeSeen = 0
+    
+    var selectedSegment = 1
 
     var giftsArray: [Gift] = []
     var notesArray: [Note] = []
-
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
     @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var textfield: UITextView!
     @IBOutlet weak var button: UIButton!
     
-    @IBOutlet weak var giftTableView: UITableView!
-    @IBOutlet weak var noteTableView: UITableView!
+    @IBOutlet weak var giftNoteTableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         DataManager.shared.vriendViewController = self
-        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
         nameLabel.text = friend.name
-        giftTableView.dataSource = self
-        giftTableView.delegate = self
-        noteTableView.dataSource = self
-        noteTableView.delegate = self
+        birthdayLabel.text = formatter.string(for: friend.birthdate)
+        
+        let calendar = NSCalendar.current
+        let date1 = calendar.startOfDay(for: friend.lastSeen!)
+        let date2 = calendar.startOfDay(for: Date())
+        let components = calendar.dateComponents([.day], from: date1, to: date2)
+        lastTimeSeen = components.day!
+        
+        switch lastTimeSeen {
+        case 0:
+             lastSeenLabel.text = "Vandaag"
+        case 1:
+             lastSeenLabel.text = "Gisteren"
+        default:
+             lastSeenLabel.text = String(lastTimeSeen) + " dagen geleden"
+        }
+       
+        giftNoteTableView.dataSource = self
+        giftNoteTableView.delegate = self
         
         if let giftForFriend = friend.gift {
             giftsArray = giftForFriend.map({$0}) as! [Gift]
@@ -44,6 +67,15 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         if let noteForFriend = friend.note {
             notesArray = noteForFriend.map({$0}) as! [Note]
         }
+        segmentedControl.backgroundColor = .clear
+        segmentedControl.tintColor = .clear
+        segmentedControl.setTitleTextAttributes([
+            NSAttributedStringKey.foregroundColor: UIColor.lightGray
+            ], for: .normal)
+        
+        segmentedControl.setTitleTextAttributes([
+            NSAttributedStringKey.foregroundColor: UIColor.blue
+            ], for: .selected)
         
         let actionButton = JJFloatingActionButton()
         actionButton.buttonColor = UIColor(red: 0.27, green: 0.66, blue: 0.95, alpha: 1)
@@ -69,15 +101,21 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         }
         
         actionButton.display(inViewController: self)
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
+    @IBAction func segmentedControl(_ sender: UISegmentedControl) {
+        if (sender.selectedSegmentIndex == 0){
+            selectedSegment = 1
+        }else{
+            selectedSegment = 2
+        }
+        giftNoteTableView.reloadData()
+    }
+    
     @IBAction func deleteVriend(_ sender: Any) {
         
-        let alertController = UIAlertController(title: "Are you sure?", message: "", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Are you sure you want to delete " + friend.name! + " ?", message: "This will permanently delete this vriend from Vriends.", preferredStyle: .actionSheet)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
-            print(action)
         }
         alertController.addAction(cancelAction)
         
@@ -98,34 +136,28 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var count = 1
-        
-        if tableView == self.giftTableView{
-            count = giftsArray.count
+        if(selectedSegment == 1){
+            return notesArray.count
         }else{
-            count = notesArray.count
+            return giftsArray.count
         }
-        return count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell: giftCells!
-        var notecell: noteCells!
+        let giftCell = tableView.dequeueReusableCell(withIdentifier: "giftCell", for: indexPath) as! giftCells
+        let noteCell = tableView.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath) as! noteCells
         
-        if tableView == self.giftTableView{//This makes it so there are multiple labels in the cell to fill in the information
-         cell = tableView.dequeueReusableCell(withIdentifier: "giftCell", for: indexPath) as! giftCells
-        cell.giftTitle.text = giftsArray[indexPath.row].title
-        cell.giftNote.text = giftsArray[indexPath.row].note
-        return cell
-        }else if tableView == self.noteTableView {
-            notecell = tableView.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath) as! noteCells
-            notecell.noteTitle.text = notesArray[indexPath.row].title
-            notecell.noteText.text = notesArray[indexPath.row].text
-        return notecell
+        if(selectedSegment == 1){
+            noteCell.noteTitle.text = notesArray[indexPath.row].title
+            noteCell.noteText.text = notesArray[indexPath.row].text
 
+            return noteCell
+        }else{
+            giftCell.giftTitle.text = giftsArray[indexPath.row].title
+            giftCell.giftNote.text = giftsArray[indexPath.row].note
+            return giftCell
         }
-        return cell
         
     }
     

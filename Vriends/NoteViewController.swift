@@ -102,7 +102,7 @@ class NoteViewController: UIViewController, UITextViewDelegate {
         CoreDataStack.instance.saveContext()
         DataManager.shared.vriendViewController.notesArray.append(note)
     
-    DataManager.shared.vriendViewController.noteTableView.reloadData()
+    DataManager.shared.vriendViewController.giftNoteTableView.reloadData()
         dismiss(animated: true, completion: nil)
         
     }

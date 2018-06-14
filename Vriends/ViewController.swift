@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     var flower: [String] = ["F_12.png","F_11.png", "F_10.png", "F_09.png", "F_08.png", "F_07.png", "F_06.png", "F_05.png", "F_04.png", "F_03.png", "F_02.png", "F_01.png", "F_00.png"]
     var addFriend = AddFriendViewController()
     var lastSeenTime = ""
-    var lastSeenArray:[String] = []
+    
     let formatter = DateFormatter()
     var i = 0
 
@@ -70,23 +70,6 @@ class ViewController: UIViewController {
         }
     }
 
-    func fillFriendArray() {
-        if friends.count != 0 {
-            for friend in friends {
-                let calendar = NSCalendar.current
-                let date1 = calendar.startOfDay(for: friend.lastSeen!)
-                let date2 = calendar.startOfDay(for: Date())
-                let components = calendar.dateComponents([.day], from: date1, to: date2)
-                lastSeenTime = String(describing: components.day!)
-                lastSeenArray.append(lastSeenTime)
-                
-                if(friendNames.count == 0){
-                    friendNames.append(friend.name!)
-                }
-               
-            }
-        }
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "mainToProfileSegue", let destination = segue.destination as? VriendViewController {
@@ -144,17 +127,32 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "friendCollectionCell", for: indexPath) as! friendCollectionCell
+        let calendar = NSCalendar.current
+        let birthdate = friends[indexPath.row].birthdate
+        let weekOfYearNow = calendar.component(.weekOfYear, from: Date())
+        
+        let weekOfYearBirthDay = calendar.component(.weekOfYear, from: birthdate!)
+        if (weekOfYearNow == (weekOfYearBirthDay + 1)){
+            cell.birthdayImage.image = UIImage(named: "birthday-gift" )
+        }else{
+            cell.birthdayImage.image = nil
+        }
+        
         cell.nameLabel.fullWidth(parent: cell)
         let friend = friends[indexPath.row]
         let parent = collectionView
-        // compare dates and generate lastseendate
-        let calendar = NSCalendar.current
+        
+        
+        //
+        //Put birthday to this year and check the days between
+        //
         let date1 = calendar.startOfDay(for: friend.lastSeen!)
         let date2 = calendar.startOfDay(for: Date())
         let components = calendar.dateComponents([.day], from: date1, to: date2)
         
+        var lastSeen = components.day!
         let badFriend = components.day! / Int(friend.wishToSee!)!
-        cell.lastSeenLabel.text = String(badFriend) + " days ago"
+        cell.lastSeenLabel.text = String(lastSeen) + " days ago"
         cell.layer.cornerRadius = 8
         
         cell.leaf.image = UIImage(named: flower[badFriend])
@@ -167,6 +165,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let parent2 = collectionView
         return CGSize(width: parent2.frame.width / 2 - 20, height: parent2.frame.width / 2 - 20)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
     }
     
 }

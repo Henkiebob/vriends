@@ -29,6 +29,7 @@ class AddFriendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let parent = self.view
+        friendNameTextField.delegate = self
         test.text = "Één keer per maand"
         birthDatePicker.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1)
         colorCollectionView.delegate = self
@@ -90,8 +91,7 @@ class AddFriendViewController: UIViewController {
         if(friendNameTextField.text != nil) {
             friend.name = friendNameTextField.text
             friend.birthdate = birthDatePicker.date
-            let coupleOfDaysBack = Calendar.current.date(byAdding: .day, value: -23, to: Date())
-            friend.lastSeen = coupleOfDaysBack
+            friend.lastSeen = Date()
             friend.favoriteColor = selectedColor
             friend.wishToSee = String(wishDateArray[Int(wishSlider.value)])
             
@@ -136,7 +136,7 @@ class AddFriendViewController: UIViewController {
     */
 
 }
-extension AddFriendViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+extension AddFriendViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return colorArray.count
@@ -162,7 +162,14 @@ extension AddFriendViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! colorCollectionCell
-        
+        self.view.endEditing(true)
         cell.selectedImage.image = nil
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

@@ -16,6 +16,10 @@ class GiftViewController: UIViewController {
     @IBOutlet weak var giftTitle: UITextField!
     @IBOutlet weak var giftInfo: UITextView!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
+    
     var darkStatusBar = true
     let fullView: CGFloat = 100
     var partialView: CGFloat {
@@ -46,6 +50,28 @@ class GiftViewController: UIViewController {
         view.addGestureRecognizer(panGesture)
         
         roundViews()
+        setAnchorToViews()
+    }
+    func setAnchorToViews() {
+        let parent = self.view
+        saveButton.translatesAutoresizingMaskIntoConstraints = false
+        saveButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        saveButton.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        saveButton.rightAnchor.constraint(equalTo: (parent?.rightAnchor)!, constant: -20).isActive = true
+        saveButton.topAnchor.constraint(equalTo: (parent?.topAnchor)!, constant: 28).isActive = true
+        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        titleLabel.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: (parent?.centerXAnchor)!, constant: -(titleLabel.frame.width / 2)).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: (parent?.topAnchor)!, constant: 29).isActive = true
+        
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        backButton.widthAnchor.constraint(equalToConstant: 12).isActive = true
+        backButton.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        backButton.leftAnchor.constraint(equalTo: (parent?.leftAnchor)!, constant: 20).isActive = true
+        backButton.topAnchor.constraint(equalTo: (parent?.topAnchor)!, constant: 29).isActive = true
+        
     }
     @IBAction func dismissButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -63,7 +89,7 @@ class GiftViewController: UIViewController {
         CoreDataStack.instance.saveContext()
         DataManager.shared.vriendViewController.giftsArray.append(gift)
         
-        DataManager.shared.vriendViewController.giftTableView.reloadData()
+        DataManager.shared.vriendViewController.giftNoteTableView.reloadData()
         dismiss(animated: true, completion: nil)
         
     }
