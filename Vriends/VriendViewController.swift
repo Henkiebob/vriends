@@ -34,13 +34,13 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
         DataManager.shared.vriendViewController = self
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy"
         nameLabel.text = friend.name
         birthdayLabel.text = formatter.string(for: friend.birthdate)
+        print(birthdayLabel.text)
         
         let calendar = NSCalendar.current
         let date1 = calendar.startOfDay(for: friend.lastSeen!)
@@ -50,11 +50,11 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         
         switch lastTimeSeen {
         case 0:
-             lastSeenLabel.text = "Vandaag"
+             lastSeenLabel.text = "Today"
         case 1:
-             lastSeenLabel.text = "Gisteren"
+             lastSeenLabel.text = "Yesterday"
         default:
-             lastSeenLabel.text = String(lastTimeSeen) + " dagen geleden"
+             lastSeenLabel.text = String(lastTimeSeen) + " days ago"
         }
        
         giftNoteTableView.dataSource = self
