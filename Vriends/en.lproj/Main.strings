@@ -1,0 +1,87 @@
+
+/* Class = "UILabel"; text = "Keep track of this vriendship?"; ObjectID = "9mo-JV-LMk"; */
+"9mo-JV-LMk.text" = "Keep track of this vriendship?";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "A3m-Zh-TYB"; */
+"A3m-Zh-TYB.title" = "Back";
+
+/* Class = "UINavigationItem"; title = "Add a new vriend"; ObjectID = "ALR-fI-XOc"; */
+"ALR-fI-XOc.title" = "Add a new vriend";
+
+/* Class = "UITextField"; placeholder = "Subject"; ObjectID = "CZe-YK-OOQ"; */
+"CZe-YK-OOQ.placeholder" = "Subject";
+
+/* Class = "UIBarButtonItem"; title = "Delete"; ObjectID = "Fej-O4-jtN"; */
+"Fej-O4-jtN.title" = "Delete";
+
+/* Class = "UILabel"; text = "Pick a color"; ObjectID = "Q5k-LR-Vo9"; */
+"Q5k-LR-Vo9.text" = "Pick a color";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "RSY-8m-ipt"; */
+"RSY-8m-ipt.normalTitle" = "Save";
+
+/* Class = "UILabel"; text = "New note"; ObjectID = "Whq-rv-Zkr"; */
+"Whq-rv-Zkr.text" = "New note";
+
+/* Class = "UINavigationItem"; title = "Vriend profile"; ObjectID = "Z14-cI-bbn"; */
+"Z14-cI-bbn.title" = "Vriend profile";
+
+/* Class = "UILabel"; text = "Select a birthday"; ObjectID = "Zeb-1U-6IJ"; */
+"Zeb-1U-6IJ.text" = "Select a birthday";
+
+/* Class = "UILabel"; text = "Lang geleden"; ObjectID = "bFc-FG-yQA"; */
+"bFc-FG-yQA.text" = "Lang geleden";
+
+/* Class = "UIBarButtonItem"; title = "Add"; ObjectID = "eHl-aC-lY6"; */
+"eHl-aC-lY6.title" = "Add";
+
+/* Class = "UILabel"; text = "Select meeting frequency"; ObjectID = "gut-Ib-seX"; */
+"gut-Ib-seX.text" = "Select meeting frequency";
+
+/* Class = "UILabel"; text = "New gift"; ObjectID = "hKm-fz-9aR"; */
+"hKm-fz-9aR.text" = "New gift";
+
+/* Class = "UILabel"; accessibilityLabel = "Note Text"; ObjectID = "hat-Tr-YG1"; */
+"hat-Tr-YG1.accessibilityLabel" = "Note Text";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "hat-Tr-YG1"; */
+"hat-Tr-YG1.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Vriends"; ObjectID = "iDc-9A-t20"; */
+"iDc-9A-t20.title" = "Vriends";
+
+/* Class = "UISwitch"; accessibilityHint = "Wanneer deze optie aanstaat zal er een bloem worden geladen die status van jullie vriendschap symboliseert"; ObjectID = "k7s-F2-YwT"; */
+"k7s-F2-YwT.accessibilityHint" = "Wanneer deze optie aanstaat zal er een bloem worden geladen die status van jullie vriendschap symboliseert";
+
+/* Class = "UISwitch"; accessibilityLabel = "Help mij herrinneren"; ObjectID = "k7s-F2-YwT"; */
+"k7s-F2-YwT.accessibilityLabel" = "Help mij herrinneren";
+
+/* Class = "UITextField"; placeholder = "Vriend name"; ObjectID = "mAU-ed-Fvq"; */
+"mAU-ed-Fvq.placeholder" = "Vriend name";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "pFl-hf-9jR"; */
+"pFl-hf-9jR.normalTitle" = "Save";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "rVU-Ed-GdC"; */
+"rVU-Ed-GdC.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Subject"; ObjectID = "tCB-6f-3hr"; */
+"tCB-6f-3hr.placeholder" = "Subject";
+
+/* Class = "UILabel"; text = "sadasdadasdsa"; ObjectID = "tWT-mh-auG"; */
+"tWT-mh-auG.text" = "sadasdadasdsa";
+
+/* Class = "UISegmentedControl"; u7i-BJ-tBL.segmentTitles[0] = "Notes"; ObjectID = "u7i-BJ-tBL"; */
+"u7i-BJ-tBL.segmentTitles[0]" = "Notes";
+
+/* Class = "UISegmentedControl"; u7i-BJ-tBL.segmentTitles[1] = "Gifts"; ObjectID = "u7i-BJ-tBL"; */
+"u7i-BJ-tBL.segmentTitles[1]" = "Gifts";
+
+/* Class = "UILabel"; text = "Dit is een test"; ObjectID = "vc0-kt-cLS"; */
+"vc0-kt-cLS.text" = "Dit is een test";
+
+/* Class = "UILabel"; text = "Dit is een test"; ObjectID = "xLk-VK-Em9"; */
+"xLk-VK-Em9.text" = "Dit is een test";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zSi-at-62f"; */
+"zSi-at-62f.text" = "Label";
