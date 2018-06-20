@@ -22,10 +22,35 @@ class ShareViewController: SLComposeServiceViewController {
     }
 
     override func didSelectPost() {
-        // This is called after the user selects Post. Do the upload of contentText and/or NSExtensionContext attachments.
+        
+        let friend = vriends[getFriendIndex()]
+        let context = CoreDataStack.instance.managedObjectContext
+        let gift = Gift(context: context)
+
+         print(friend.name)
+         print(selectedDeck?.url)
+         print(selectedDeck?.title)
+//        gift.title = selectedDeck?.url
+//        gift.note = selectedDeck?.url
+        
+
+//        friend.addToGift(gift)
+//        CoreDataStack.instance.saveContext()
+        
     
         // Inform the host that we're done, so it un-blocks its UI. Note: Alternatively you could call super's -didSelectPost, which will similarly complete the extension context.
         self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
+    }
+    
+    func getFriendIndex() -> Int{
+        // find the selected friend
+        for (index, selectedFriend) in vriends.enumerated() {
+            if(selectedFriend.name == selectedDeck?.title) {
+                return index
+            }
+        }
+        
+        return 0
     }
 
     override func configurationItems() -> [Any]! {
@@ -45,6 +70,7 @@ class ShareViewController: SLComposeServiceViewController {
     }
     
     override func viewDidLoad() {
+    
         let context = CoreDataStack.instance.managedObjectContext
         do {
             vriends = try context.fetch(Friend.fetchRequest())
@@ -53,15 +79,13 @@ class ShareViewController: SLComposeServiceViewController {
             print("I can't fetch any friends from the database, hah loser!")
         }
         
-        // Loading friends and adding them to the sharetable as options
-        // MARK get friends and add them to userdecks
         for friend in vriends {
             let deck = Deck()
             deck.title = friend.name
             userDecks.append(deck)
         }
         selectedDeck = userDecks.first
-    
+        
         let extensionItem = extensionContext?.inputItems.first as! NSExtensionItem
         let itemProvider = extensionItem.attachments?.first as! NSItemProvider
         let propertyList = String(kUTTypePropertyList)
@@ -72,12 +96,10 @@ class ShareViewController: SLComposeServiceViewController {
                     if let results = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
                         let urlString = results["URL"] as? String,
                         let _ = NSURL(string: urlString) {
-                        print("URL retrieved: \(urlString)")
+                        self.selectedDeck?.url = urlString
                     }
                 }
             })
-        } else {
-            print("error")
         }
     }
 
