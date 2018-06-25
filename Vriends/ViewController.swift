@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import UserNotifications
+
 
 class ViewController: UIViewController {
     
@@ -20,10 +22,29 @@ class ViewController: UIViewController {
     
     let formatter = DateFormatter()
     var i = 0
+    let center = UNUserNotificationCenter.current()
+    let options: UNAuthorizationOptions = [.alert, .sound, .badge];
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        center.requestAuthorization(options: options) {
+            (granted, error) in
+            if !granted {
+                print("No notifications for you")
+            }
+        }
+        
+        center.getNotificationSettings { (settings) in
+            if settings.authorizationStatus != .authorized {
+                // Notifications not allowed
+            }
+        }
+        
+        // lets clear up those pesky notifications
+        center.removeAllPendingNotificationRequests()
+        
+        
         collectionView.dataSource = self
         collectionView.delegate = self
         formatter.dateFormat = "dd/mm/yyyy"
@@ -129,29 +150,86 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "friendCollectionCell", for: indexPath) as! friendCollectionCell
         let calendar = NSCalendar.current
         let birthdate = friends[indexPath.row].birthdate
+        let notification_name = friends[indexPath.row].name
         let weekOfYearNow = calendar.component(.weekOfYear, from: Date())
         
         let weekOfYearBirthDay = calendar.component(.weekOfYear, from: birthdate!)
         if (weekOfYearNow == (weekOfYearBirthDay + 1)){
             cell.birthdayImage.image = UIImage(named: "birthday-gift" )
+            
+            let triggerForSoon = UNTimeIntervalNotificationTrigger(timeInterval: 3600,
+                                                            repeats: false)
+            let content = UNMutableNotificationContent()
+            content.title = "Don't forget!"
+            content.body = "It's \(notification_name ?? "a friend") birthday soon"
+            content.sound = UNNotificationSound.default()
+            //content.badge = 1
+            
+            let identifier = "BirthdaySoon"
+            let request = UNNotificationRequest(identifier: identifier,
+                                                content: content, trigger: triggerForSoon)
+            center.add(request, withCompletionHandler: { (error) in
+                if let error = error {
+                    // Something went wrong
+                    print("not added")
+                }
+            })
+            
+            
         }else{
             cell.birthdayImage.image = nil
         }
+        
+//        let content = UNMutableNotificationContent()
+//        content.title = "Don't forget"
+//        content.body = "It's \(notification_name ?? "a friend") birthday today!"
+//        content.sound = UNNotificationSound.default()
+//
+//        let triggerDate = Calendar.current.dateComponents([.day,.month,], from: birthdate!)
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+//
+//        let identifier = "Birthday today"
+//        let request = UNNotificationRequest(identifier: identifier,
+//                                            content: content, trigger: trigger)
+//        center.add(request, withCompletionHandler: { (error) in
+//            if let error = error {
+//                // Something went wrong
+//                print("not added")
+//            }
+//        })
         
         cell.nameLabel.fullWidth(parent: cell)
         let friend = friends[indexPath.row]
         let parent = collectionView
         
-        
-        //
         //Put birthday to this year and check the days between
-        //
         let date1 = calendar.startOfDay(for: friend.lastSeen!)
         let date2 = calendar.startOfDay(for: Date())
         let components = calendar.dateComponents([.day], from: date1, to: date2)
         
         var lastSeen = components.day!
         let badFriend = components.day! / Int(friend.wishToSee!)!
+        
+        if(badFriend > 9) {
+            let date = Date(timeIntervalSinceNow: 3600)
+            let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: date)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+            let content = UNMutableNotificationContent()
+            content.title = "Oh oh.."
+            content.body = "You haven't seen \(notification_name ?? "a friend") in a while!"
+            content.sound = UNNotificationSound.default()
+            
+            let identifier = "SeeFriend"
+            let request = UNNotificationRequest(identifier: identifier,
+                                                content: content, trigger: trigger)
+            center.add(request, withCompletionHandler: { (error) in
+                if let error = error {
+                    // Something went wrong
+                    print("not added")
+                }
+            })
+        }
+        
         cell.lastSeenLabel.text = String(lastSeen) + " days ago"
         cell.layer.cornerRadius = 8
         

@@ -35,22 +35,12 @@ class AddFriendViewController: UIViewController {
         colorCollectionView.delegate = self
         colorCollectionView.dataSource = self
         colorCollectionView.allowsMultipleSelection = false
-        
         self.nameAndTrackingView.layer.borderWidth = 1
         self.nameAndTrackingView.layer.borderColor = UIColor(red: 0.91, green: 0.92, blue: 0.92, alpha: 1).cgColor
-        
-        
-//        nameAndTrackingView.fullWidth(parent: parent!)
         colorCollectionView.frame.size.width = self.view.frame.width
         nameAndTrackingView.frame.size.width = self.view.frame.width
         print(colorCollectionView.frame.width)
         setAnchors()
-//        uiSwitch.topAnchor.constraint(equalTo: (parent?.topAnchor)!, constant: 28).isActive = true
-
-//        uiSwitch.rightSide(parent: nameAndTrackingView)
-//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-//        
-//        view.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,11 +81,15 @@ class AddFriendViewController: UIViewController {
         if(friendNameTextField.text != nil) {
             friend.name = friendNameTextField.text
             friend.birthdate = birthDatePicker.date
-            friend.lastSeen = Date()
+            //friend.lastSeen = Date()
+            
+            // debug
+            let coupleOfDaysBack = Calendar.current.date(byAdding: .day, value: -80, to: Date())
+            friend.lastSeen = coupleOfDaysBack
+            
             if(selectedColor == ""){
                 friend.favoriteColor = String(colorArray[Int.random(range: 0...12)])
-                print(friend.favoriteColor)
-            }else{
+            } else {
                 friend.favoriteColor = selectedColor
             }
             friend.wishToSee = String(wishDateArray[Int(wishSlider.value)])

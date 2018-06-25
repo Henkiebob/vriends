@@ -26,15 +26,43 @@ class ShareViewController: SLComposeServiceViewController {
         let friend = vriends[getFriendIndex()]
         let context = CoreDataStack.instance.managedObjectContext
         let gift = Gift(context: context)
-
-         print(friend.name)
-         print(selectedDeck?.url)
-         print(selectedDeck?.title)
-//        gift.title = selectedDeck?.url
-//        gift.note = selectedDeck?.url
+        
+        
+        let extensionItem = extensionContext?.inputItems.first as! NSExtensionItem
+        let itemProvider = extensionItem.attachments?.first as! NSItemProvider
+        let propertyList = String(kUTTypePropertyList)
+        if itemProvider.hasItemConformingToTypeIdentifier(propertyList) {
+            itemProvider.loadItem(forTypeIdentifier: propertyList, options: nil, completionHandler: { (item, error) -> Void in
+                guard let dictionary = item as? NSDictionary else { return }
+                OperationQueue.main.addOperation {
+                    if let results = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
+                        let urlString = results["URL"] as? String,
+                        let _ = NSURL(string: urlString) {
+                        self.selectedDeck?.url = urlString
+                        
+                        print(urlString)
+                    }
+                }
+            })
+        }
         
 
+//        if let item = extensionContext?.inputItems.first as? NSExtensionItem,
+//            let itemProvider = item.attachments?.first as? NSItemProvider,
+//            itemProvider.hasItemConformingToTypeIdentifier("kUTTypeURL") {
+//            itemProvider.loadItem(forTypeIdentifier: "kUTTypeURL", options: nil) { (url, error) in
+//                if let shareURL = url as? String {
+//                    gift.title = shareURL
+//                }
+//                self.extensionContext?.completeRequest(returningItems: [], completionHandler:nil)
+//            }
+//        }
+        
+        
+       // gift.note = urlString
+        
 //        friend.addToGift(gift)
+//
 //        CoreDataStack.instance.saveContext()
         
     
@@ -84,23 +112,8 @@ class ShareViewController: SLComposeServiceViewController {
             deck.title = friend.name
             userDecks.append(deck)
         }
-        selectedDeck = userDecks.first
         
-        let extensionItem = extensionContext?.inputItems.first as! NSExtensionItem
-        let itemProvider = extensionItem.attachments?.first as! NSItemProvider
-        let propertyList = String(kUTTypePropertyList)
-        if itemProvider.hasItemConformingToTypeIdentifier(propertyList) {
-            itemProvider.loadItem(forTypeIdentifier: propertyList, options: nil, completionHandler: { (item, error) -> Void in
-                guard let dictionary = item as? NSDictionary else { return }
-                OperationQueue.main.addOperation {
-                    if let results = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
-                        let urlString = results["URL"] as? String,
-                        let _ = NSURL(string: urlString) {
-                        self.selectedDeck?.url = urlString
-                    }
-                }
-            })
-        }
+        selectedDeck = userDecks.first
     }
 
 }
