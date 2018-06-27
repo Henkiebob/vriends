@@ -13,6 +13,7 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
     
     var friend:Friend!
     var gift: Gift!
+    var note: Note!
     @IBOutlet weak var lastSeenLabel: UILabel!
     @IBOutlet weak var birthdayLabel: UILabel!
     var lastTimeSeen = 0
@@ -147,6 +148,51 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
             giftCell.giftTitle.text = giftsArray[indexPath.row].title
             giftCell.giftNote.text = giftsArray[indexPath.row].note
             return giftCell
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if (selectedSegment == 1){
+            let alert = UIAlertController(title: notesArray[indexPath.row].title, message: notesArray[indexPath.row].text, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else{
+            let alert = UIAlertController(title: giftsArray[indexPath.row].title, message: giftsArray[indexPath.row].note, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        let context = CoreDataStack.instance.managedObjectContext
+        
+        if editingStyle == .delete{
+            if selectedSegment == 1{
+                let note = notesArray[indexPath.row]
+                context.delete(note)
+            }else {
+                let gift = giftsArray[indexPath.row]
+                context.delete(gift)
+            }
+            
+            CoreDataStack.instance.saveContext()
+            
+            reload()
+        }
+        
+    }
+    func reload(){
+        getItems()
+        giftNoteTableView.reloadData()
+    }
+    func getItems(){
+        let context = CoreDataStack.instance.managedObjectContext
+        do {
+            notesArray = try context.fetch(Note.fetchRequest())
+            giftsArray = try context.fetch(Gift.fetchRequest())
+        }
+        catch {
+            print("I can't fetch any friends from the database, hah loser!")
         }
     }
     
