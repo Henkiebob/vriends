@@ -6,10 +6,19 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Page View Controller-->
+        <scene sceneID="amb-pR-dns">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Rma-dL-dTm" customClass="PageViewController" customModule="Vriends" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xdj-Xa-FVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="419" y="-554"/>
+        </scene>
         <!--Vriends-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -80,11 +89,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Vriends" id="iDc-9A-t20">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7dt-6B-6Mc">
-                            <connections>
-                                <segue destination="3Ue-Za-6ao" kind="show" id="rYW-IH-3jB"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="7dt-6B-6Mc">
+                                <connections>
+                                    <segue destination="3Ue-Za-6ao" kind="show" id="rYW-IH-3jB"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="?" style="plain" id="zaC-D4-A6Q">
+                                <connections>
+                                    <segue destination="Rma-dL-dTm" kind="show" identifier="FirstLaunchSegue" id="in8-hi-E6Y"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="sMc-hn-Z88" id="IJx-dH-hi1"/>
@@ -382,6 +398,97 @@
             </objects>
             <point key="canvasLocation" x="420.28985507246381" y="895.10869565217399"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="cSA-3E-8xm">
+            <objects>
+                <viewController storyboardIdentifier="Page1" id="aAd-dc-yGU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Goh-79-cBw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is Vriends?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="In8-FE-vel">
+                                <rect key="frame" x="130.66666666666666" y="456" width="152.99999999999997" height="25.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding-1" translatesAutoresizingMaskIntoConstraints="NO" id="3ci-bg-Xd1">
+                                <rect key="frame" x="47" y="81" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="Zct-b7-Q1d"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0v6-vS-hiU">
+                                <rect key="frame" x="20" y="485" width="374" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Vriends is an application that allows you to keep track of your friendships. Vriends can be used to store useful information about your friends like gift idea's or even birthdays.</string>
+                                <color key="textColor" red="0.42745098040000001" green="0.45882352939999999" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration" identifier="Page1"/>
+                        <constraints>
+                            <constraint firstItem="4fW-zC-tKK" firstAttribute="trailing" secondItem="3ci-bg-Xd1" secondAttribute="trailing" constant="47" id="K1j-lt-gXW"/>
+                            <constraint firstItem="3ci-bg-Xd1" firstAttribute="leading" secondItem="4fW-zC-tKK" secondAttribute="leading" constant="47" id="iG9-7s-ph7"/>
+                            <constraint firstItem="3ci-bg-Xd1" firstAttribute="centerX" secondItem="In8-FE-vel" secondAttribute="centerX" id="nkK-B7-Waq"/>
+                            <constraint firstItem="In8-FE-vel" firstAttribute="top" secondItem="3ci-bg-Xd1" secondAttribute="bottom" constant="55" id="vAN-0o-v3p"/>
+                            <constraint firstItem="3ci-bg-Xd1" firstAttribute="top" secondItem="4fW-zC-tKK" secondAttribute="top" constant="61" id="xkE-HW-jv3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4fW-zC-tKK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="orI-kF-KWu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1224.6376811594205" y="-555.16304347826087"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="loS-e7-d2Z">
+            <objects>
+                <viewController storyboardIdentifier="Page2" id="z97-9s-Hja" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uSb-YB-n14">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding-2" translatesAutoresizingMaskIntoConstraints="NO" id="TPc-74-kjS">
+                                <rect key="frame" x="47" y="79" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="k59-Av-xNk"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24A-d5-wnh">
+                                <rect key="frame" x="20" y="485" width="374" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Each friendship is represented with a flower. Friendships, like all things, need maintenance. If you don't see or speak with your friend, the flower will lose its petals.</string>
+                                <color key="textColor" red="0.42745098040000001" green="0.45882352939999999" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maintain your friendships" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmg-Rf-d9b">
+                                <rect key="frame" x="93.666666666666742" y="445" width="229" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration" identifier="Page2"/>
+                        <constraints>
+                            <constraint firstItem="TPc-74-kjS" firstAttribute="leading" secondItem="bP7-Ec-Hvv" secondAttribute="leading" constant="47" id="33O-Cy-hd1"/>
+                            <constraint firstItem="TPc-74-kjS" firstAttribute="top" secondItem="bP7-Ec-Hvv" secondAttribute="top" constant="59" id="NfF-7L-g14"/>
+                            <constraint firstItem="TPc-74-kjS" firstAttribute="centerX" secondItem="uSb-YB-n14" secondAttribute="centerX" id="RR3-yV-c0L"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bP7-Ec-Hvv"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i8P-js-hAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2032" y="-554"/>
+        </scene>
         <!--Add a new vriend-->
         <scene sceneID="RVb-Mf-OvK">
             <objects>
@@ -551,6 +658,142 @@
             </objects>
             <point key="canvasLocation" x="-340" y="125"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="K1n-Wy-gdI">
+            <objects>
+                <viewController storyboardIdentifier="Page3" id="tfy-m6-wXI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bAE-oG-AUW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Su-jk-RbO">
+                                <rect key="frame" x="20" y="485" width="374" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">By holding down a flower, you are letting the app know you have seen a friend, the petals will grow back.</string>
+                                <color key="textColor" red="0.42745098039215684" green="0.45882352941176469" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Give life to your friendship" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MxE-v0-d7f">
+                                <rect key="frame" x="90.666666666666742" y="445" width="236" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding-3" translatesAutoresizingMaskIntoConstraints="NO" id="32J-oA-gXU">
+                                <rect key="frame" x="0.0" y="38" width="418" height="418"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="418" id="dtr-aB-7oS"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration" identifier="Page2"/>
+                        <constraints>
+                            <constraint firstItem="32J-oA-gXU" firstAttribute="top" secondItem="cOu-0E-URs" secondAttribute="top" constant="18" id="5dD-xd-meg"/>
+                            <constraint firstItem="32J-oA-gXU" firstAttribute="centerX" secondItem="bAE-oG-AUW" secondAttribute="centerX" constant="2" id="9Mo-vv-fkY"/>
+                            <constraint firstItem="32J-oA-gXU" firstAttribute="leading" secondItem="cOu-0E-URs" secondAttribute="leading" id="Fbq-Wg-AAv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cOu-0E-URs"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G4L-Ms-zGx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2776.811594202899" y="-554.34782608695662"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="2cV-s2-t9S">
+            <objects>
+                <viewController storyboardIdentifier="Page4" id="ztf-vS-28H" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KCR-hk-2YT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding-4" translatesAutoresizingMaskIntoConstraints="NO" id="n3n-pg-gG9">
+                                <rect key="frame" x="47" y="79" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="f0I-CX-75s"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgb-sL-653">
+                                <rect key="frame" x="20" y="485" width="374" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">The speed at which your flower deteriorates depens on how much you want to see your friend, once a week, once a month? 
+That's up to you!</string>
+                                <color key="textColor" red="0.42745098040000001" green="0.45882352939999999" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don’t let the flower wither away" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZg-pi-ips">
+                                <rect key="frame" x="66.66666666666697" y="445" width="285" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration" identifier="Page2"/>
+                        <constraints>
+                            <constraint firstItem="n3n-pg-gG9" firstAttribute="leading" secondItem="0pA-V4-qMb" secondAttribute="leading" constant="47" id="dbb-9e-VnW"/>
+                            <constraint firstItem="n3n-pg-gG9" firstAttribute="top" secondItem="0pA-V4-qMb" secondAttribute="top" constant="59" id="phe-dR-u2Q"/>
+                            <constraint firstItem="n3n-pg-gG9" firstAttribute="centerX" secondItem="KCR-hk-2YT" secondAttribute="centerX" id="tjD-x3-b5P"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0pA-V4-qMb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X01-du-vDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3516" y="-554"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ucw-cG-9FP">
+            <objects>
+                <viewController storyboardIdentifier="Page5" id="rZH-bF-FtD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8HK-OP-hYW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding-5" translatesAutoresizingMaskIntoConstraints="NO" id="ZFO-El-gN6">
+                                <rect key="frame" x="47" y="79" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="wXh-dM-9MB"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Inh-R6-Er2">
+                                <rect key="frame" x="20" y="485" width="374" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Vriends is an open source application which works 100% offline. We do not need any information or accounts. This means all data is stored on your device and nowhere else.</string>
+                                <color key="textColor" red="0.42745098040000001" green="0.45882352939999999" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No personal data needed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aE1-ua-s6J">
+                                <rect key="frame" x="94.66666666666697" y="445" width="228" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration" identifier="Page2"/>
+                        <constraints>
+                            <constraint firstItem="ZFO-El-gN6" firstAttribute="centerX" secondItem="8HK-OP-hYW" secondAttribute="centerX" id="TD3-7P-YoD"/>
+                            <constraint firstItem="ZFO-El-gN6" firstAttribute="top" secondItem="15E-RQ-hAP" secondAttribute="top" constant="59" id="iBz-cU-cSZ"/>
+                            <constraint firstItem="ZFO-El-gN6" firstAttribute="leading" secondItem="15E-RQ-hAP" secondAttribute="leading" constant="47" id="wQc-m8-rZs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="15E-RQ-hAP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bRv-kk-riq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4213.04347826087" y="-555.16304347826087"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Back_orange" width="12" height="20"/>
@@ -559,6 +802,11 @@
         <image name="birthday-gift" width="24" height="24"/>
         <image name="last-seen" width="12" height="8"/>
         <image name="last-seen-1" width="24" height="24"/>
+        <image name="onboarding-1" width="512" height="512"/>
+        <image name="onboarding-2" width="512" height="512"/>
+        <image name="onboarding-3" width="512" height="512"/>
+        <image name="onboarding-4" width="512" height="512"/>
+        <image name="onboarding-5" width="512" height="512"/>
         <image name="seperator" width="414" height="1"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

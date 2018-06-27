@@ -27,6 +27,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        isAppAlreadyLaunchedOnce()
+
         
         center.requestAuthorization(options: options) {
             (granted, error) in
@@ -60,6 +62,17 @@ class ViewController: UIViewController {
         
     }
     
+    func isAppAlreadyLaunchedOnce()->Bool{
+        let defaults = UserDefaults.standard
+        if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
+            print("App already launched")
+            return true
+        }else{
+            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
+            performSegue(withIdentifier: "FirstLaunchSegue", sender: self)
+            return false
+        }
+    }
     func dismiss(_ segue: UIStoryboardSegue) {
         self.dismiss(animated: true, completion: nil)
     }
