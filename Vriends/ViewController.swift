@@ -38,6 +38,8 @@ class ViewController: UIViewController {
         collectionView.widthAnchor.constraint(equalToConstant: (parent?.frame.width)!).isActive = true
         collectionView.heightAnchor.constraint(equalToConstant: (parent?.frame.height)!).isActive = true
         ADataManager.shared.viewController = self
+        self.navigationItem.setHidesBackButton(true, animated:true);
+
     }
 
     func isAppAlreadyLaunchedOnce()->Bool{
