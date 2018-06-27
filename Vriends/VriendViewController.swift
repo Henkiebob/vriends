@@ -40,7 +40,6 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         formatter.dateFormat = "dd-MM-yyyy"
         nameLabel.text = friend.name
         birthdayLabel.text = formatter.string(for: friend.birthdate)
-        print(birthdayLabel.text)
         
         let calendar = NSCalendar.current
         let date1 = calendar.startOfDay(for: friend.lastSeen!)
@@ -112,39 +111,30 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     @IBAction func deleteVriend(_ sender: Any) {
-        
         let alertController = UIAlertController(title: "Are you sure you want to delete " + friend.name! + " ?", message: "This will permanently delete this vriend from Vriends.", preferredStyle: .actionSheet)
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
-        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in }
         alertController.addAction(cancelAction)
         
         let destroyAction = UIAlertAction(title: "Delete", style: .destructive) { action in
             let context = CoreDataStack.instance.managedObjectContext
-
             context.delete(self.friend)
-
-                // save
             CoreDataStack.instance.saveContext()
             self.navigationController?.popViewController(animated: true)
-
         }
         
         alertController.addAction(destroyAction)
-        
-        self.present(alertController, animated: true) {
-        }
+        self.present(alertController, animated: true) {}
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(selectedSegment == 1){
+        if(selectedSegment == 1) {
             return notesArray.count
-        }else{
+        } else {
             return giftsArray.count
         }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let giftCell = tableView.dequeueReusableCell(withIdentifier: "giftCell", for: indexPath) as! giftCells
         let noteCell = tableView.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath) as! noteCells
         
@@ -153,12 +143,11 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
             noteCell.noteText.text = notesArray[indexPath.row].text
 
             return noteCell
-        }else{
+        } else {
             giftCell.giftTitle.text = giftsArray[indexPath.row].title
             giftCell.giftNote.text = giftsArray[indexPath.row].note
             return giftCell
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

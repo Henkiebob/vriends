@@ -21,6 +21,7 @@
 		0A59361B20C9C7EC002A6AAC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A59361A20C9C7EC002A6AAC /* CoreDataStack.swift */; };
 		0A59361C20C9C7EC002A6AAC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A59361A20C9C7EC002A6AAC /* CoreDataStack.swift */; };
 		0A890495206F81D800A1C7EA /* VriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A890494206F81D800A1C7EA /* VriendViewController.swift */; };
+		0A8EBB6620E28B4E004F3F4C /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8EBB6520E28B4E004F3F4C /* NotificationHelper.swift */; };
 		0A9FA031204446A7002D993F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9FA030204446A7002D993F /* AppDelegate.swift */; };
 		0A9FA033204446A7002D993F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9FA032204446A7002D993F /* ViewController.swift */; };
 		0A9FA036204446A7002D993F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9FA034204446A7002D993F /* Main.storyboard */; };
@@ -86,6 +87,7 @@
 		0A59361A20C9C7EC002A6AAC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		0A77457820C185A600F4EADE /* Vriends.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vriends.entitlements; sourceTree = "<group>"; };
 		0A890494206F81D800A1C7EA /* VriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VriendViewController.swift; sourceTree = "<group>"; };
+		0A8EBB6520E28B4E004F3F4C /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		0A9FA02D204446A7002D993F /* Vriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A9FA030204446A7002D993F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A9FA032204446A7002D993F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		0A9FA024204446A7002D993F = {
 			isa = PBXGroup;
 			children = (
+				0A8EBB6520E28B4E004F3F4C /* NotificationHelper.swift */,
 				0A59361A20C9C7EC002A6AAC /* CoreDataStack.swift */,
 				0A9FA02F204446A7002D993F /* Vriends */,
 				0A02327020BF1F0700FC9E5E /* ShareExtension */,
@@ -174,8 +177,6 @@
 			children = (
 				0A77457820C185A600F4EADE /* Vriends.entitlements */,
 				0A08406920B8477500CF1F43 /* Podfile */,
-				DA9C85642080B819007C7795 /* Gifs */,
-				DA9C855B2080B646007C7795 /* SwiftyGif */,
 				0A9FA030204446A7002D993F /* AppDelegate.swift */,
 				0A9FA032204446A7002D993F /* ViewController.swift */,
 				DAEA897820C037B900D439AE /* NoteViewController.swift */,
@@ -216,26 +217,6 @@
 				BF7C97660F5BA575F2AD9A2B /* Pods-Vriends.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		DA9C855B2080B646007C7795 /* SwiftyGif */ = {
-			isa = PBXGroup;
-			children = (
-				DA9C855E2080B664007C7795 /* UIImage+SwiftyGif.swift */,
-				DA9C85602080B666007C7795 /* UIImageView+SwiftyGif.swift */,
-				DA9C855C2080B661007C7795 /* SwiftyGifManager.swift */,
-			);
-			path = SwiftyGif;
-			sourceTree = "<group>";
-		};
-		DA9C85642080B819007C7795 /* Gifs */ = {
-			isa = PBXGroup;
-			children = (
-				DA9C85682080BC8E007C7795 /* Flower.gif */,
-				DA9C85672080BC8E007C7795 /* TestGif.gif */,
-			);
-			name = Gifs;
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,8 +329,6 @@
 			files = (
 				0A08406A20B8477500CF1F43 /* Podfile in Resources */,
 				0A9FA03B204446A7002D993F /* LaunchScreen.storyboard in Resources */,
-				DA9C856A2080BC8E007C7795 /* Flower.gif in Resources */,
-				DA9C85692080BC8E007C7795 /* TestGif.gif in Resources */,
 				0A9FA038204446A7002D993F /* Assets.xcassets in Resources */,
 				0A9FA036204446A7002D993F /* Main.storyboard in Resources */,
 			);
@@ -413,10 +392,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA9C855D2080B661007C7795 /* SwiftyGifManager.swift in Sources */,
 				0A890495206F81D800A1C7EA /* VriendViewController.swift in Sources */,
 				0A9FA033204446A7002D993F /* ViewController.swift in Sources */,
 				DA7C194720C2DBBC00BF16C7 /* GiftTableViewController.swift in Sources */,
+				0A8EBB6620E28B4E004F3F4C /* NotificationHelper.swift in Sources */,
 				DA1D98842048C9620004BB78 /* FriendCell.swift in Sources */,
 				DA87D43820E3A03300BBFC2F /* LastPageViewController.swift in Sources */,
 				DA9C855F2080B664007C7795 /* UIImage+SwiftyGif.swift in Sources */,
@@ -431,7 +410,6 @@
 				0A54CB6520456116007B68A4 /* vriends.xcdatamodeld in Sources */,
 				0A59361B20C9C7EC002A6AAC /* CoreDataStack.swift in Sources */,
 				DA32EBF720BCA79F003B5032 /* CardAnimationController.swift in Sources */,
-				DA9C85612080B666007C7795 /* UIImageView+SwiftyGif.swift in Sources */,
 				DA32EBF520BCA717003B5032 /* CardPresentationController.swift in Sources */,
 				0A08405920B815EA00CF1F43 /* Friend.swift in Sources */,
 			);
