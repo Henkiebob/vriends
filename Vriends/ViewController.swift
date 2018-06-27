@@ -72,6 +72,7 @@ class ViewController: UIViewController {
         // @TODO add a check if the user actually agreed to receive notifications..
         notificationHelper.setupBirthDaySoonNotifications(friends: friends)
         notificationHelper.friendShipFailingNotifications(friends: friends)
+        notificationHelper.setupBirthdayTodayNotifications(friends: friends)
 
         collectionView.reloadData()
     }

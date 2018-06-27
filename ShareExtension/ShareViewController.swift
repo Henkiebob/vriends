@@ -27,7 +27,6 @@ class ShareViewController: SLComposeServiceViewController {
         let context = CoreDataStack.instance.managedObjectContext
         let gift = Gift(context: context)
         
-        
         let extensionItem = extensionContext?.inputItems.first as! NSExtensionItem
         let itemProvider = extensionItem.attachments?.first as! NSItemProvider
         let propertyList = String(kUTTypePropertyList)
@@ -39,32 +38,15 @@ class ShareViewController: SLComposeServiceViewController {
                         let urlString = results["URL"] as? String,
                         let _ = NSURL(string: urlString) {
                         self.selectedDeck?.url = urlString
-                        
-                        print(urlString)
                     }
                 }
             })
         }
         
-
-//        if let item = extensionContext?.inputItems.first as? NSExtensionItem,
-//            let itemProvider = item.attachments?.first as? NSItemProvider,
-//            itemProvider.hasItemConformingToTypeIdentifier("kUTTypeURL") {
-//            itemProvider.loadItem(forTypeIdentifier: "kUTTypeURL", options: nil) { (url, error) in
-//                if let shareURL = url as? String {
-//                    gift.title = shareURL
-//                }
-//                self.extensionContext?.completeRequest(returningItems: [], completionHandler:nil)
-//            }
-//        }
-        
-        
-       // gift.note = urlString
-        
-//        friend.addToGift(gift)
-//
-//        CoreDataStack.instance.saveContext()
-        
+        gift.title = "Gift idea from the internet"
+        gift.note = self.selectedDeck?.url
+        friend.addToGift(gift)
+        CoreDataStack.instance.saveContext()
     
         // Inform the host that we're done, so it un-blocks its UI. Note: Alternatively you could call super's -didSelectPost, which will similarly complete the extension context.
         self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
@@ -77,7 +59,6 @@ class ShareViewController: SLComposeServiceViewController {
                 return index
             }
         }
-        
         return 0
     }
 

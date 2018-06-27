@@ -51,23 +51,24 @@ class NotificationHelper {
     }
     
     func setupBirthdayTodayNotifications(friends: [Friend]) {
-//        let content = UNMutableNotificationContent()
-//        content.title = "Don't forget"
-//        content.body = "It's \(notification_name ?? "a friend") birthday today!"
-//        content.sound = UNNotificationSound.default()
-//
-//        let triggerDate = Calendar.current.dateComponents([.day,.month,], from: birthdate!)
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
-//
-//        let identifier = "Birthday today"
-//        let request = UNNotificationRequest(identifier: identifier,
-//                                            content: content, trigger: trigger)
-//        center.add(request, withCompletionHandler: { (error) in
-//            if let error = error {
-//                // Something went wrong
-//                print("not added")
-//            }
-//        })
+        for friend in friends {
+            let content = UNMutableNotificationContent()
+            content.title = "Don't forget"
+            content.body = "It's \(friend.name ?? "a friend") birthday today!"
+            content.sound = UNNotificationSound.default()
+    
+            let triggerDate = Calendar.current.dateComponents([.day,.month,], from: friend.birthdate!)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+    
+            let identifier = "Birthday today"
+            let request = UNNotificationRequest(identifier: identifier,
+                                                content: content, trigger: trigger)
+            center.add(request, withCompletionHandler: { (error) in
+                if let error = error {
+                    print(error)
+                }
+            })
+        }
     }
     
     func friendShipFailingNotifications(friends: [Friend]) {
