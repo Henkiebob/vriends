@@ -54,7 +54,7 @@ class ViewController: UIViewController {
     func reload() {
         getFriends()
         
-        // @TODO add a check if the use actually agreed to receive notifications..
+        // @TODO add a check if the user actually agreed to receive notifications..
         notificationHelper.setupBirthDaySoonNotifications(friends: friends)
         notificationHelper.friendShipFailingNotifications(friends: friends)
         
