@@ -25,24 +25,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         isAppAlreadyLaunchedOnce()
 
-
-        center.requestAuthorization(options: options) {
-            (granted, error) in
-            if !granted {
-                print("No notifications for you")
-            }
-        }
-
-        center.getNotificationSettings { (settings) in
-            if settings.authorizationStatus != .authorized {
-                // Notifications not allowed
-            }
-        }
-
-        // lets clear up those pesky notifications
-        center.removeAllPendingNotificationRequests()
-
-
         collectionView.dataSource = self
         collectionView.delegate = self
         formatter.dateFormat = "dd/mm/yyyy"
