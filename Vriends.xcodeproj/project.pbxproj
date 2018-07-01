@@ -38,8 +38,6 @@
 		DA556E4820E3809200733585 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA556E4720E3809200733585 /* PageViewController.swift */; };
 		DA7C194720C2DBBC00BF16C7 /* GiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7C194620C2DBBC00BF16C7 /* GiftTableViewController.swift */; };
 		DA87D43820E3A03300BBFC2F /* LastPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87D43720E3A03300BBFC2F /* LastPageViewController.swift */; };
-		DA9C85692080BC8E007C7795 /* TestGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = DA9C85672080BC8E007C7795 /* TestGif.gif */; };
-		DA9C856A2080BC8E007C7795 /* Flower.gif in Resources */ = {isa = PBXBuildFile; fileRef = DA9C85682080BC8E007C7795 /* Flower.gif */; };
 		DA9F634C20C1850D009C84C8 /* GiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9F634B20C1850D009C84C8 /* GiftViewController.swift */; };
 		DAEA897920C037BA00D439AE /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEA897820C037B900D439AE /* NoteViewController.swift */; };
 /* End PBXBuildFile section */
@@ -105,8 +103,6 @@
 		DA556E4720E3809200733585 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		DA7C194620C2DBBC00BF16C7 /* GiftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftTableViewController.swift; sourceTree = "<group>"; };
 		DA87D43720E3A03300BBFC2F /* LastPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastPageViewController.swift; sourceTree = "<group>"; };
-		DA9C85672080BC8E007C7795 /* TestGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = TestGif.gif; path = Vriends/Gifs/TestGif.gif; sourceTree = SOURCE_ROOT; };
-		DA9C85682080BC8E007C7795 /* Flower.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Flower.gif; path = Vriends/Gifs/Flower.gif; sourceTree = SOURCE_ROOT; };
 		DA9F634B20C1850D009C84C8 /* GiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftViewController.swift; sourceTree = "<group>"; };
 		DAEA897820C037B900D439AE /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -456,7 +452,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P9KK68PA63;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Vriends.Tjerk.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -476,7 +472,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P9KK68PA63;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Vriends.Tjerk.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -609,6 +605,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P9KK68PA63;
 				INFOPLIST_FILE = Vriends/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Vriends.Tjerk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -629,6 +626,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P9KK68PA63;
 				INFOPLIST_FILE = Vriends/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Vriends.Tjerk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
