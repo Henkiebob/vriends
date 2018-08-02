@@ -18,6 +18,7 @@ class NoteViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     var darkStatusBar = true
     let fullView: CGFloat = 100
@@ -91,12 +92,15 @@ class NoteViewController: UIViewController, UITextViewDelegate {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func addNote(_ sender: Any) {
+        let notificationHelper = NotificationHelper.instance
         let context = CoreDataStack.instance.managedObjectContext
-        
         let note = Note(context: context)
         
         note.title = noteTitle.text
         note.text = noteInfo.text
+        note.date = datePicker.date
+        
+        notificationHelper.setupNoteNotification(note: note)
         
         friend.addToNote(note)
         CoreDataStack.instance.saveContext()

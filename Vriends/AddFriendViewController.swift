@@ -16,6 +16,7 @@ class AddFriendViewController: UIViewController {
     @IBOutlet weak var uiSwitch: UISwitch!
     @IBOutlet weak var colorCollectionView: UICollectionView!
     
+    
     var viewController = ViewController?.self
     var selectedColor: String = ""
     
@@ -36,6 +37,7 @@ class AddFriendViewController: UIViewController {
         0x9268BD
     ]
     let wishDateArray = [7, 14, 31, 32]
+    let notificationHelper = NotificationHelper.instance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,13 +56,13 @@ class AddFriendViewController: UIViewController {
     @IBAction func otherSliderChanged(_ sender: Any) {
         switch Int(wishSlider.value) {
         case 0:
-            wishToSeeLabel.text = "It's been more then a week"
+            wishToSeeLabel.text = "Weekly"
         case 1:
-            wishToSeeLabel.text = "It's been more then a month"
+            wishToSeeLabel.text = "Monthly"
         case 2:
-            wishToSeeLabel.text = "It's been more then two months"
+            wishToSeeLabel.text = "Every two months"
         default:
-            wishToSeeLabel.text = "It's been almost a year"
+            wishToSeeLabel.text = "Annualy"
         }
     }
     
@@ -68,14 +70,17 @@ class AddFriendViewController: UIViewController {
         let context = CoreDataStack.instance.managedObjectContext
         let friend = Friend(context: context)
         
+        
         if(friendNameTextField.text != nil) {
             friend.name = friendNameTextField.text
             friend.birthdate = birthDatePicker.date
-            friend.lastSeen = Date()
+            //friend.lastSeen = Date()
+            friend.triggerdate = Calendar.current.date(byAdding: .day, value: -7, to: friend.birthdate!)
             
             // debug
-//            let coupleOfDaysBack = Calendar.current.date(byAdding: .day, value: -80, to: Date())
-//            friend.lastSeen = coupleOfDaysBack
+            let coupleOfDaysBack = Calendar.current.date(byAdding: .day, value: -80, to: Date())
+         
+            friend.lastSeen = coupleOfDaysBack
             
             if(selectedColor == ""){
                 friend.favoriteColor = String(colorArray[Int.random(range: 0...12)])
@@ -86,6 +91,11 @@ class AddFriendViewController: UIViewController {
         }
         
         CoreDataStack.instance.saveContext()
+        
+        // setup notifications, these repeat yearly
+        notificationHelper.setBirthDaySoonNotification(friend: friend)
+        notificationHelper.setupBirthDayNotification(friend: friend)
+        
         ADataManager.shared.viewController.friendNames.append(friend.name!)
         ADataManager.shared.viewController.collectionView.reloadData()
         navigationController!.popViewController(animated: true)

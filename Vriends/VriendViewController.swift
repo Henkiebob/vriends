@@ -14,28 +14,34 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
     var friend:Friend!
     var gift: Gift!
     var note: Note!
-    @IBOutlet weak var lastSeenLabel: UILabel!
-    @IBOutlet weak var birthdayLabel: UILabel!
     var lastTimeSeen = 0
-    
     var selectedSegment = 1
-
     var giftsArray: [Gift] = []
     var notesArray: [Note] = []
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var textfield: UITextView!
     @IBOutlet weak var button: UIButton!
-    
     @IBOutlet weak var giftNoteTableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var lastSeenLabel: UILabel!
+    @IBOutlet weak var birthdayLabel: UILabel!
+    @IBOutlet weak var keepInTouchLabel: UILabel!
+    
+    @IBAction func RefreshFriendship(_ sender: Any) {
+        friend.lastSeen = Date()
+        CoreDataStack.instance.saveContext()
+        
+        let alert = UIAlertController(title: "You saw " + friend.name!, message: "Hope you had fun!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Woop woop", comment: "Default action"), style: .default, handler: { _ in
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         DataManager.shared.vriendViewController = self
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy"
@@ -43,10 +49,11 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         birthdayLabel.text = formatter.string(for: friend.birthdate)
         
         let calendar = NSCalendar.current
-        let date1 = calendar.startOfDay(for: friend.lastSeen!)
-        let date2 = calendar.startOfDay(for: Date())
-        let components = calendar.dateComponents([.day], from: date1, to: date2)
+        let lastSeen = calendar.startOfDay(for: friend.lastSeen!)
+        let today = calendar.startOfDay(for: Date())
+        let components = calendar.dateComponents([.day], from: lastSeen, to: today)
         lastTimeSeen = components.day!
+        let wishToSee = Int(friend.wishToSee!)
         
         switch lastTimeSeen {
         case 0:
@@ -55,6 +62,19 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
              lastSeenLabel.text = "Yesterday"
         default:
              lastSeenLabel.text = String(lastTimeSeen) + " days ago"
+        }
+        
+        switch wishToSee {
+        case 7:
+            keepInTouchLabel.text = "Weekly"
+        case 14:
+           keepInTouchLabel.text = "Monthly"
+        case 31:
+            keepInTouchLabel.text = "Every two months"
+        case 32:
+            keepInTouchLabel.text = "Annualy"
+        default:
+           keepInTouchLabel.text = "Weekly"
         }
        
         giftNoteTableView.dataSource = self
@@ -102,10 +122,11 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         
         actionButton.display(inViewController: self)
     }
+    
     @IBAction func segmentedControl(_ sender: UISegmentedControl) {
         if (sender.selectedSegmentIndex == 0){
             selectedSegment = 1
-        }else{
+        } else {
             selectedSegment = 2
         }
         giftNoteTableView.reloadData()
@@ -176,16 +197,16 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
             }
             
             CoreDataStack.instance.saveContext()
-            
             reload()
         }
         
     }
-    func reload(){
+    func reload() {
         getItems()
         giftNoteTableView.reloadData()
     }
-    func getItems(){
+    
+    func getItems() {
         let context = CoreDataStack.instance.managedObjectContext
         do {
             notesArray = try context.fetch(Note.fetchRequest())

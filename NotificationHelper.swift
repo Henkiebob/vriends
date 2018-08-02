@@ -28,91 +28,61 @@ class NotificationHelper {
         }
     }
     
-    func setupBirthDaySoonNotifications(friends: [Friend]) {
-        for friend in friends{
-            if( isBirthDayNextWeek(birthdate: friend.birthdate!) ) {
-                let triggerForSoon = UNTimeIntervalNotificationTrigger(timeInterval: 10,
-                                                                       repeats: false)
-                let content = UNMutableNotificationContent()
-                content.title = "Don't forget!"
-                content.body = "It's \(friend.name ?? "a friend") birthday next week"
-                content.sound = UNNotificationSound.default()
-
-                let identifier = "BirthdaySoon"
-                let request = UNNotificationRequest(identifier: identifier,
-                                                    content: content, trigger: triggerForSoon)
-                center.add(request, withCompletionHandler: { (error) in
-                    if let error = error {
-                        print(error)
-                    }
-                })
-            }
-        }
-    }
-    
-    func setupBirthdayTodayNotifications(friends: [Friend]) {
-        for friend in friends {
-            let content = UNMutableNotificationContent()
-            content.title = "Don't forget"
-            content.body = "It's \(friend.name ?? "a friend") birthday today!"
-            content.sound = UNNotificationSound.default()
-    
-            let triggerDate = Calendar.current.dateComponents([.day,.month,], from: friend.birthdate!)
-            let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
-    
-            let identifier = "Birthday today"
-            let request = UNNotificationRequest(identifier: identifier,
-                                                content: content, trigger: trigger)
-            center.add(request, withCompletionHandler: { (error) in
-                if let error = error {
-                    print(error)
-                }
-            })
-        }
-    }
-    
-    func friendShipFailingNotifications(friends: [Friend]) {
-        for friend in friends {
-            let calendar = NSCalendar.current
-            let date1 = calendar.startOfDay(for: friend.lastSeen!)
-            let date2 = calendar.startOfDay(for: Date())
-            let components = calendar.dateComponents([.day], from: date1, to: date2)
-            let badFriend = components.day! / Int(friend.wishToSee!)!
-            
-            if(badFriend > 9) {
-                let date = Date(timeIntervalSinceNow: 30)
-                let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: date)
-                let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
-                let content = UNMutableNotificationContent()
-                content.title = "Oh oh.."
-                content.body = "You haven't seen \(friend.name ?? "a friend") in a while!"
-                content.sound = UNNotificationSound.default()
-
-                let identifier = "SeeFriend"
-                let request = UNNotificationRequest(identifier: identifier,
-                                                    content: content, trigger: trigger)
-                center.add(request, withCompletionHandler: { (error) in
-                    if let error = error {
-                        print(error)
-                    }
-                })
-            }
-        }
-    }
-    
-    private func isBirthDayNextWeek(birthdate: Date) -> Bool {
-        let today = NSDate()
-        let cal = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
-        let weekfromnow = cal!.date(byAdding: NSCalendar.Unit.day, value: 7, to: today as Date, options: NSCalendar.Options.matchLast)
+    func setBirthDaySoonNotification(friend: Friend) {
+        let content = UNMutableNotificationContent()
+        content.title = "Don't forget"
+        content.body = "It's \(friend.name ?? "a friend") birthday soon!"
+        content.sound = UNNotificationSound.default()
         
-        // so let's check if the birthweek is the same as a week from now
-        let birthweek = NSCalendar.current.component(.weekOfYear, from: birthdate)
-        let nextweek  = NSCalendar.current.component(.weekOfYear, from: weekfromnow!)
+        var triggerDate = Calendar.current.dateComponents([.day,.month,], from: friend.triggerdate!)
+        triggerDate.hour = 12
+        triggerDate.minute = 00
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: true)
+        let identifier = "BirthdaySoon"
+        let request = UNNotificationRequest(identifier: identifier,
+                                            content: content, trigger: trigger)
+        center.add(request, withCompletionHandler: { (error) in
+            if let error = error {
+                print(error)
+            }
+        })
+    }
+    
+    func setupBirthDayNotification(friend: Friend) {
+        let content = UNMutableNotificationContent()
+        content.title = "Party time!"
+        content.body = "It's \(friend.name ?? "a friend") birthday today!"
+        content.sound = UNNotificationSound.default()
         
-        if(birthweek == nextweek) {
-            return true
-        } else {
-            return false
-        }
+        var triggerDate = Calendar.current.dateComponents([.day,.month,], from: friend.birthdate!)
+        triggerDate.hour = 12
+        triggerDate.minute = 00
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: true)
+        let identifier = "BirthdayToday"
+        let request = UNNotificationRequest(identifier: identifier,
+                                            content: content, trigger: trigger)
+        center.add(request, withCompletionHandler: { (error) in
+            if let error = error {
+                print(error)
+            }
+        })
+    }
+    
+    func setupNoteNotification(note: Note) {
+        let content = UNMutableNotificationContent()
+        content.title = note.title ?? "Note"
+        content.body = note.text ?? "Note"
+        content.sound = UNNotificationSound.default()
+        
+        let triggerDate = Calendar.current.dateComponents([.day,.month,.hour,.minute], from: note.date!)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+        let identifier = "Note"
+        let request = UNNotificationRequest(identifier: identifier,
+                                            content: content, trigger: trigger)
+        center.add(request, withCompletionHandler: { (error) in
+            if let error = error {
+                print(error)
+            }
+        })
     }
 }
