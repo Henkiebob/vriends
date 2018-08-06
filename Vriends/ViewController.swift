@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         isAppAlreadyLaunchedOnce()
+        setLayout()
 
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -32,7 +33,9 @@ class ViewController: UIViewController {
         formatter.dateStyle = .long
 
         notificationHelper.setupPermissions()
+    }
 
+    func setLayout(){
         //Anchors make collection view as big as the screen its on
         let parent = self.view
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -40,9 +43,8 @@ class ViewController: UIViewController {
         collectionView.heightAnchor.constraint(equalToConstant: (parent?.frame.height)!).isActive = true
         ADataManager.shared.viewController = self
         self.navigationItem.setHidesBackButton(true, animated:true);
-
     }
-
+    
     func isAppAlreadyLaunchedOnce()->Bool {
         let defaults = UserDefaults.standard
         if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce") {
