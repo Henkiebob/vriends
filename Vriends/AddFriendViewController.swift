@@ -13,7 +13,6 @@ class AddFriendViewController: UIViewController {
     @IBOutlet weak var birthDatePicker: UIDatePicker!
     @IBOutlet weak var wishSlider: UISlider!
     @IBOutlet weak var wishToSeeLabel: UILabel!
-    @IBOutlet weak var uiSwitch: UISwitch!
     @IBOutlet weak var colorCollectionView: UICollectionView!
     
     

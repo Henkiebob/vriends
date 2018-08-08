@@ -21,6 +21,7 @@
 		0A59361B20C9C7EC002A6AAC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A59361A20C9C7EC002A6AAC /* CoreDataStack.swift */; };
 		0A59361C20C9C7EC002A6AAC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A59361A20C9C7EC002A6AAC /* CoreDataStack.swift */; };
 		0A890495206F81D800A1C7EA /* VriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A890494206F81D800A1C7EA /* VriendViewController.swift */; };
+		0A8C54ED21147F27004BFF0C /* EditFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C54EC21147F27004BFF0C /* EditFriendViewController.swift */; };
 		0A8EBB6620E28B4E004F3F4C /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8EBB6520E28B4E004F3F4C /* NotificationHelper.swift */; };
 		0A9FA031204446A7002D993F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9FA030204446A7002D993F /* AppDelegate.swift */; };
 		0A9FA033204446A7002D993F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9FA032204446A7002D993F /* ViewController.swift */; };
@@ -82,6 +83,7 @@
 		0A59361A20C9C7EC002A6AAC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		0A77457820C185A600F4EADE /* Vriends.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vriends.entitlements; sourceTree = "<group>"; };
 		0A890494206F81D800A1C7EA /* VriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VriendViewController.swift; sourceTree = "<group>"; };
+		0A8C54EC21147F27004BFF0C /* EditFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFriendViewController.swift; sourceTree = "<group>"; };
 		0A8EBB6520E28B4E004F3F4C /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		0A9FA02D204446A7002D993F /* Vriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A9FA030204446A7002D993F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				DA53848720B9E3730055D5BD /* RoundedView.swift */,
 				DA37D3B820CC5176002D7E16 /* UIViewExtension.swift */,
 				DA7C194620C2DBBC00BF16C7 /* GiftTableViewController.swift */,
+				0A8C54EC21147F27004BFF0C /* EditFriendViewController.swift */,
 			);
 			path = Vriends;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 			files = (
 				0A890495206F81D800A1C7EA /* VriendViewController.swift in Sources */,
 				0A9FA033204446A7002D993F /* ViewController.swift in Sources */,
+				0A8C54ED21147F27004BFF0C /* EditFriendViewController.swift in Sources */,
 				DA7C194720C2DBBC00BF16C7 /* GiftTableViewController.swift in Sources */,
 				0A8EBB6620E28B4E004F3F4C /* NotificationHelper.swift in Sources */,
 				DA1D98842048C9620004BB78 /* FriendCell.swift in Sources */,

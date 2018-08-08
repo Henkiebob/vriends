@@ -33,6 +33,15 @@ class ViewController: UIViewController {
 
         notificationHelper.setupPermissions()
 
+        // @DEBUG
+//        notificationHelper.center.getPendingNotificationRequests { (notifications) in
+//            print("Count: \(notifications.count)")
+//            for item in notifications {
+//                print(item.content.title)
+//                print(item.trigger)
+//            }
+//        }
+        
         //Anchors make collection view as big as the screen its on
         let parent = self.view
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -62,7 +71,6 @@ class ViewController: UIViewController {
         reload()
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -108,45 +116,23 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "friendCollectionCell", for: indexPath) as! friendCollectionCell
         let calendar = NSCalendar.current
-      //  let birthdate = friends[indexPath.row].birthdate
-//        let weekOfYearNow = calendar.component(.weekOfYear, from: Date())
-//        let weekOfYearBirthDay = calendar.component(.weekOfYear, from: birthdate!)
-//
-//        if (weekOfYearNow == (weekOfYearBirthDay + 1)) {
-//            cell.birthdayImage.image = UIImage(named: "birthday-gift" )
-//        } else {
-//            cell.birthdayImage.image = nil
-//        }
-        
-        cell.nameLabel.fullWidth(parent: cell)
         let friend = friends[indexPath.row]
-        var lastSeenText = "Been a while"
         let lastSeenDate = calendar.startOfDay(for: friend.lastSeen!)
         let today = calendar.startOfDay(for: Date())
         let components = calendar.dateComponents([.day], from: lastSeenDate, to: today)
+        
         var badFriend = components.day! / Int(friend.wishToSee!)!
-        let lastSeenComponent = calendar.dateComponents([.day], from: lastSeenDate, to: today)
         
         // can't be higher then 12
         if badFriend > 12 {
             badFriend = 12
         }
         
-        lastTimeSeen = lastSeenComponent.day!
-        
-        switch lastTimeSeen {
-            case 0:
-                lastSeenText = "Today"
-            case 1:
-                lastSeenText = "Yesterday"
-            default:
-                lastSeenText = String(lastTimeSeen) + " days ago"
-        }
-        
         cell.layer.cornerRadius = 8
         cell.leaf.image = UIImage(named: flower[badFriend])
         cell.nameLabel?.text = friend.name!
         cell.backgroundColor = addFriend.uiColorFromHex(rgbValue: Int(friends[indexPath.row].favoriteColor!)!)
+        cell.nameLabel.fullWidth(parent: cell)
 
         return cell
     }
@@ -160,21 +146,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return 10
     }
 
-}
-
-extension UIView {
-    func rotate360Degrees(duration: CFTimeInterval = 0.5, completionDelegate: AnyObject? = nil) {
-        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
-        rotateAnimation.fromValue = 0.0
-        rotateAnimation.toValue = CGFloat(Double.pi * 5.0)
-        rotateAnimation.duration = duration
-
-
-        if let delegate: AnyObject = completionDelegate {
-            rotateAnimation.delegate = delegate as? CAAnimationDelegate
-        }
-        self.layer.add(rotateAnimation, forKey: nil)
-    }
 }
 
 class ADataManager {
