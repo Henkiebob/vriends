@@ -41,7 +41,7 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
             UIAlertAction in
             self.navigationController!.popViewController(animated: true)
         }
-
+        
         alert.addAction(action)
         
     }

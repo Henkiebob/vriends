@@ -92,7 +92,6 @@
 		0A9FA037204446A7002D993F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A9FA03A204446A7002D993F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A9FA03C204446A7002D993F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0AA97E8820D97ED900A92CA4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		34C0CE98276C5A7A0792FFA6 /* Pods-Vriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vriends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vriends/Pods-Vriends.debug.xcconfig"; sourceTree = "<group>"; };
 		76F6A9F4E46F39609EF2C2AF /* Pods_Vriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF7C97660F5BA575F2AD9A2B /* Pods-Vriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vriends.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vriends/Pods-Vriends.release.xcconfig"; sourceTree = "<group>"; };
@@ -431,7 +430,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				0A9FA035204446A7002D993F /* Base */,
-				0AA97E8820D97ED900A92CA4 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -609,7 +607,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P9KK68PA63;
 				INFOPLIST_FILE = Vriends/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Vriends.Tjerk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -630,7 +628,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P9KK68PA63;
 				INFOPLIST_FILE = Vriends/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Vriends.Tjerk;
 				PRODUCT_NAME = "$(TARGET_NAME)";

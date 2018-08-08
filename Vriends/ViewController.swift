@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        isAppAlreadyLaunchedOnce()
+        _ = isAppAlreadyLaunchedOnce()
 
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -34,13 +34,13 @@ class ViewController: UIViewController {
         notificationHelper.setupPermissions()
 
         // @DEBUG
-//        notificationHelper.center.getPendingNotificationRequests { (notifications) in
-//            print("Count: \(notifications.count)")
-//            for item in notifications {
-//                print(item.content.title)
-//                print(item.trigger)
-//            }
-//        }
+        notificationHelper.center.getPendingNotificationRequests { (notifications) in
+            print("Count: \(notifications.count)")
+            for item in notifications {
+                print(item.content.title)
+                print(item.trigger)
+            }
+        }
         
         //Anchors make collection view as big as the screen its on
         let parent = self.view
@@ -91,7 +91,7 @@ class ViewController: UIViewController {
             print("I can't fetch any friends from the database, hah loser!")
         }
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "mainToProfileSegue", let destination = segue.destination as? VriendViewController {
             if let cell = sender as? UICollectionViewCell, let indexPath = collectionView.indexPath(for: cell) {
@@ -123,10 +123,17 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         
         var badFriend = components.day! / Int(friend.wishToSee!)!
         
+        print(badFriend)
+        
         // can't be higher then 12
         if badFriend > 12 {
             badFriend = 12
         }
+        
+        // can't get this to work quite yet
+//        if badFriend > 7 {
+//            notificationHelper.setBadFriendNotification(friend: friend)
+//        }
         
         cell.layer.cornerRadius = 8
         cell.leaf.image = UIImage(named: flower[badFriend])
