@@ -25,13 +25,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         _ = isAppAlreadyLaunchedOnce()
-
+//        setLayout()
         collectionView.dataSource = self
         collectionView.delegate = self
         formatter.dateFormat = "dd/mm/yyyy"
         formatter.dateStyle = .long
 
         notificationHelper.setupPermissions()
+    
 
         // @DEBUG
         notificationHelper.center.getPendingNotificationRequests { (notifications) in
@@ -41,17 +42,17 @@ class ViewController: UIViewController {
                 print(item.trigger)
             }
         }
-        
-        //Anchors make collection view as big as the screen its on
-        let parent = self.view
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.widthAnchor.constraint(equalToConstant: (parent?.frame.width)!).isActive = true
-        collectionView.heightAnchor.constraint(equalToConstant: (parent?.frame.height)!).isActive = true
-        ADataManager.shared.viewController = self
-        self.navigationItem.setHidesBackButton(true, animated:true);
-
     }
-
+//     func setLayout(){
+//        //Anchors make collection view as big as the screen its on
+//        let parent = self.view
+//        collectionView.translatesAutoresizingMaskIntoConstraints = false
+//        collectionView.widthAnchor.constraint(equalToConstant: (parent?.frame.width)!).isActive = true
+//        collectionView.heightAnchor.constraint(equalToConstant: (parent?.frame.height)!).isActive = true
+//        ADataManager.shared.viewController = self
+//        self.navigationItem.setHidesBackButton(true, animated:true);
+//    }
+    
     func isAppAlreadyLaunchedOnce()->Bool {
         let defaults = UserDefaults.standard
         if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce") {
