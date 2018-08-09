@@ -85,4 +85,23 @@ class NotificationHelper {
             }
         })
     }
+    
+    func setBadFriendNotification(friend: Friend) {
+        let content = UNMutableNotificationContent()
+        content.title = "Oh oh.."
+        content.body = "You haven't seen \(friend.name ?? "a friend") for a while now"
+        content.sound = UNNotificationSound.default()
+        let today_in_10_minutes = Date(timeIntervalSinceNow: 60)
+        let triggerDate = Calendar.current.dateComponents([.day,.month,.hour,.minute], from: today_in_10_minutes)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+        let identifier = "BadFriend"
+        let request = UNNotificationRequest(identifier: identifier,
+                                            content: content, trigger: trigger)
+        center.add(request, withCompletionHandler: { (error) in
+            if let error = error {
+                print(error)
+            }
+        })
+    }
+    
 }

@@ -21,22 +21,29 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var textfield: UITextView!
-    @IBOutlet weak var button: UIButton!
     @IBOutlet weak var giftNoteTableView: UITableView!
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var lastSeenLabel: UILabel!
     @IBOutlet weak var birthdayLabel: UILabel!
     @IBOutlet weak var keepInTouchLabel: UILabel!
+    
+    @IBAction func EditFriend(_ sender: Any) {
+         self.performSegue(withIdentifier: "EditFriendSegue", sender: nil)
+    }
     
     @IBAction func RefreshFriendship(_ sender: Any) {
         friend.lastSeen = Date()
         CoreDataStack.instance.saveContext()
         
         let alert = UIAlertController(title: "You saw " + friend.name!, message: "Hope you had fun!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Woop woop", comment: "Default action"), style: .default, handler: { _ in
-        }))
         self.present(alert, animated: true, completion: nil)
+        
+        let action = UIAlertAction(title: "Woop Woop", style: UIAlertActionStyle.cancel) {
+            UIAlertAction in
+            self.navigationController!.popViewController(animated: true)
+        }
+        
+        alert.addAction(action)
+        
     }
     
     override func viewDidLoad() {
@@ -132,21 +139,6 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         giftNoteTableView.reloadData()
     }
     
-    @IBAction func deleteVriend(_ sender: Any) {
-        let alertController = UIAlertController(title: "Are you sure you want to delete " + friend.name! + " ?", message: "This will permanently delete this vriend from Vriends.", preferredStyle: .actionSheet)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in }
-        alertController.addAction(cancelAction)
-        
-        let destroyAction = UIAlertAction(title: "Delete", style: .destructive) { action in
-            let context = CoreDataStack.instance.managedObjectContext
-            context.delete(self.friend)
-            CoreDataStack.instance.saveContext()
-            self.navigationController?.popViewController(animated: true)
-        }
-        
-        alertController.addAction(destroyAction)
-        self.present(alertController, animated: true) {}
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(selectedSegment == 1) {
@@ -223,6 +215,10 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
                 destination.friend = friend
         }
         if segue.identifier == "addNoteSegue", let destination = segue.destination as? NoteViewController {
+            let friend = self.friend
+            destination.friend = friend
+        }
+        if segue.identifier == "EditFriendSegue", let destination = segue.destination as? EditFriendViewController {
             let friend = self.friend
             destination.friend = friend
         }
