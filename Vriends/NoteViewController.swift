@@ -48,7 +48,7 @@ class NoteViewController: UIViewController, UITextViewDelegate {
         let panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(panGesture(_:)))
         view.addGestureRecognizer(panGesture)
         
-        noteInfo.text = "Your note here"
+        noteInfo.text = "Your reminder here"
         noteInfo.textColor = .lightGray
         
         noteInfo.delegate = self

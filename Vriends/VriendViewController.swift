@@ -112,7 +112,7 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         }
         
         let addNoteButton = actionButton.addItem()
-        addNoteButton.titleLabel.text = "Add note"
+        addNoteButton.titleLabel.text = "Add reminder"
         addNoteButton.imageView.image = UIImage(named: "add-note")
         addNoteButton.action = { item in
             self.performSegue(withIdentifier: "addNoteSegue", sender: nil)
