@@ -94,15 +94,6 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         if let noteForFriend = friend.note {
             notesArray = noteForFriend.map({$0}) as! [Note]
         }
-        segmentedControl.backgroundColor = .clear
-        segmentedControl.tintColor = .clear
-        segmentedControl.setTitleTextAttributes([
-            NSAttributedStringKey.foregroundColor: UIColor.lightGray
-            ], for: .normal)
-        
-        segmentedControl.setTitleTextAttributes([
-            NSAttributedStringKey.foregroundColor: UIColor.blue
-            ], for: .selected)
         
         let actionButton = JJFloatingActionButton()
         actionButton.buttonColor = UIColor(red: 0.27, green: 0.66, blue: 0.95, alpha: 1)

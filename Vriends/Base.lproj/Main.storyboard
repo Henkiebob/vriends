@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BdH-Vv-ueL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.14" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BdH-Vv-ueL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -170,7 +169,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Gift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKm-fz-9aR">
-                                        <rect key="frame" x="144" y="0.0" width="66.5" height="25"/>
+                                        <rect key="frame" x="144.5" y="0.0" width="66.5" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="C4M-4I-Onm"/>
                                         </constraints>
@@ -280,7 +279,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whq-rv-Zkr">
-                                        <rect key="frame" x="122" y="0.0" width="112" height="21"/>
+                                        <rect key="frame" x="121.5" y="0.0" width="112" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="mYJ-h4-VKy"/>
                                         </constraints>
@@ -525,8 +524,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TFU-40-ygn">
-                                <rect key="frame" x="0.0" y="79" width="375" height="588"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TFU-40-ygn">
+                                <rect key="frame" x="0.0" y="64" width="375" height="588"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vriend name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSi-at-62f">
                                         <rect key="frame" x="10" y="10" width="289" height="45"/>
@@ -560,17 +559,6 @@
                                             <constraint firstAttribute="height" constant="24" id="a5r-rT-V6V"/>
                                         </constraints>
                                     </imageView>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u7i-BJ-tBL">
-                                        <rect key="frame" x="107.5" y="270" width="159" height="29"/>
-                                        <color key="backgroundColor" red="0.15686274509803921" green="0.57647058823529407" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
-                                        <segments>
-                                            <segment title="Reminders"/>
-                                            <segment title="Gifts"/>
-                                        </segments>
-                                        <connections>
-                                            <action selector="segmentedControl:" destination="J9p-gf-Mtd" eventType="valueChanged" id="Rq9-eE-zL9"/>
-                                        </connections>
-                                    </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep in touch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYw-eb-j9d">
                                         <rect key="frame" x="45" y="99" width="320" height="24"/>
                                         <constraints>
@@ -688,13 +676,24 @@
                                         <color key="textColor" red="0.42745098040000001" green="0.45882352939999999" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wVr-Bx-Qet">
+                                        <rect key="frame" x="108" y="262" width="159" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="Reminders"/>
+                                            <segment title="Gifts"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.15686274510000001" green="0.57647058819999997" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="segmentedControl:" destination="J9p-gf-Mtd" eventType="valueChanged" id="1LE-QB-vPB"/>
+                                        </connections>
+                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ZAI-yY-1WA" secondAttribute="trailing" id="3Dx-r0-zOq"/>
                                     <constraint firstItem="xDr-wQ-w4t" firstAttribute="leading" secondItem="TFU-40-ygn" secondAttribute="leading" id="9q8-Qi-aS8"/>
                                     <constraint firstItem="Pt8-8E-d6T" firstAttribute="leading" secondItem="f28-2w-ojg" secondAttribute="trailing" constant="10" id="Cc7-qc-q7F"/>
-                                    <constraint firstItem="u7i-BJ-tBL" firstAttribute="centerX" secondItem="TFU-40-ygn" secondAttribute="centerX" id="Exx-MQ-qVj"/>
                                     <constraint firstItem="uYw-eb-j9d" firstAttribute="leading" secondItem="dDw-5U-dRz" secondAttribute="trailing" constant="11" id="FgV-gB-uc4"/>
                                     <constraint firstItem="bFc-FG-yQA" firstAttribute="leading" secondItem="R6E-3X-3Gs" secondAttribute="trailing" constant="10" id="FoA-6v-QyG"/>
                                     <constraint firstItem="ZAI-yY-1WA" firstAttribute="top" secondItem="TFU-40-ygn" secondAttribute="top" id="K7m-p0-zhF"/>
@@ -707,7 +706,6 @@
                                     <constraint firstItem="zSi-at-62f" firstAttribute="leading" secondItem="TFU-40-ygn" secondAttribute="leading" constant="10" id="Wj4-0b-gd3"/>
                                     <constraint firstAttribute="trailing" secondItem="uYw-eb-j9d" secondAttribute="trailing" constant="10" id="aOl-OE-VZ7"/>
                                     <constraint firstItem="zSi-at-62f" firstAttribute="top" secondItem="TFU-40-ygn" secondAttribute="top" constant="10" id="bRQ-7X-g6t"/>
-                                    <constraint firstItem="xDr-wQ-w4t" firstAttribute="top" secondItem="u7i-BJ-tBL" secondAttribute="bottom" id="g0Q-ML-VaP"/>
                                     <constraint firstItem="bFc-FG-yQA" firstAttribute="top" secondItem="zSi-at-62f" secondAttribute="bottom" constant="10" id="hXK-Aa-xtt"/>
                                     <constraint firstItem="R6E-3X-3Gs" firstAttribute="top" secondItem="zSi-at-62f" secondAttribute="bottom" constant="10" id="l7d-A3-Neg"/>
                                     <constraint firstItem="Pt8-8E-d6T" firstAttribute="top" secondItem="uYw-eb-j9d" secondAttribute="bottom" constant="10" id="m6S-MF-zVb"/>
@@ -750,7 +748,7 @@
                         <outlet property="keepInTouchLabel" destination="uYw-eb-j9d" id="J8o-Uj-hfU"/>
                         <outlet property="lastSeenLabel" destination="bFc-FG-yQA" id="rPR-TS-sgO"/>
                         <outlet property="nameLabel" destination="zSi-at-62f" id="efp-wl-4fF"/>
-                        <outlet property="segmentedControl" destination="u7i-BJ-tBL" id="Z4C-ma-4bF"/>
+                        <outlet property="segmentedControl" destination="wVr-Bx-Qet" id="Xfm-SK-Z79"/>
                         <segue destination="DgY-2b-dWQ" kind="presentation" identifier="addGiftSegue" id="evx-5h-bXW"/>
                         <segue destination="baM-nk-Dhs" kind="presentation" identifier="addNoteSegue" id="iye-xl-RQj"/>
                     </connections>

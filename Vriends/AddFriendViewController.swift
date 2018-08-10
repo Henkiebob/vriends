@@ -96,7 +96,7 @@ class AddFriendViewController: UIViewController {
         notificationHelper.setupBirthDayNotification(friend: friend)
         
         ADataManager.shared.viewController.friendNames.append(friend.name!)
-        ADataManager.shared.viewController.collectionView.reloadData()
+//        ADataManager.shared.viewController.collectionView.reloadData()
         navigationController!.popViewController(animated: true)
     }
     
