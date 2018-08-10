@@ -73,13 +73,12 @@ class AddFriendViewController: UIViewController {
         if(friendNameTextField.text != nil) {
             friend.name = friendNameTextField.text
             friend.birthdate = birthDatePicker.date
-            //friend.lastSeen = Date()
+            friend.lastSeen = Date()
             friend.triggerdate = Calendar.current.date(byAdding: .day, value: -7, to: friend.birthdate!)
             
             // debug
-            let coupleOfDaysBack = Calendar.current.date(byAdding: .day, value: -80, to: Date())
-         
-            friend.lastSeen = coupleOfDaysBack
+            //let coupleOfDaysBack = Calendar.current.date(byAdding: .day, value: -80, to: Date())
+            //friend.lastSeen = coupleOfDaysBack
             
             if(selectedColor == ""){
                 friend.favoriteColor = String(colorArray[Int.random(range: 0...12)])
