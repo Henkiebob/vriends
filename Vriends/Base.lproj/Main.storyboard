@@ -1014,7 +1014,7 @@
         <!--Navigation Controller-->
         <scene sceneID="W4B-Jy-zkF">
             <objects>
-                <navigationController id="BdH-Vv-ueL" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Navigation" id="BdH-Vv-ueL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yhm-Tk-COZ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

@@ -21,7 +21,7 @@ class PageViewController: UIPageViewController {
             self.getViewController(withIdentifier: "Page3"),
             self.getViewController(withIdentifier: "Page4"),
             self.getViewController(withIdentifier: "Page5"),
-            self.getViewController(withIdentifier: "Vriends")
+            self.getViewController(withIdentifier: "Page1")
         ]
     }()
     
@@ -102,8 +102,15 @@ extension PageViewController: UIPageViewControllerDelegate, UIPageViewController
         self.pageControl.currentPage = pages.index(of: pageContentViewController)!
         if pageControl.currentPage == 5 {
             pageControl.removeFromSuperview()
+            
+            let transition = CATransition()
+            transition.type = kCATransitionFade
+            transition.subtype = kCATransitionMoveIn
+            self.navigationController?.view.layer.add(transition, forKey: kCATransition)
+            
+            self.dismiss(animated: true, completion: {})
             self.navigationController?.isNavigationBarHidden = false
-            navigationController!.popViewController(animated: true)
+            self.navigationController?.popViewController(animated: true)
         }
     }
 }
