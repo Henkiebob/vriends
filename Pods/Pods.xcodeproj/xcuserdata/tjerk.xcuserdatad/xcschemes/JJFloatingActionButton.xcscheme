@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0D066F5E6B689BDB6C2D3A1FDB56E3EB"
+               BlueprintIdentifier = "F437DF4A7F22FDECCDF603E76D5454DF"
                BlueprintName = "JJFloatingActionButton"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "JJFloatingActionButton.framework">

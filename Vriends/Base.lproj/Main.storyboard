@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BdH-Vv-ueL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BdH-Vv-ueL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -125,7 +125,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jaS-mH-8b4">
-                                <rect key="frame" x="15" y="35" width="345" height="622"/>
+                                <rect key="frame" x="15" y="79" width="345" height="578"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Subject" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tCB-6f-3hr">
                                         <rect key="frame" x="0.0" y="45" width="345" height="34"/>
@@ -169,7 +169,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Gift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKm-fz-9aR">
-                                        <rect key="frame" x="141.5" y="0.0" width="63" height="25"/>
+                                        <rect key="frame" x="141" y="0.0" width="63" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="C4M-4I-Onm"/>
                                         </constraints>
@@ -225,7 +225,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UOz-jc-9pX">
-                                <rect key="frame" x="15" y="35" width="345" height="627"/>
+                                <rect key="frame" x="15" y="79" width="345" height="583"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Reminder" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CZe-YK-OOQ">
                                         <rect key="frame" x="0.0" y="45" width="345" height="34"/>
@@ -755,8 +755,8 @@
                         <outlet property="lastSeenLabel" destination="bFc-FG-yQA" id="rPR-TS-sgO"/>
                         <outlet property="nameLabel" destination="zSi-at-62f" id="efp-wl-4fF"/>
                         <outlet property="segmentedControl" destination="wVr-Bx-Qet" id="Xfm-SK-Z79"/>
-                        <segue destination="DgY-2b-dWQ" kind="presentation" identifier="addGiftSegue" id="evx-5h-bXW"/>
-                        <segue destination="baM-nk-Dhs" kind="presentation" identifier="addNoteSegue" id="iye-xl-RQj"/>
+                        <segue destination="DgY-2b-dWQ" kind="show" identifier="addGiftSegue" id="evx-5h-bXW"/>
+                        <segue destination="baM-nk-Dhs" kind="show" identifier="addNoteSegue" id="iye-xl-RQj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZp-es-VEP" userLabel="First Responder" sceneMemberID="firstResponder"/>

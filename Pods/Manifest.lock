@@ -1,5 +1,5 @@
 PODS:
-  - JJFloatingActionButton (0.9.1)
+  - JJFloatingActionButton (0.10.0)
 
 DEPENDENCIES:
   - JJFloatingActionButton
@@ -9,7 +9,7 @@ SPEC REPOS:
     - JJFloatingActionButton
 
 SPEC CHECKSUMS:
-  JJFloatingActionButton: ea596ce87923e5c9c55e8157ae2a91968c1512c3
+  JJFloatingActionButton: 7e9e924d0819ebeb6a566dade9d5dbed63ff8add
 
 PODFILE CHECKSUM: f386e6a90ed359ad5c8505166e317396ec7fbef5
 

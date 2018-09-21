@@ -13,7 +13,6 @@
 		0A02328120BF33FC00FC9E5E /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A02328020BF33FC00FC9E5E /* Deck.swift */; };
 		0A02328320BF343300FC9E5E /* ShareSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A02328220BF343300FC9E5E /* ShareSelectViewController.swift */; };
 		0A08405920B815EA00CF1F43 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A08405820B815EA00CF1F43 /* Friend.swift */; };
-		0A08406A20B8477500CF1F43 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0A08406920B8477500CF1F43 /* Podfile */; };
 		0A0C42F620C1981D00BB0F89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9FA037204446A7002D993F /* Assets.xcassets */; };
 		0A51B3BD20C18A7100DF28DF /* ShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0A02326F20BF1F0700FC9E5E /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0A54CB6220455D38007B68A4 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A54CB6120455D38007B68A4 /* AddFriendViewController.swift */; };
@@ -28,7 +27,7 @@
 		0A9FA036204446A7002D993F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9FA034204446A7002D993F /* Main.storyboard */; };
 		0A9FA038204446A7002D993F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9FA037204446A7002D993F /* Assets.xcassets */; };
 		0A9FA03B204446A7002D993F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9FA039204446A7002D993F /* LaunchScreen.storyboard */; };
-		596F897F166F8A3CF3B4187F /* Pods_Vriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F6A9F4E46F39609EF2C2AF /* Pods_Vriends.framework */; };
+		C36BEEF90DECFF9BF629C95A /* Pods_Vriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E05015356F756ED0385AE29 /* Pods_Vriends.framework */; };
 		DA1D98842048C9620004BB78 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D98832048C9620004BB78 /* FriendCell.swift */; };
 		DA32EBF520BCA717003B5032 /* CardPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32EBF420BCA717003B5032 /* CardPresentationController.swift */; };
 		DA32EBF720BCA79F003B5032 /* CardAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32EBF620BCA79F003B5032 /* CardAnimationController.swift */; };
@@ -76,7 +75,6 @@
 		0A02328020BF33FC00FC9E5E /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		0A02328220BF343300FC9E5E /* ShareSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSelectViewController.swift; sourceTree = "<group>"; };
 		0A08405820B815EA00CF1F43 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
-		0A08406920B8477500CF1F43 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		0A51B3BF20C1971100DF28DF /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension.entitlements; sourceTree = "<group>"; };
 		0A54CB6120455D38007B68A4 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		0A54CB6420456116007B68A4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -92,9 +90,9 @@
 		0A9FA037204446A7002D993F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A9FA03A204446A7002D993F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A9FA03C204446A7002D993F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		34C0CE98276C5A7A0792FFA6 /* Pods-Vriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vriends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vriends/Pods-Vriends.debug.xcconfig"; sourceTree = "<group>"; };
-		76F6A9F4E46F39609EF2C2AF /* Pods_Vriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF7C97660F5BA575F2AD9A2B /* Pods-Vriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vriends.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vriends/Pods-Vriends.release.xcconfig"; sourceTree = "<group>"; };
+		1E05015356F756ED0385AE29 /* Pods_Vriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50C1ADF9FD174AD04EFDCB62 /* Pods-Vriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vriends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vriends/Pods-Vriends.debug.xcconfig"; sourceTree = "<group>"; };
+		85AE63D7385B757ED98F0E8B /* Pods-Vriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vriends.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vriends/Pods-Vriends.release.xcconfig"; sourceTree = "<group>"; };
 		DA1D98832048C9620004BB78 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		DA32EBF420BCA717003B5032 /* CardPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresentationController.swift; sourceTree = "<group>"; };
 		DA32EBF620BCA79F003B5032 /* CardAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAnimationController.swift; sourceTree = "<group>"; };
@@ -120,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				596F897F166F8A3CF3B4187F /* Pods_Vriends.framework in Frameworks */,
+				C36BEEF90DECFF9BF629C95A /* Pods_Vriends.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,8 +147,8 @@
 				0A9FA02F204446A7002D993F /* Vriends */,
 				0A02327020BF1F0700FC9E5E /* ShareExtension */,
 				0A9FA02E204446A7002D993F /* Products */,
-				1ACFA57638587DE00F9F42E2 /* Pods */,
-				18B80A6973BBF4F9B5F5AF6B /* Frameworks */,
+				86F48F2EA5F48B11A0718C5D /* Pods */,
+				2C43B9CCBDBD77AC3F22996A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				0A77457820C185A600F4EADE /* Vriends.entitlements */,
-				0A08406920B8477500CF1F43 /* Podfile */,
 				0A9FA030204446A7002D993F /* AppDelegate.swift */,
 				0A9FA032204446A7002D993F /* ViewController.swift */,
 				DAEA897820C037B900D439AE /* NoteViewController.swift */,
@@ -194,19 +191,19 @@
 			path = Vriends;
 			sourceTree = "<group>";
 		};
-		18B80A6973BBF4F9B5F5AF6B /* Frameworks */ = {
+		2C43B9CCBDBD77AC3F22996A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				76F6A9F4E46F39609EF2C2AF /* Pods_Vriends.framework */,
+				1E05015356F756ED0385AE29 /* Pods_Vriends.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1ACFA57638587DE00F9F42E2 /* Pods */ = {
+		86F48F2EA5F48B11A0718C5D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				34C0CE98276C5A7A0792FFA6 /* Pods-Vriends.debug.xcconfig */,
-				BF7C97660F5BA575F2AD9A2B /* Pods-Vriends.release.xcconfig */,
+				50C1ADF9FD174AD04EFDCB62 /* Pods-Vriends.debug.xcconfig */,
+				85AE63D7385B757ED98F0E8B /* Pods-Vriends.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -235,12 +232,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A9FA03F204446A7002D993F /* Build configuration list for PBXNativeTarget "Vriends" */;
 			buildPhases = (
-				3A706B5993FD86B5A56BAFB6 /* [CP] Check Pods Manifest.lock */,
+				8EAA19B6D7698FE2CDBD2486 /* [CP] Check Pods Manifest.lock */,
 				0A9FA029204446A7002D993F /* Sources */,
 				0A9FA02A204446A7002D993F /* Frameworks */,
 				0A9FA02B204446A7002D993F /* Resources */,
-				100F87768E2A010964C855E6 /* [CP] Embed Pods Frameworks */,
 				0A51B3BE20C18A7100DF28DF /* Embed App Extensions */,
+				8F5303ED0A8C9EE8F7BA9287 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -319,7 +316,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A08406A20B8477500CF1F43 /* Podfile in Resources */,
 				0A9FA03B204446A7002D993F /* LaunchScreen.storyboard in Resources */,
 				0A9FA038204446A7002D993F /* Assets.xcassets in Resources */,
 				0A9FA036204446A7002D993F /* Main.storyboard in Resources */,
@@ -329,40 +325,48 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		100F87768E2A010964C855E6 /* [CP] Embed Pods Frameworks */ = {
+		8EAA19B6D7698FE2CDBD2486 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Vriends/Pods/Target Support Files/Pods-Vriends/Pods-Vriends-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/JJFloatingActionButton/JJFloatingActionButton.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JJFloatingActionButton.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Vriends/Pods/Target Support Files/Pods-Vriends/Pods-Vriends-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3A706B5993FD86B5A56BAFB6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Vriends-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F5303ED0A8C9EE8F7BA9287 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Vriends/Pods-Vriends-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/JJFloatingActionButton/JJFloatingActionButton.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JJFloatingActionButton.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Vriends/Pods-Vriends-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -452,6 +456,7 @@
 				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = P9KK68PA63;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
@@ -462,6 +467,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -472,6 +478,7 @@
 				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = P9KK68PA63;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
@@ -482,6 +489,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -518,6 +526,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 6;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -541,6 +550,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -577,6 +587,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 6;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -593,18 +604,20 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
 		0A9FA040204446A7002D993F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34C0CE98276C5A7A0792FFA6 /* Pods-Vriends.debug.xcconfig */;
+			baseConfigurationReference = 50C1ADF9FD174AD04EFDCB62 /* Pods-Vriends.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Vriends/Vriends.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = P9KK68PA63;
 				INFOPLIST_FILE = Vriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -614,18 +627,20 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		0A9FA041204446A7002D993F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF7C97660F5BA575F2AD9A2B /* Pods-Vriends.release.xcconfig */;
+			baseConfigurationReference = 85AE63D7385B757ED98F0E8B /* Pods-Vriends.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Vriends/Vriends.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = P9KK68PA63;
 				INFOPLIST_FILE = Vriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -635,6 +650,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
