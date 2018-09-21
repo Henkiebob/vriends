@@ -43,15 +43,6 @@ class ViewController: UIViewController {
             }
         }
     }
-//     func setLayout(){
-//        //Anchors make collection view as big as the screen its on
-//        let parent = self.view
-//        collectionView.translatesAutoresizingMaskIntoConstraints = false
-//        collectionView.widthAnchor.constraint(equalToConstant: (parent?.frame.width)!).isActive = true
-//        collectionView.heightAnchor.constraint(equalToConstant: (parent?.frame.height)!).isActive = true
-//        ADataManager.shared.viewController = self
-//        self.navigationItem.setHidesBackButton(true, animated:true);
-//    }
     
     func isAppAlreadyLaunchedOnce()->Bool {
         let defaults = UserDefaults.standard

@@ -28,6 +28,10 @@
 			<dict>
 				<key>NSExtensionActivationSupportsWebURLWithMaxCount</key>
 				<integer>1</integer>
+				<key>NSExtensionActivationSupportsImageWithMaxCount</key>
+				<string>1</string>
+				<key>NSExtensionActivationSupportsText</key>
+				<true/>
 			</dict>
 			<key>NSExtensionJavaScriptPreprocessingFile</key>
 			<string>ShareScript</string>

@@ -12,5 +12,3 @@ import CoreData
 public class FriendClass: NSManagedObject {
     @NSManaged var name: String?
 }
-
-

@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+
 class CoreDataStack {
     static let instance = CoreDataStack()
     
@@ -16,7 +17,7 @@ class CoreDataStack {
         //        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         //NSURL *storeURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.mycontainer"];
         
-        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.tjerk.vriends")
+        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.go.Vriends")
         
         //        let url = urls[urls.count-1]
         print("Connecting to SQLite-database at \(url!)")
@@ -65,6 +66,29 @@ class CoreDataStack {
     
     // MARK: - Core Data Saving support
     
+    
+    var fetchedFriends = [Friend]()
+    
+    func storeGifts(withTitle title:String, withText text:String, withFriend friend:Friend){
+        let gift = Gift(context: managedObjectContext)
+        print(title, text, friend)
+        gift.note = text
+        gift.title = title
+        storeFriend(withGift: gift, withFriend: friend)
+    }
+    
+    func storeFriend(withGift gift:Gift, withFriend friend:Friend){
+        friend.addToGift(gift)
+        try! CoreDataStack.instance.saveContext()
+        fetchFriend()
+//        DataManager.shared.vriendViewController.giftsArray.append(gift)
+//        DataManager.shared.vriendViewController.giftNoteTableView.reloadData()
+    }
+    
+    func fetchFriend(){
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Friend")
+        self.fetchedFriends = try! managedObjectContext.fetch(fetchRequest) as! [Friend]
+    }
     func saveContext () {
         if managedObjectContext.hasChanges {
             do {
