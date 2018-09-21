@@ -85,10 +85,17 @@ class EditFriendViewController: UIViewController {
         }
         
         CoreDataStack.instance.saveContext()
+
+        performSegue(withIdentifier: "BackToProfile", sender: self)
+
         
-        ADataManager.shared.viewController.friendNames.append(friend.name!)
-        ADataManager.shared.viewController.collectionView.reloadData()
-        navigationController!.popViewController(animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+        if segue.identifier == "BackToProfile", let destination = segue.destination as? VriendViewController {
+                destination.friend = self.friend
+        }
     }
     
     @IBAction func DeleteFriend(_ sender: Any) {

@@ -30,6 +30,7 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
          self.performSegue(withIdentifier: "EditFriendSegue", sender: nil)
     }
     
+    
     @IBAction func RefreshFriendship(_ sender: Any) {
         friend.lastSeen = Date()
         CoreDataStack.instance.saveContext()

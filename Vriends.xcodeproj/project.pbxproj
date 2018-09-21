@@ -464,16 +464,12 @@
 				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-<<<<<<< HEAD
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = P9KK68PA63;
-=======
-				DEVELOPMENT_TEAM = 7U2CF25QL7;
->>>>>>> 0bdafe317153fca0382514e5750f325d4c893fb0
 				INFOPLIST_FILE = ShareExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Vriends.ShareExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = Vriends.Tjerk.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -490,16 +486,12 @@
 				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-<<<<<<< HEAD
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = P9KK68PA63;
-=======
-				DEVELOPMENT_TEAM = 7U2CF25QL7;
->>>>>>> 0bdafe317153fca0382514e5750f325d4c893fb0
 				INFOPLIST_FILE = ShareExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Vriends.ShareExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = Vriends.Tjerk.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -633,16 +625,12 @@
 				CODE_SIGN_ENTITLEMENTS = Vriends/Vriends.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-<<<<<<< HEAD
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = P9KK68PA63;
-=======
-				DEVELOPMENT_TEAM = 7U2CF25QL7;
->>>>>>> 0bdafe317153fca0382514e5750f325d4c893fb0
 				INFOPLIST_FILE = Vriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Vriends;
+				PRODUCT_BUNDLE_IDENTIFIER = Vriends.Tjerk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -660,16 +648,12 @@
 				CODE_SIGN_ENTITLEMENTS = Vriends/Vriends.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-<<<<<<< HEAD
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = P9KK68PA63;
-=======
-				DEVELOPMENT_TEAM = 7U2CF25QL7;
->>>>>>> 0bdafe317153fca0382514e5750f325d4c893fb0
 				INFOPLIST_FILE = Vriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Vriends;
+				PRODUCT_BUNDLE_IDENTIFIER = Vriends.Tjerk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
