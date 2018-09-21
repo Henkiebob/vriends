@@ -21,7 +21,6 @@ class PageViewController: UIPageViewController {
             self.getViewController(withIdentifier: "Page3"),
             self.getViewController(withIdentifier: "Page4"),
             self.getViewController(withIdentifier: "Page5"),
-            self.getViewController(withIdentifier: "Page1")
         ]
     }()
     
@@ -36,6 +35,8 @@ class PageViewController: UIPageViewController {
         self.delegate = self
         self.dataSource = self
         configurePageControl()
+        
+        print(pages.count)
         
         if let firstVC = pages.first
         {
@@ -87,6 +88,7 @@ extension PageViewController: UIPageViewControllerDelegate, UIPageViewController
         
         let nextIndex = viewControllerIndex + 1
         
+        
         guard nextIndex < pages.count
             else {
                 return pages.first
@@ -100,7 +102,7 @@ extension PageViewController: UIPageViewControllerDelegate, UIPageViewController
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let pageContentViewController = pageViewController.viewControllers![0]
         self.pageControl.currentPage = pages.index(of: pageContentViewController)!
-        if pageControl.currentPage == 5 {
+        if (pageControl.currentPage + 1) == pages.count {
             pageControl.removeFromSuperview()
             
             let transition = CATransition()

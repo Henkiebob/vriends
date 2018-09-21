@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.tjerk.vriends</string>
+		<string>group.go.Vriends</string>
 	</array>
 </dict>
 </plist>

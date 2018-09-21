@@ -15,7 +15,13 @@ class ShareViewController: SLComposeServiceViewController {
     var vriends: [Friend] = []
     
     var userDecks = [Deck]()
+    var store = CoreDataStack.instance
+    
+    private var textString: String?
+    
     fileprivate var selectedDeck: Deck?
+    
+    
     override func isContentValid() -> Bool {
         // Do validation of contentText and/or NSExtensionContext attachments here
         return true
@@ -24,29 +30,31 @@ class ShareViewController: SLComposeServiceViewController {
     override func didSelectPost() {
         
         let friend = vriends[getFriendIndex()]
-        let context = CoreDataStack.instance.managedObjectContext
-        let gift = Gift(context: context)
         
-        let extensionItem = extensionContext?.inputItems.first as! NSExtensionItem
-        let itemProvider = extensionItem.attachments?.first as! NSItemProvider
-        let propertyList = String(kUTTypePropertyList)
-        if itemProvider.hasItemConformingToTypeIdentifier(propertyList) {
-            itemProvider.loadItem(forTypeIdentifier: propertyList, options: nil, completionHandler: { (item, error) -> Void in
-                guard let dictionary = item as? NSDictionary else { return }
-                OperationQueue.main.addOperation {
-                    if let results = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
-                        let urlString = results["URL"] as? String,
-                        let _ = NSURL(string: urlString) {
-                        self.selectedDeck?.url = urlString
-                    }
-                }
-            })
-        }
+//        let context = CoreDataStack.instance.managedObjectContext
+//        let gift = Gift(context: context)
         
-        gift.title = "Gift idea from the internet"
-        gift.note = self.selectedDeck?.url
-        friend.addToGift(gift)
-        CoreDataStack.instance.saveContext()
+        
+        guard let giftText = textView.text else {return}
+        
+        
+        store.storeGifts(withTitle: "test", withText: giftText, withFriend: friend)
+        
+//        let extensionItem = extensionContext?.inputItems.first as! NSExtensionItem
+//        let itemProvider = extensionItem.attachments?.first as! NSItemProvider
+//        let propertyList = String(kUTTypePropertyList)
+//        if itemProvider.hasItemConformingToTypeIdentifier(propertyList) {
+//            itemProvider.loadItem(forTypeIdentifier: propertyList, options: nil, completionHandler: { (item, error) -> Void in
+//                guard let dictionary = item as? NSDictionary else { return }
+//                OperationQueue.main.addOperation {
+//                    if let results = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
+//                        let urlString = results["URL"] as? String,
+//                        let _ = NSURL(string: urlString) {
+//                        self.selectedDeck?.url = urlString
+//                    }
+//                }
+//            })
+//        }
     
         // Inform the host that we're done, so it un-blocks its UI. Note: Alternatively you could call super's -didSelectPost, which will similarly complete the extension context.
         self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
@@ -87,7 +95,6 @@ class ShareViewController: SLComposeServiceViewController {
         catch {
             print("I can't fetch any friends from the database, hah loser!")
         }
-        
         for friend in vriends {
             let deck = Deck()
             deck.title = friend.name
