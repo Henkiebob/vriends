@@ -29,8 +29,6 @@
 		0A9FA03B204446A7002D993F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9FA039204446A7002D993F /* LaunchScreen.storyboard */; };
 		C36BEEF90DECFF9BF629C95A /* Pods_Vriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E05015356F756ED0385AE29 /* Pods_Vriends.framework */; };
 		DA1D98842048C9620004BB78 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D98832048C9620004BB78 /* FriendCell.swift */; };
-		DA32EBF520BCA717003B5032 /* CardPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32EBF420BCA717003B5032 /* CardPresentationController.swift */; };
-		DA32EBF720BCA79F003B5032 /* CardAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32EBF620BCA79F003B5032 /* CardAnimationController.swift */; };
 		DA37D3B720CA8E7B002D7E16 /* vriends.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A54CB6320456116007B68A4 /* vriends.xcdatamodeld */; };
 		DA37D3B920CC5176002D7E16 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA37D3B820CC5176002D7E16 /* UIViewExtension.swift */; };
 		DA3C808720D326BB009B36E9 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C808620D326BB009B36E9 /* IntExtension.swift */; };
@@ -41,7 +39,6 @@
 		DA9F634C20C1850D009C84C8 /* GiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9F634B20C1850D009C84C8 /* GiftViewController.swift */; };
 		DAB28D6C2141819700BBCA87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9FA030204446A7002D993F /* AppDelegate.swift */; };
 		DAB28D6E21419DD500BBCA87 /* NSItemProviderExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB28D6D21419DD500BBCA87 /* NSItemProviderExt.swift */; };
-		DAB28D6F21419FC300BBCA87 /* NSItemProviderExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB28D6D21419DD500BBCA87 /* NSItemProviderExt.swift */; };
 		DAEA897920C037BA00D439AE /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEA897820C037B900D439AE /* NoteViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,8 +94,6 @@
 		50C1ADF9FD174AD04EFDCB62 /* Pods-Vriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vriends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vriends/Pods-Vriends.debug.xcconfig"; sourceTree = "<group>"; };
 		85AE63D7385B757ED98F0E8B /* Pods-Vriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vriends.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vriends/Pods-Vriends.release.xcconfig"; sourceTree = "<group>"; };
 		DA1D98832048C9620004BB78 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
-		DA32EBF420BCA717003B5032 /* CardPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresentationController.swift; sourceTree = "<group>"; };
-		DA32EBF620BCA79F003B5032 /* CardAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAnimationController.swift; sourceTree = "<group>"; };
 		DA37D3B820CC5176002D7E16 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		DA3C808620D326BB009B36E9 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		DA53848720B9E3730055D5BD /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
@@ -143,11 +138,58 @@
 			path = ShareExtension;
 			sourceTree = "<group>";
 		};
-		0A9FA024204446A7002D993F = {
+		0A15A5E02194E29500EB28EA /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				0A890494206F81D800A1C7EA /* VriendViewController.swift */,
+				0A08405820B815EA00CF1F43 /* Friend.swift */,
+				DA1D98832048C9620004BB78 /* FriendCell.swift */,
+				0A54CB6120455D38007B68A4 /* AddFriendViewController.swift */,
+				0A8C54EC21147F27004BFF0C /* EditFriendViewController.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		0A15A5E12194E2FB00EB28EA /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				0A9FA039204446A7002D993F /* LaunchScreen.storyboard */,
+				0A9FA034204446A7002D993F /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		0A15A5E32194E32100EB28EA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DA3C808620D326BB009B36E9 /* IntExtension.swift */,
+				DA37D3B820CC5176002D7E16 /* UIViewExtension.swift */,
+				DAB28D6D21419DD500BBCA87 /* NSItemProviderExt.swift */,
+				DA53848720B9E3730055D5BD /* RoundedView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0A15A5E42194E36E00EB28EA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0A59361A20C9C7EC002A6AAC /* CoreDataStack.swift */,
+				0A54CB6320456116007B68A4 /* vriends.xcdatamodeld */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		0A15A5E52194E39300EB28EA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				0A8EBB6520E28B4E004F3F4C /* NotificationHelper.swift */,
-				0A59361A20C9C7EC002A6AAC /* CoreDataStack.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0A9FA024204446A7002D993F = {
+			isa = PBXGroup;
+			children = (
 				0A9FA02F204446A7002D993F /* Vriends */,
 				0A02327020BF1F0700FC9E5E /* ShareExtension */,
 				0A9FA02E204446A7002D993F /* Products */,
@@ -168,30 +210,21 @@
 		0A9FA02F204446A7002D993F /* Vriends */ = {
 			isa = PBXGroup;
 			children = (
-				0A77457820C185A600F4EADE /* Vriends.entitlements */,
+				0A15A5E52194E39300EB28EA /* Helpers */,
+				0A15A5E42194E36E00EB28EA /* Data */,
+				0A15A5E32194E32100EB28EA /* Extensions */,
+				0A15A5E12194E2FB00EB28EA /* Storyboard */,
+				0A15A5E02194E29500EB28EA /* Friends */,
 				0A9FA030204446A7002D993F /* AppDelegate.swift */,
 				0A9FA032204446A7002D993F /* ViewController.swift */,
 				DAEA897820C037B900D439AE /* NoteViewController.swift */,
 				DA9F634B20C1850D009C84C8 /* GiftViewController.swift */,
-				DA32EBF620BCA79F003B5032 /* CardAnimationController.swift */,
 				DA556E4720E3809200733585 /* PageViewController.swift */,
-				DA32EBF420BCA717003B5032 /* CardPresentationController.swift */,
-				0A54CB6120455D38007B68A4 /* AddFriendViewController.swift */,
-				0A9FA034204446A7002D993F /* Main.storyboard */,
-				0A9FA037204446A7002D993F /* Assets.xcassets */,
-				0A9FA039204446A7002D993F /* LaunchScreen.storyboard */,
-				0A54CB6320456116007B68A4 /* vriends.xcdatamodeld */,
-				DA3C808620D326BB009B36E9 /* IntExtension.swift */,
-				0A08405820B815EA00CF1F43 /* Friend.swift */,
 				DA87D43720E3A03300BBFC2F /* LastPageViewController.swift */,
-				0A9FA03C204446A7002D993F /* Info.plist */,
-				DA1D98832048C9620004BB78 /* FriendCell.swift */,
-				0A890494206F81D800A1C7EA /* VriendViewController.swift */,
-				DA53848720B9E3730055D5BD /* RoundedView.swift */,
-				DA37D3B820CC5176002D7E16 /* UIViewExtension.swift */,
 				DA7C194620C2DBBC00BF16C7 /* GiftTableViewController.swift */,
-				0A8C54EC21147F27004BFF0C /* EditFriendViewController.swift */,
-				DAB28D6D21419DD500BBCA87 /* NSItemProviderExt.swift */,
+				0A9FA03C204446A7002D993F /* Info.plist */,
+				0A77457820C185A600F4EADE /* Vriends.entitlements */,
+				0A9FA037204446A7002D993F /* Assets.xcassets */,
 			);
 			path = Vriends;
 			sourceTree = "<group>";
@@ -382,7 +415,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAB28D6C2141819700BBCA87 /* AppDelegate.swift in Sources */,
-				DAB28D6F21419FC300BBCA87 /* NSItemProviderExt.swift in Sources */,
 				0A02328120BF33FC00FC9E5E /* Deck.swift in Sources */,
 				0A02328320BF343300FC9E5E /* ShareSelectViewController.swift in Sources */,
 				0A02327220BF1F0700FC9E5E /* ShareViewController.swift in Sources */,
@@ -413,8 +445,6 @@
 				DAEA897920C037BA00D439AE /* NoteViewController.swift in Sources */,
 				0A54CB6520456116007B68A4 /* vriends.xcdatamodeld in Sources */,
 				0A59361B20C9C7EC002A6AAC /* CoreDataStack.swift in Sources */,
-				DA32EBF720BCA79F003B5032 /* CardAnimationController.swift in Sources */,
-				DA32EBF520BCA717003B5032 /* CardPresentationController.swift in Sources */,
 				0A08405920B815EA00CF1F43 /* Friend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

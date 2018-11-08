@@ -33,7 +33,7 @@ class GiftViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        giftInfo.text = "Your note here"
+        giftInfo.text = "Think of something awesome.."
         giftInfo.textColor = .lightGray
         
         giftInfo.delegate = self
@@ -66,6 +66,7 @@ class GiftViewController: UIViewController, UITextViewDelegate {
         DataManager.shared.vriendViewController.giftNoteTableView.reloadData()
         dismiss(animated: true, completion: nil)
         
+        _ = navigationController?.popViewController(animated: true)
+        
     }
-   
 }

@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     let formatter = DateFormatter()
     let notificationHelper = NotificationHelper.instance
+    let NO_FRIEND_TAG = 1;
 
     var friends: [Friend] = []
     var friendNames: [String] = []
@@ -25,23 +26,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         _ = isAppAlreadyLaunchedOnce()
-//        setLayout()
         collectionView.dataSource = self
         collectionView.delegate = self
         formatter.dateFormat = "dd/mm/yyyy"
         formatter.dateStyle = .long
-
         notificationHelper.setupPermissions()
-    
-
-        // @DEBUG
-        notificationHelper.center.getPendingNotificationRequests { (notifications) in
-            print("Count: \(notifications.count)")
-            for item in notifications {
-                print(item.content.title)
-                print(item.trigger)
-            }
+        
+        NotificationCenter.default.addObserver(forName: .save, object: nil, queue: .main) {_ in
+            self.view.viewWithTag(self.NO_FRIEND_TAG)?.isHidden = true
         }
+        
+        
     }
     
     func isAppAlreadyLaunchedOnce()->Bool {
@@ -65,12 +60,22 @@ class ViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     func reload() {
         getFriends()
         collectionView.reloadData()
+        
+        // create no friends label
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+        label.center = CGPoint(x: 200, y: 285)
+        label.textAlignment = .center
+        label.text = "No friends yet, add some!"
+        label.tag = NO_FRIEND_TAG
+        
+        if(friends.count == 0) {
+            self.view.addSubview(label)
+        }
     }
 
     // You really should get some friends 🔥 (sick burn)
@@ -115,17 +120,15 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         
         var badFriend = components.day! / Int(friend.wishToSee!)!
         
-        print(badFriend)
-        
         // can't be higher then 12
         if badFriend > 12 {
             badFriend = 12
         }
         
-        // can't get this to work quite yet
-//        if badFriend > 7 {
-//            notificationHelper.setBadFriendNotification(friend: friend)
-//        }
+        // can't get this to work quite yet, its still beta
+        if badFriend > 7 {
+            notificationHelper.setBadFriendNotification(friend: friend)
+        }
         
         cell.layer.cornerRadius = 8
         cell.leaf.image = UIImage(named: flower[badFriend])
@@ -150,4 +153,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
 class ADataManager {
     static let shared = ADataManager()
     var viewController = ViewController()
+}
+
+
+extension Notification.Name {
+    static let save = Notification.Name("save")
 }

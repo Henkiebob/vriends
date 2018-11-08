@@ -31,7 +31,7 @@ class NotificationHelper {
     func setBirthDaySoonNotification(friend: Friend) {
         let content = UNMutableNotificationContent()
         content.title = "Don't forget"
-        content.body = "It's \(friend.name ?? "a friend") birthday soon!"
+        content.body = "It's\(friend.name ?? "a friend")'s birthday soon!"
         content.sound = UNNotificationSound.default()
         
         var triggerDate = Calendar.current.dateComponents([.day,.month,], from: friend.triggerdate!)
@@ -51,7 +51,7 @@ class NotificationHelper {
     func setupBirthDayNotification(friend: Friend) {
         let content = UNMutableNotificationContent()
         content.title = "Party time!"
-        content.body = "It's \(friend.name ?? "a friend") birthday today!"
+        content.body = "It's\(friend.name ?? "a friend")'s birthday today!"
         content.sound = UNNotificationSound.default()
         
         var triggerDate = Calendar.current.dateComponents([.day,.month,], from: friend.birthdate!)

@@ -155,33 +155,32 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
             return giftCell
         }
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if (selectedSegment == 1){
-            let alert = UIAlertController(title: notesArray[indexPath.row].title, message: notesArray[indexPath.row].text, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        } else{
-            let alert = UIAlertController(title: giftsArray[indexPath.row].title, message: giftsArray[indexPath.row].note, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         let context = CoreDataStack.instance.managedObjectContext
         
+    
         if editingStyle == .delete{
-            if selectedSegment == 1{
+            if selectedSegment == 1 {
                 let note = notesArray[indexPath.row]
                 context.delete(note)
-            }else {
+                
+                notesArray.remove(at: indexPath.row)
+                tableView.beginUpdates()
+                tableView.deleteRows(at: [indexPath], with: .middle)
+                tableView.endUpdates()
+               
+            } else {
                 let gift = giftsArray[indexPath.row]
                 context.delete(gift)
+                
+                giftsArray.remove(at: indexPath.row)
+                tableView.beginUpdates()
+                tableView.deleteRows(at: [indexPath], with: .middle)
+                tableView.endUpdates()
             }
             
             CoreDataStack.instance.saveContext()
-            reload()
         }
         
     }
@@ -197,7 +196,7 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
             giftsArray = try context.fetch(Gift.fetchRequest())
         }
         catch {
-            print("I can't fetch any friends from the database, hah loser!")
+            print("no gifts for you")
         }
     }
     

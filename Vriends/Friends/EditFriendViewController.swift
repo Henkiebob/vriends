@@ -49,6 +49,8 @@ class EditFriendViewController: UIViewController {
         NameTextField.text = friend.name!
         selectedColor = friend.favoriteColor!
         BirthDatePicker.date = friend.birthdate!
+        
+        //self.navigationController?.viewControllers = [self]
     }
     
     func uiColorFromHex(rgbValue: Int) -> UIColor {
@@ -85,18 +87,15 @@ class EditFriendViewController: UIViewController {
         }
         
         CoreDataStack.instance.saveContext()
-
-        performSegue(withIdentifier: "BackToProfile", sender: self)
-
-        
+        _ = navigationController?.popViewController(animated: true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
-        if segue.identifier == "BackToProfile", let destination = segue.destination as? VriendViewController {
-                destination.friend = self.friend
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        if segue.identifier == "BackToProfile", let destination = segue.destination as? VriendViewController {
+//                destination.friend = self.friend
+//        }
+//    }
     
     @IBAction func DeleteFriend(_ sender: Any) {
         let alertController = UIAlertController(title: "Are you sure you want to delete " + friend.name! + " ?", message: "This will permanently delete this vriend from Vriends.", preferredStyle: .actionSheet)

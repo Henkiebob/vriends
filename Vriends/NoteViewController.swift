@@ -30,7 +30,7 @@ class NoteViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    @IBAction func addNote(_ sender: Any) {
+    @IBAction func saveNote(_ sender: UIBarButtonItem) {
         let notificationHelper = NotificationHelper.instance
         let context = CoreDataStack.instance.managedObjectContext
         let note = Note(context: context)
@@ -43,9 +43,10 @@ class NoteViewController: UIViewController, UITextViewDelegate {
         friend.addToNote(note)
         CoreDataStack.instance.saveContext()
         DataManager.shared.vriendViewController.notesArray.append(note)
-    
+        
         DataManager.shared.vriendViewController.giftNoteTableView.reloadData()
         dismiss(animated: true, completion: nil)
         
+        _ = navigationController?.popViewController(animated: true)
     }
 }
