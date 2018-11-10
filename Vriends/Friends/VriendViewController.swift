@@ -38,7 +38,7 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         let alert = UIAlertController(title: "You saw " + friend.name!, message: "Hope you had fun!", preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
         
-        let action = UIAlertAction(title: "Woop Woop", style: UIAlertActionStyle.cancel) {
+        let action = UIAlertAction(title: "Woop Woop", style: UIAlertAction.Style.cancel) {
             UIAlertAction in
         }
         
@@ -158,7 +158,7 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let context = CoreDataStack.instance.managedObjectContext
         
     

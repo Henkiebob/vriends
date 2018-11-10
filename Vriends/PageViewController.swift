@@ -102,8 +102,8 @@ extension PageViewController: UIPageViewControllerDelegate, UIPageViewController
             pageControl.removeFromSuperview()
             
             let transition = CATransition()
-            transition.type = kCATransitionFade
-            transition.subtype = kCATransitionMoveIn
+            transition.type = CATransitionType.fade
+            transition.subtype = CATransitionSubtype.fromLeft
             self.navigationController?.view.layer.add(transition, forKey: kCATransition)
             
             self.dismiss(animated: true, completion: {})

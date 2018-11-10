@@ -32,7 +32,7 @@ class NotificationHelper {
         let content = UNMutableNotificationContent()
         content.title = "Don't forget"
         content.body = "It's\(friend.name ?? "a friend")'s birthday soon!"
-        content.sound = UNNotificationSound.default()
+        content.sound = UNNotificationSound.default
         
         var triggerDate = Calendar.current.dateComponents([.day,.month,], from: friend.triggerdate!)
         triggerDate.hour = 12
@@ -52,7 +52,7 @@ class NotificationHelper {
         let content = UNMutableNotificationContent()
         content.title = "Party time!"
         content.body = "It's\(friend.name ?? "a friend")'s birthday today!"
-        content.sound = UNNotificationSound.default()
+        content.sound = UNNotificationSound.default
         
         var triggerDate = Calendar.current.dateComponents([.day,.month,], from: friend.birthdate!)
         triggerDate.hour = 12
@@ -72,7 +72,7 @@ class NotificationHelper {
         let content = UNMutableNotificationContent()
         content.title = note.title ?? "Note"
         content.body = note.text ?? "Note"
-        content.sound = UNNotificationSound.default()
+        content.sound = UNNotificationSound.default
         
         let triggerDate = Calendar.current.dateComponents([.day,.month,.hour,.minute], from: note.date!)
         let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
@@ -90,7 +90,7 @@ class NotificationHelper {
         let content = UNMutableNotificationContent()
         content.title = "Oh oh.."
         content.body = "You haven't seen \(friend.name ?? "a friend") for a while now"
-        content.sound = UNNotificationSound.default()
+        content.sound = UNNotificationSound.default
         let today_in_10_minutes = Date(timeIntervalSinceNow: 60)
         let triggerDate = Calendar.current.dateComponents([.day,.month,.hour,.minute], from: today_in_10_minutes)
         let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)

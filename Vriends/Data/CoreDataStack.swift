@@ -79,10 +79,8 @@ class CoreDataStack {
     
     func storeFriend(withGift gift:Gift, withFriend friend:Friend){
         friend.addToGift(gift)
-        try! CoreDataStack.instance.saveContext()
+        CoreDataStack.instance.saveContext()
         fetchFriend()
-//        DataManager.shared.vriendViewController.giftsArray.append(gift)
-//        DataManager.shared.vriendViewController.giftNoteTableView.reloadData()
     }
     
     func fetchFriend(){
