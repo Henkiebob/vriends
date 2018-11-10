@@ -45,7 +45,7 @@ import UIKit
 
         storeAnimationState()
 
-        superview.bringSubviewToFront(self)
+        superview.bringSubview(toFront: self)
         addOverlayView(to: superview)
         addItems(to: superview)
         itemContainerView.setNeedsLayout()

@@ -55,7 +55,7 @@ class NotificationHelper {
         content.sound = UNNotificationSound.default
         
         var triggerDate = Calendar.current.dateComponents([.day,.month,], from: friend.birthdate!)
-        triggerDate.hour = 12
+        triggerDate.hour = 10
         triggerDate.minute = 00
         let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: true)
         let identifier = "BirthdayToday"

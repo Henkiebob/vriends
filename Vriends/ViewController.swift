@@ -79,7 +79,7 @@ class ViewController: UIViewController {
             self.view.addSubview(label)
         }
     }
-
+    
     // You really should get some friends 🔥 (sick burn)
     func getFriends() {
         let context = CoreDataStack.instance.managedObjectContext

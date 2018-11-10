@@ -38,6 +38,7 @@ class NoteViewController: UIViewController, UITextViewDelegate {
         let note = Note(context: context)
         
         note.title = noteTitle.text
+        note.text = noteInfo.text
         note.date = datePicker.date
         
         notificationHelper.setupNoteNotification(note: note)
