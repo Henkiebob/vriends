@@ -64,6 +64,7 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         lastTimeSeen = components.day!
         let wishToSee = Int(friend.wishToSee!)
         
+        
         switch lastTimeSeen {
         case 0:
              lastSeenLabel.text = "Today"

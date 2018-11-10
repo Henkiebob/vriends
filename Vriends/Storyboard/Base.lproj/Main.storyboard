@@ -28,11 +28,11 @@
             <objects>
                 <viewController storyboardIdentifier="Vriends" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="Vriends" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMc-hn-Z88">
-                                <rect key="frame" x="5" y="69" width="365" height="603"/>
+                                <rect key="frame" x="5" y="5" width="365" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tbF-Uf-0j5">
                                     <size key="itemSize" width="50" height="50"/>
@@ -110,6 +110,7 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="collectionView" destination="sMc-hn-Z88" id="IJx-dH-hi1"/>
                     </connections>
@@ -676,9 +677,9 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="Vriend profile" id="Z14-cI-bbn">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="A3m-Zh-TYB">
+                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="tGF-5M-IqX">
                             <connections>
-                                <action selector="BackButton:" destination="J9p-gf-Mtd" id="NcW-3v-2Le"/>
+                                <segue destination="BYZ-38-t0r" kind="show" id="G5W-b6-NK8"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="edit" id="oQp-Ec-gZl">
@@ -698,7 +699,6 @@
                         <outlet property="segmentedControl" destination="wVr-Bx-Qet" id="Xfm-SK-Z79"/>
                         <segue destination="DgY-2b-dWQ" kind="show" identifier="addGiftSegue" id="evx-5h-bXW"/>
                         <segue destination="baM-nk-Dhs" kind="show" identifier="addNoteSegue" id="iye-xl-RQj"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="BackToMain" id="2gZ-DA-i1j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZp-es-VEP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -790,11 +790,11 @@
             <objects>
                 <viewController id="3Ue-Za-6ao" customClass="AddFriendViewController" customModule="Vriends" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gf0-ez-bjZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Every two months" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Q6-zN-zWO">
-                                <rect key="frame" x="10" y="179" width="355" height="37"/>
+                                <rect key="frame" x="10" y="115" width="355" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="vzN-jZ-His"/>
                                 </constraints>
@@ -803,7 +803,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick a color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5k-LR-Vo9">
-                                <rect key="frame" x="10" y="226" width="355" height="20.5"/>
+                                <rect key="frame" x="10" y="162" width="355" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20.5" id="O9g-jw-Nqt"/>
                                 </constraints>
@@ -812,7 +812,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your friends birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zeb-1U-6IJ">
-                                <rect key="frame" x="10" y="386.5" width="355" height="20"/>
+                                <rect key="frame" x="10" y="322.5" width="355" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="BPd-10-wE5"/>
                                 </constraints>
@@ -821,7 +821,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind me when.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gut-Ib-seX">
-                                <rect key="frame" x="10" y="119" width="355" height="20"/>
+                                <rect key="frame" x="10" y="55" width="355" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Foa-BB-WNQ"/>
                                 </constraints>
@@ -830,7 +830,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.5" maxValue="3.5" translatesAutoresizingMaskIntoConstraints="NO" id="0ne-LZ-fcL">
-                                <rect key="frame" x="8" y="144" width="359" height="31"/>
+                                <rect key="frame" x="8" y="80" width="359" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="kpE-z8-Z1t"/>
                                 </constraints>
@@ -839,7 +839,7 @@
                                 </connections>
                             </slider>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1jx-NC-6Te">
-                                <rect key="frame" x="0.0" y="256.5" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="192.5" width="375" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="Z6P-bT-Tpd"/>
@@ -872,7 +872,7 @@
                                 </cells>
                             </collectionView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="mAU-ed-Fvq">
-                                <rect key="frame" x="10" y="74" width="355" height="35"/>
+                                <rect key="frame" x="10" y="10" width="355" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="ltn-Qe-eIg"/>
@@ -882,7 +882,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="CRn-qa-iqi">
-                                <rect key="frame" x="0.0" y="416.5" width="375" height="140"/>
+                                <rect key="frame" x="0.0" y="352.5" width="375" height="140"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="N7L-Ve-CRX"/>
@@ -1115,8 +1115,8 @@ That's up to you!</string>
         <image name="onboarding-bg" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7pl-NP-qHE"/>
-        <segue reference="x0S-HN-jaP"/>
+        <segue reference="VkS-YF-xVx"/>
+        <segue reference="G5W-b6-NK8"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

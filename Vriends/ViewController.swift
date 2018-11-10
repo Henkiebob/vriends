@@ -32,6 +32,8 @@ class ViewController: UIViewController {
         formatter.dateStyle = .long
         notificationHelper.setupPermissions()
         
+        self.navigationItem.hidesBackButton = true
+        
         NotificationCenter.default.addObserver(forName: .saved, object: nil, queue: .main) {_ in
             self.view.viewWithTag(self.NO_FRIEND_TAG)?.isHidden = true
         }
@@ -68,7 +70,7 @@ class ViewController: UIViewController {
         
         // create no friends label
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-        label.center = CGPoint(x: 200, y: 285)
+        label.center = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height/2)
         label.textAlignment = .center
         label.text = "No friends yet, add some!"
         label.tag = NO_FRIEND_TAG

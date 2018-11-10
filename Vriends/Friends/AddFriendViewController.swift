@@ -41,7 +41,6 @@ class AddFriendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         friendNameTextField.delegate = self
-        wishToSeeLabel.text = "It's been more then a month"
         birthDatePicker.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1)
         colorCollectionView.delegate = self
         colorCollectionView.dataSource = self
