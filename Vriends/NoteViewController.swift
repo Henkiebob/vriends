@@ -21,6 +21,8 @@ class NoteViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         noteInfo.delegate = self
+        noteInfo.text = "Maybe some additional stuff!"
+        noteInfo.textColor = .lightGray
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {

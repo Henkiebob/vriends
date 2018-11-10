@@ -40,8 +40,9 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         
         let action = UIAlertAction(title: "Woop Woop", style: UIAlertActionStyle.cancel) {
             UIAlertAction in
-            self.navigationController!.popViewController(animated: true)
         }
+        
+        lastSeenLabel.text = "Today, yay!"
         
         alert.addAction(action)
         
@@ -85,6 +86,7 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
            keepInTouchLabel.text = "Weekly"
         }
        
+      
         giftNoteTableView.dataSource = self
         giftNoteTableView.delegate = self
         
@@ -219,4 +221,8 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
 class DataManager {
     static let shared = DataManager()
     var vriendViewController = VriendViewController()
+}
+
+extension Notification.Name {
+    static let justsaved = Notification.Name("just_saved")
 }

@@ -50,7 +50,22 @@ class EditFriendViewController: UIViewController {
         selectedColor = friend.favoriteColor!
         BirthDatePicker.date = friend.birthdate!
         
-        //self.navigationController?.viewControllers = [self]
+        // change slider accordingly
+        switch Int(friend.wishToSee!) {
+        case 7:
+            RemindMeSlider.value = 0
+             WishToSeeLabel.text = "Weekly"
+        case 14:
+            RemindMeSlider.value = 1
+             WishToSeeLabel.text = "Monthly"
+        case 31:
+            RemindMeSlider.value = 2
+            WishToSeeLabel.text = "Every two months"
+        default:
+            RemindMeSlider.value = 3
+            WishToSeeLabel.text = "Annualy"
+        }
+        
     }
     
     func uiColorFromHex(rgbValue: Int) -> UIColor {
@@ -61,6 +76,12 @@ class EditFriendViewController: UIViewController {
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "BackToProfile", let destination = segue.destination as? VriendViewController {
+            destination.friend = friend
+        }
+    }
+
     @IBAction func SaveFriend(_ sender: Any) {
         
         if(NameTextField.text != nil) {
@@ -87,18 +108,13 @@ class EditFriendViewController: UIViewController {
         }
         
         CoreDataStack.instance.saveContext()
-        _ = navigationController?.popViewController(animated: true)
+        
+        performSegue(withIdentifier: "BackToProfile", sender: self)
+        //_ = navigationController?.popViewController(animated: true)
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        if segue.identifier == "BackToProfile", let destination = segue.destination as? VriendViewController {
-//                destination.friend = self.friend
-//        }
-//    }
-    
     @IBAction func DeleteFriend(_ sender: Any) {
-        let alertController = UIAlertController(title: "Are you sure you want to delete " + friend.name! + " ?", message: "This will permanently delete this vriend from Vriends.", preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: "Are you sure you want to delete " + friend.name! + " ?", message: "This will permanently delete this friend from Vriends.", preferredStyle: .actionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in }
         alertController.addAction(cancelAction)
         
@@ -128,7 +144,6 @@ class EditFriendViewController: UIViewController {
         sliderchanged = true
     }
     
-    
 }
 
 extension EditFriendViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
@@ -138,9 +153,15 @@ extension EditFriendViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "colorCollectionCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "colorCollectionCell", for: indexPath) as! colorCollectionCell
         cell.layer.cornerRadius = cell.frame.width / 2
         cell.backgroundColor = uiColorFromHex(rgbValue: Int(colorArray[indexPath.row]))
+        
+        
+        if colorArray[indexPath.row] == Int(selectedColor) {
+            cell.selectedImage.image = UIImage(named: "selected-color")
+        }
+        
         return cell
     }
     
@@ -152,21 +173,30 @@ extension EditFriendViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! colorCollectionCell
         selectedColor = String(colorArray[indexPath.row])
+        
+        // away with you, stupid selected image, bit overkill but its friday 23:21 SO SUE ME
+        for cell in collectionView.visibleCells as! [colorCollectionCell] {
+            cell.selectedImage.image = nil
+        }
+        
         cell.selectedImage.image = UIImage(named: "selected-color")
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! colorCollectionCell
         self.view.endEditing(true)
+    
         cell.selectedImage.image = nil
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
+
 }

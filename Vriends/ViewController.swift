@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         formatter.dateStyle = .long
         notificationHelper.setupPermissions()
         
-        NotificationCenter.default.addObserver(forName: .save, object: nil, queue: .main) {_ in
+        NotificationCenter.default.addObserver(forName: .saved, object: nil, queue: .main) {_ in
             self.view.viewWithTag(self.NO_FRIEND_TAG)?.isHidden = true
         }
         
@@ -157,5 +157,5 @@ class ADataManager {
 
 
 extension Notification.Name {
-    static let save = Notification.Name("save")
+    static let saved = Notification.Name("just_saved")
 }

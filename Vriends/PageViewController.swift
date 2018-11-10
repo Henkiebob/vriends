@@ -36,17 +36,13 @@ class PageViewController: UIPageViewController {
         self.dataSource = self
         configurePageControl()
         
-        print(pages.count)
-        
-        if let firstVC = pages.first
-        {
+        if let firstVC = pages.first {
             setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         }
-
     }
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        
         self.navigationController?.isNavigationBarHidden = false
     }
     
@@ -63,7 +59,6 @@ class PageViewController: UIPageViewController {
         self.pageControl.pageIndicatorTintColor = UIColor(red: 0.43, green: 0.46, blue: 0.49, alpha: 0.25)
         self.pageControl.currentPageIndicatorTintColor = UIColor(red: 0.27, green: 0.66, blue: 0.95, alpha: 1)
         self.view.addSubview(pageControl)
-       
     }
 }
 extension PageViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
@@ -99,6 +94,7 @@ extension PageViewController: UIPageViewControllerDelegate, UIPageViewController
         
         return pages[nextIndex]
     }
+    
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let pageContentViewController = pageViewController.viewControllers![0]
         self.pageControl.currentPage = pages.index(of: pageContentViewController)!
