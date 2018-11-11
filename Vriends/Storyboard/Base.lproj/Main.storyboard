@@ -187,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7J6-km-sWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1958" y="1667"/>
+            <point key="canvasLocation" x="1172" y="904"/>
         </scene>
         <!--New reminder-->
         <scene sceneID="7rT-Xe-Gx2">
@@ -264,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5b-SQ-Q6F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="696.79999999999995" y="1667.3163418290856"/>
+            <point key="canvasLocation" x="1881" y="904"/>
         </scene>
         <!--EditFriendViewController-->
         <scene sceneID="BBk-D2-P2K">
@@ -452,7 +452,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vua-Kd-cL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2431" y="864"/>
+            <point key="canvasLocation" x="1881" y="125"/>
         </scene>
         <!--Vriend profile-->
         <scene sceneID="uOQ-wS-ahU">
@@ -677,11 +677,6 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="Vriend profile" id="Z14-cI-bbn">
-                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="tGF-5M-IqX">
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="G5W-b6-NK8"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="edit" id="oQp-Ec-gZl">
                             <color key="tintColor" red="0.97838455438613892" green="0.74194914102554321" blue="0.019051114097237587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -703,7 +698,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZp-es-VEP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1355.072463768116" y="891.84782608695662"/>
+            <point key="canvasLocation" x="1172" y="125"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="cSA-3E-8xm">
@@ -952,7 +947,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p3m-Bv-R8J" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Swo-1Z-FKh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1221.5999999999999" y="120.08995502248877"/>
+            <point key="canvasLocation" x="415" y="851"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="W4B-Jy-zkF">
@@ -1115,8 +1110,9 @@ That's up to you!</string>
         <image name="onboarding-bg" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VkS-YF-xVx"/>
-        <segue reference="G5W-b6-NK8"/>
+        <segue reference="Oss-Cn-h2T"/>
+        <segue reference="7pl-NP-qHE"/>
+        <segue reference="JiF-7Z-E3d"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
