@@ -37,6 +37,9 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(forName: .saved, object: nil, queue: .main) {_ in
             self.view.viewWithTag(self.NO_FRIEND_TAG)?.isHidden = true
         }
+        NotificationCenter.default.addObserver(forName: .back, object: nil, queue: .main) {_ in
+            self.reload()
+        }
         
         
     }
@@ -67,6 +70,7 @@ class ViewController: UIViewController {
     func reload() {
         getFriends()
         collectionView.reloadData()
+        
         
         // create no friends label
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
@@ -99,7 +103,6 @@ class ViewController: UIViewController {
             }
         }
     }
-
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate {
@@ -115,30 +118,45 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "friendCollectionCell", for: indexPath) as! friendCollectionCell
         let calendar = NSCalendar.current
-        let friend = friends[indexPath.row]
+        let friend = self.friends[indexPath.row]
         let lastSeenDate = calendar.startOfDay(for: friend.lastSeen!)
         let today = calendar.startOfDay(for: Date())
         let components = calendar.dateComponents([.day], from: lastSeenDate, to: today)
-        
         var badFriend = components.day! / Int(friend.wishToSee!)!
-        
+    
         // can't be higher then 12
         if badFriend > 12 {
             badFriend = 12
         }
-        
+    
         // can't get this to work quite yet, its still beta
         if badFriend > 7 {
-            notificationHelper.setBadFriendNotification(friend: friend)
+            self.notificationHelper.setBadFriendNotification(friend: friend)
         }
-        
+    
         cell.layer.cornerRadius = 8
-        cell.leaf.image = UIImage(named: flower[badFriend])
+        cell.leaf.image = UIImage(named: self.flower[badFriend])
+        let translate = CGAffineTransform(translationX: 0, y: 0)
+        let scale = CGAffineTransform(scaleX: 1.25, y: 1.25)
+        let minScale = CGAffineTransform(scaleX: 1, y: 1)
+        if !cell.isAnimated{
+            UIView.animate(withDuration: 0.5, animations: {
+                cell.leaf.transform = translate.concatenating(scale)
+            }, completion: {(value: Bool) in
+                UIView.animate(withDuration: 0.5, animations: {
+                    cell.leaf.transform = translate.concatenating(minScale)
+                    }
+                )}
+            )
+        }
         cell.nameLabel?.text = friend.name!
-        cell.backgroundColor = addFriend.uiColorFromHex(rgbValue: Int(friends[indexPath.row].favoriteColor!)!)
+        cell.backgroundColor = self.addFriend.uiColorFromHex(rgbValue: Int(self.friends[indexPath.row].favoriteColor!)!)
         cell.nameLabel.fullWidth(parent: cell)
-
+        
         return cell
+    }
+    override func becomeFirstResponder() -> Bool {
+        return true
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -160,4 +178,5 @@ class ADataManager {
 
 extension Notification.Name {
     static let saved = Notification.Name("just_saved")
+    static let back = Notification.Name("back")
 }

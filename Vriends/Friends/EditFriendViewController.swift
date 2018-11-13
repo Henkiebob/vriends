@@ -11,10 +11,9 @@ import UIKit
 class EditFriendViewController: UIViewController {
 
     @IBOutlet weak var NameTextField: UITextField!
-    @IBOutlet weak var RemindMeSlider: UISlider!
     @IBOutlet weak var ColorPicker: UICollectionView!
-    @IBOutlet weak var WishToSeeLabel: UILabel!
     @IBOutlet weak var BirthDatePicker: UIDatePicker!
+    @IBOutlet weak var TimeSelector: UISegmentedControl!
     
     var friend: Friend!
     var selectedColor: String = ""
@@ -50,22 +49,17 @@ class EditFriendViewController: UIViewController {
         selectedColor = friend.favoriteColor!
         BirthDatePicker.date = friend.birthdate!
         
-        // change slider accordingly
+        // change segemented control accordingly
         switch Int(friend.wishToSee!) {
         case 7:
-            RemindMeSlider.value = 0
-             WishToSeeLabel.text = "Weekly"
+            TimeSelector.selectedSegmentIndex = 0
         case 14:
-            RemindMeSlider.value = 1
-             WishToSeeLabel.text = "Monthly"
+            TimeSelector.selectedSegmentIndex = 1
         case 31:
-            RemindMeSlider.value = 2
-            WishToSeeLabel.text = "Every two months"
+            TimeSelector.selectedSegmentIndex = 2
         default:
-            RemindMeSlider.value = 3
-            WishToSeeLabel.text = "Annualy"
+            TimeSelector.selectedSegmentIndex = 3
         }
-        
     }
     
     func uiColorFromHex(rgbValue: Int) -> UIColor {
@@ -93,9 +87,7 @@ class EditFriendViewController: UIViewController {
             }
         }
         
-        if(sliderchanged) {
-            friend.wishToSee = String(wishDateArray[Int(RemindMeSlider.value)])
-        }
+        friend.wishToSee = String(wishDateArray[TimeSelector.selectedSegmentIndex])
         
         // birthday changed so we need to do notifications
         if(friend.birthdate != BirthDatePicker.date) {
@@ -110,7 +102,6 @@ class EditFriendViewController: UIViewController {
         CoreDataStack.instance.saveContext()
         
         performSegue(withIdentifier: "BackToProfile", sender: self)
-        //_ = navigationController?.popViewController(animated: true)
     }
     
     @IBAction func DeleteFriend(_ sender: Any) {
@@ -128,22 +119,7 @@ class EditFriendViewController: UIViewController {
         alertController.addAction(destroyAction)
         self.present(alertController, animated: true) {}
     }
-    
-    @IBAction func otherSliderChanged(_ sender: Any) {
-        switch Int(RemindMeSlider.value) {
-        case 0:
-            WishToSeeLabel.text = "Weekly"
-        case 1:
-            WishToSeeLabel.text = "Monthly"
-        case 2:
-            WishToSeeLabel.text = "Every two months"
-        default:
-            WishToSeeLabel.text = "Annualy"
-        }
-        
-        sliderchanged = true
-    }
-    
+
 }
 
 extension EditFriendViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate {

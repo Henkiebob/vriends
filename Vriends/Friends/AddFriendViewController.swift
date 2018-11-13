@@ -9,12 +9,10 @@ import UIKit
 
 class AddFriendViewController: UIViewController {
     
-    @IBOutlet weak var nameAndTrackingView: UIView!
     @IBOutlet weak var friendNameTextField: UITextField!
     @IBOutlet weak var birthDatePicker: UIDatePicker!
-    @IBOutlet weak var wishSlider: UISlider!
-    @IBOutlet weak var wishToSeeLabel: UILabel!
     @IBOutlet weak var colorCollectionView: UICollectionView!
+    @IBOutlet weak var timeSelector: UISegmentedControl!
     
     var viewController = ViewController?.self
     var selectedColor: String = ""
@@ -51,19 +49,6 @@ class AddFriendViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func otherSliderChanged(_ sender: Any) {
-        switch Int(wishSlider.value) {
-        case 0:
-            wishToSeeLabel.text = "Weekly"
-        case 1:
-            wishToSeeLabel.text = "Monthly"
-        case 2:
-            wishToSeeLabel.text = "Every two months"
-        default:
-            wishToSeeLabel.text = "Annualy"
-        }
-    }
-    
     @IBAction func AddFriend(_ sender: Any) {
         let context = CoreDataStack.instance.managedObjectContext
         let friend = Friend(context: context)
@@ -76,15 +61,16 @@ class AddFriendViewController: UIViewController {
             friend.triggerdate = Calendar.current.date(byAdding: .day, value: -7, to: friend.birthdate!)
             
             // debug
-            //let coupleOfDaysBack = Calendar.current.date(byAdding: .day, value: -80, to: Date())
-            //friend.lastSeen = coupleOfDaysBack
+//            let coupleOfDaysBack = Calendar.current.date(byAdding: .day, value: -80, to: Date())
+//            friend.lastSeen = coupleOfDaysBack
             
             if(selectedColor == ""){
                 friend.favoriteColor = String(colorArray[Int.random(range: 0...12)])
             } else {
                 friend.favoriteColor = selectedColor
             }
-            friend.wishToSee = String(wishDateArray[Int(wishSlider.value)])
+            
+            friend.wishToSee = String(wishDateArray[timeSelector.selectedSegmentIndex])
         }
         
         CoreDataStack.instance.saveContext()

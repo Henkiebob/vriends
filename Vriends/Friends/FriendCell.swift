@@ -23,6 +23,7 @@ class friendCollectionCell: UICollectionViewCell{
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var leaf: UIImageView!
     @IBOutlet weak var birthdayImage: UIImageView!
+    var isAnimated: Bool = false
 }
 
 class colorCollectionCell: UICollectionViewCell{

@@ -72,6 +72,7 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         
         self.setBackBarButtonCustom()
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate;
         
         DataManager.shared.vriendViewController = self
         let formatter = DateFormatter()

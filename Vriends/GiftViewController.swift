@@ -37,7 +37,6 @@ class GiftViewController: UIViewController, UITextViewDelegate {
         giftInfo.textColor = .lightGray
         
         giftInfo.delegate = self
-        
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {

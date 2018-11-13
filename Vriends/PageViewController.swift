@@ -103,12 +103,16 @@ extension PageViewController: UIPageViewControllerDelegate, UIPageViewController
             
             let transition = CATransition()
             transition.type = CATransitionType.fade
-            transition.subtype = CATransitionSubtype.fromLeft
+            transition.subtype = CATransitionSubtype.fromRight
             self.navigationController?.view.layer.add(transition, forKey: kCATransition)
             
             self.dismiss(animated: true, completion: {})
             self.navigationController?.isNavigationBarHidden = false
-            self.navigationController?.popViewController(animated: true)
+           
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.navigationController?.popViewController(animated: true)
+            }
+
         }
     }
 }
