@@ -383,7 +383,7 @@
                                             <action selector="DeleteFriend:" destination="eCI-jT-Bd2" eventType="touchUpInside" id="1jW-yu-QzN"/>
                                         </connections>
                                     </button>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZVP-UZ-3h6">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZVP-UZ-3h6">
                                         <rect key="frame" x="10" y="86" width="355" height="29"/>
                                         <segments>
                                             <segment title="Weekly"/>
@@ -916,7 +916,7 @@
                                     <action selector="saveDate:" destination="Swo-1Z-FKh" eventType="valueChanged" id="BLQ-ZA-O4F"/>
                                 </connections>
                             </datePicker>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GMo-yJ-sBP">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GMo-yJ-sBP">
                                 <rect key="frame" x="10" y="83" width="355" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Sxj-ay-Y0z"/>
@@ -1164,8 +1164,7 @@ That's up to you!</string>
         <image name="onboarding-1" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="in8-hi-E6Y"/>
-        <segue reference="VkS-YF-xVx"/>
+        <segue reference="7pl-NP-qHE"/>
         <segue reference="JiF-7Z-E3d"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
