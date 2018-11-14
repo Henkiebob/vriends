@@ -75,14 +75,11 @@ class AddFriendViewController: UIViewController {
         
         CoreDataStack.instance.saveContext()
         
-        // alert that we have saved so the viewcontroller knows waddup
-        // NotificationCenter.default.post(name: NSNotification.Name("just_saved"), object: self)
-        
         // setup notifications, these repeat yearly
         notificationHelper.setBirthDaySoonNotification(friend: friend)
         notificationHelper.setupBirthDayNotification(friend: friend)
         ADataManager.shared.viewController.friendNames.append(friend.name!)
-        ADataManager.shared.viewController.view.viewWithTag(1)?.isHidden = true
+        
         navigationController!.popViewController(animated: true)
     }
     

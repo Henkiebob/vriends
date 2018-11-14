@@ -715,20 +715,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is Vriends?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="In8-FE-vel">
-                                <rect key="frame" x="111" y="350" width="153" height="25"/>
+                                <rect key="frame" x="111" y="300" width="153" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding-1" translatesAutoresizingMaskIntoConstraints="NO" id="3ci-bg-Xd1">
-                                <rect key="frame" x="42.5" y="40" width="290" height="290"/>
+                                <rect key="frame" x="87.5" y="80" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="290" id="YSu-qC-fV3"/>
-                                    <constraint firstAttribute="height" constant="290" id="lGG-OE-acj"/>
+                                    <constraint firstAttribute="width" constant="200" id="YSu-qC-fV3"/>
+                                    <constraint firstAttribute="height" constant="200" id="lGG-OE-acj"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1Pv-lQ-lrc">
-                                <rect key="frame" x="15" y="395" width="345" height="179"/>
+                                <rect key="frame" x="15" y="345" width="345" height="229"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Vriends is an application that allows you to keep track of your friendships. Vriends can be used to store useful information about your friends like gift idea's or even birthdays.</string>
                                 <color key="textColor" red="0.42745098040000001" green="0.45882352939999999" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -742,7 +742,7 @@
                             <constraint firstItem="4fW-zC-tKK" firstAttribute="trailing" secondItem="1Pv-lQ-lrc" secondAttribute="trailing" constant="15" id="97o-Ly-Uhl"/>
                             <constraint firstItem="In8-FE-vel" firstAttribute="top" secondItem="3ci-bg-Xd1" secondAttribute="bottom" constant="20" id="FBt-g7-Spn"/>
                             <constraint firstItem="4fW-zC-tKK" firstAttribute="bottom" secondItem="1Pv-lQ-lrc" secondAttribute="bottom" constant="93" id="TVF-ad-W6B"/>
-                            <constraint firstItem="3ci-bg-Xd1" firstAttribute="top" secondItem="4fW-zC-tKK" secondAttribute="top" constant="20" id="X5h-8i-miC"/>
+                            <constraint firstItem="3ci-bg-Xd1" firstAttribute="top" secondItem="4fW-zC-tKK" secondAttribute="top" constant="60" id="X5h-8i-miC"/>
                             <constraint firstItem="1Pv-lQ-lrc" firstAttribute="top" secondItem="In8-FE-vel" secondAttribute="bottom" constant="20" id="dak-v6-QoP"/>
                             <constraint firstItem="3ci-bg-Xd1" firstAttribute="centerX" secondItem="Goh-79-cBw" secondAttribute="centerX" id="eki-jU-Yxs"/>
                             <constraint firstItem="In8-FE-vel" firstAttribute="centerX" secondItem="Goh-79-cBw" secondAttribute="centerX" id="hiO-Bc-ecf"/>
@@ -764,20 +764,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maintain your friendships" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmg-Rf-d9b">
-                                <rect key="frame" x="73" y="350" width="229" height="26"/>
+                                <rect key="frame" x="73" y="300" width="229" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="mFP-NB-EpY">
-                                <rect key="frame" x="42.5" y="40" width="290" height="290"/>
+                                <rect key="frame" x="87.5" y="80" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="290" id="1XE-IJ-Z4y"/>
-                                    <constraint firstAttribute="width" constant="290" id="x3e-X2-80i"/>
+                                    <constraint firstAttribute="height" constant="200" id="1XE-IJ-Z4y"/>
+                                    <constraint firstAttribute="width" constant="200" id="x3e-X2-80i"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24A-d5-wnh">
-                                <rect key="frame" x="20" y="396" width="335" height="125"/>
+                                <rect key="frame" x="20" y="346" width="335" height="175"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Each friendship is represented with a flower. Friendships, like all things, need maintenance. If you don't see or speak with your friend, the flower will lose its petals.</string>
                                 <color key="textColor" red="0.42745098040000001" green="0.45882352939999999" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -789,7 +789,7 @@
                         <accessibility key="accessibilityConfiguration" identifier="Page2"/>
                         <constraints>
                             <constraint firstItem="bP7-Ec-Hvv" firstAttribute="bottom" secondItem="24A-d5-wnh" secondAttribute="bottom" constant="146" id="5h6-7h-1lY"/>
-                            <constraint firstItem="mFP-NB-EpY" firstAttribute="top" secondItem="bP7-Ec-Hvv" secondAttribute="top" constant="20" id="IXr-F2-GTg"/>
+                            <constraint firstItem="mFP-NB-EpY" firstAttribute="top" secondItem="bP7-Ec-Hvv" secondAttribute="top" constant="60" id="IXr-F2-GTg"/>
                             <constraint firstItem="Qmg-Rf-d9b" firstAttribute="top" secondItem="mFP-NB-EpY" secondAttribute="bottom" constant="20" id="JlR-Qy-vhi"/>
                             <constraint firstItem="mFP-NB-EpY" firstAttribute="centerX" secondItem="uSb-YB-n14" secondAttribute="centerX" id="KIU-au-vbp"/>
                             <constraint firstItem="24A-d5-wnh" firstAttribute="leading" secondItem="bP7-Ec-Hvv" secondAttribute="leading" constant="20" id="Ukn-px-vBx"/>
@@ -998,23 +998,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Vriends allows you to add reminders and idea's for gifts to each friend. " textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Su-jk-RbO">
-                                <rect key="frame" x="20" y="395" width="335" height="115"/>
+                                <rect key="frame" x="20" y="345" width="335" height="165"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="0.42745098039215684" green="0.45882352941176469" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give life to your friendship" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MxE-v0-d7f">
-                                <rect key="frame" x="20" y="350" width="335" height="25"/>
+                                <rect key="frame" x="20" y="300" width="335" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="80G-oo-ew9">
-                                <rect key="frame" x="42.5" y="40" width="290" height="290"/>
+                                <rect key="frame" x="87.5" y="80" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="290" id="Jts-9k-ybL"/>
-                                    <constraint firstAttribute="width" constant="290" id="hIl-oB-ro8"/>
+                                    <constraint firstAttribute="height" constant="200" id="Jts-9k-ybL"/>
+                                    <constraint firstAttribute="width" constant="200" id="hIl-oB-ro8"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -1026,7 +1026,7 @@
                             <constraint firstItem="cOu-0E-URs" firstAttribute="bottom" secondItem="4Su-jk-RbO" secondAttribute="bottom" constant="157" id="L1z-tG-xZN"/>
                             <constraint firstItem="cOu-0E-URs" firstAttribute="trailing" secondItem="4Su-jk-RbO" secondAttribute="trailing" constant="20" id="N6G-qO-8hX"/>
                             <constraint firstItem="4Su-jk-RbO" firstAttribute="leading" secondItem="cOu-0E-URs" secondAttribute="leading" constant="20" id="YIW-5k-sqc"/>
-                            <constraint firstItem="80G-oo-ew9" firstAttribute="top" secondItem="cOu-0E-URs" secondAttribute="top" constant="20" id="bdj-kd-FQK"/>
+                            <constraint firstItem="80G-oo-ew9" firstAttribute="top" secondItem="cOu-0E-URs" secondAttribute="top" constant="60" id="bdj-kd-FQK"/>
                             <constraint firstItem="MxE-v0-d7f" firstAttribute="leading" secondItem="cOu-0E-URs" secondAttribute="leading" constant="20" id="eAR-23-XmH"/>
                             <constraint firstItem="MxE-v0-d7f" firstAttribute="top" secondItem="80G-oo-ew9" secondAttribute="bottom" constant="20" id="iOh-n9-ngo"/>
                             <constraint firstItem="4Su-jk-RbO" firstAttribute="top" secondItem="MxE-v0-d7f" secondAttribute="bottom" constant="20" id="x8r-0q-ig7"/>
@@ -1047,7 +1047,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgb-sL-653">
-                                <rect key="frame" x="20" y="396" width="335" height="141"/>
+                                <rect key="frame" x="20" y="346" width="335" height="141"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="141" id="Fa1-SK-jIh"/>
@@ -1059,16 +1059,16 @@ That's up to you!</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don’t let the flower wither away" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZg-pi-ips">
-                                <rect key="frame" x="20" y="350" width="335" height="26"/>
+                                <rect key="frame" x="20" y="300" width="335" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3" translatesAutoresizingMaskIntoConstraints="NO" id="iC9-fA-hnv">
-                                <rect key="frame" x="42.5" y="40" width="290" height="290"/>
+                                <rect key="frame" x="87.5" y="80" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="290" id="1I3-eS-wgH"/>
-                                    <constraint firstAttribute="height" constant="290" id="Qfh-Dt-zFn"/>
+                                    <constraint firstAttribute="width" constant="200" id="1I3-eS-wgH"/>
+                                    <constraint firstAttribute="height" constant="200" id="Qfh-Dt-zFn"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -1077,7 +1077,7 @@ That's up to you!</string>
                         <constraints>
                             <constraint firstItem="0pA-V4-qMb" firstAttribute="trailing" secondItem="dgb-sL-653" secondAttribute="trailing" constant="20" id="9Q2-IY-utK"/>
                             <constraint firstItem="iC9-fA-hnv" firstAttribute="centerX" secondItem="KCR-hk-2YT" secondAttribute="centerX" id="BM3-hV-FPF"/>
-                            <constraint firstItem="iC9-fA-hnv" firstAttribute="top" secondItem="0pA-V4-qMb" secondAttribute="top" constant="20" id="ByC-UL-1Jf"/>
+                            <constraint firstItem="iC9-fA-hnv" firstAttribute="top" secondItem="0pA-V4-qMb" secondAttribute="top" constant="60" id="ByC-UL-1Jf"/>
                             <constraint firstItem="rZg-pi-ips" firstAttribute="leading" secondItem="0pA-V4-qMb" secondAttribute="leading" constant="20" id="Czi-iM-Y39"/>
                             <constraint firstItem="dgb-sL-653" firstAttribute="leading" secondItem="0pA-V4-qMb" secondAttribute="leading" constant="20" id="QGb-3r-lgM"/>
                             <constraint firstItem="rZg-pi-ips" firstAttribute="top" secondItem="iC9-fA-hnv" secondAttribute="bottom" constant="20" id="lfD-E3-Jyc"/>
@@ -1100,20 +1100,20 @@ That's up to you!</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No personal data needed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aE1-ua-s6J">
-                                <rect key="frame" x="73" y="350" width="229" height="26"/>
+                                <rect key="frame" x="73" y="300" width="229" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="c7b-0M-3KM">
-                                <rect key="frame" x="42.5" y="40" width="290" height="290"/>
+                                <rect key="frame" x="87.5" y="80" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="290" id="7vu-bd-IEX"/>
-                                    <constraint firstAttribute="width" constant="290" id="oho-St-e2P"/>
+                                    <constraint firstAttribute="height" constant="200" id="7vu-bd-IEX"/>
+                                    <constraint firstAttribute="width" constant="200" id="oho-St-e2P"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Inh-R6-Er2">
-                                <rect key="frame" x="20" y="396" width="335" height="138"/>
+                                <rect key="frame" x="20" y="346" width="335" height="138"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="138" id="f4s-OH-ual"/>
@@ -1131,7 +1131,7 @@ That's up to you!</string>
                             <constraint firstItem="Inh-R6-Er2" firstAttribute="top" secondItem="aE1-ua-s6J" secondAttribute="bottom" constant="20" id="Kpm-ja-7qC"/>
                             <constraint firstItem="Inh-R6-Er2" firstAttribute="leading" secondItem="15E-RQ-hAP" secondAttribute="leading" constant="20" id="LDs-QK-CDV"/>
                             <constraint firstItem="aE1-ua-s6J" firstAttribute="leading" secondItem="15E-RQ-hAP" secondAttribute="leading" constant="73" id="ROC-iq-27T"/>
-                            <constraint firstItem="c7b-0M-3KM" firstAttribute="top" secondItem="15E-RQ-hAP" secondAttribute="top" constant="20" id="W0P-Vz-6cy"/>
+                            <constraint firstItem="c7b-0M-3KM" firstAttribute="top" secondItem="15E-RQ-hAP" secondAttribute="top" constant="60" id="W0P-Vz-6cy"/>
                             <constraint firstItem="aE1-ua-s6J" firstAttribute="top" secondItem="c7b-0M-3KM" secondAttribute="bottom" constant="20" id="bVN-rR-3qK"/>
                             <constraint firstItem="c7b-0M-3KM" firstAttribute="centerX" secondItem="8HK-OP-hYW" secondAttribute="centerX" id="ghR-4c-2nr"/>
                             <constraint firstItem="aE1-ua-s6J" firstAttribute="centerX" secondItem="Inh-R6-Er2" secondAttribute="centerX" id="xoS-I2-9T5"/>
@@ -1155,7 +1155,7 @@ That's up to you!</string>
         <image name="onboarding-1" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7pl-NP-qHE"/>
+        <segue reference="VkS-YF-xVx"/>
         <segue reference="JiF-7Z-E3d"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

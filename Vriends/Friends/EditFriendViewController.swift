@@ -174,5 +174,4 @@ extension EditFriendViewController: UICollectionViewDelegate, UICollectionViewDa
         textField.resignFirstResponder()
         return true
     }
-
 }

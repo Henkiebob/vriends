@@ -33,14 +33,7 @@ class ViewController: UIViewController {
         notificationHelper.setupPermissions()
         
         self.navigationItem.hidesBackButton = true
-        
-        NotificationCenter.default.addObserver(forName: .saved, object: nil, queue: .main) {_ in
-            self.view.viewWithTag(self.NO_FRIEND_TAG)?.isHidden = true
-        }
-        NotificationCenter.default.addObserver(forName: .back, object: nil, queue: .main) {_ in
-            self.reload()
-        }
-        
+        self.reload()
         
     }
     
@@ -71,17 +64,19 @@ class ViewController: UIViewController {
         getFriends()
         collectionView.reloadData()
         
-        
         // create no friends label
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
         label.center = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height/2)
         label.textAlignment = .center
         label.text = "No friends yet, add some!"
-        label.tag = NO_FRIEND_TAG
+        label.isHidden = true
+        
+        self.view.addSubview(label)
         
         if(friends.count == 0) {
-            self.view.addSubview(label)
+           label.isHidden = false
         }
+    
     }
     
     // You really should get some friends 🔥 (sick burn)
@@ -155,9 +150,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         
         return cell
     }
-    override func becomeFirstResponder() -> Bool {
-        return true
-    }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let parent2 = collectionView
@@ -173,10 +165,4 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
 class ADataManager {
     static let shared = ADataManager()
     var viewController = ViewController()
-}
-
-
-extension Notification.Name {
-    static let saved = Notification.Name("just_saved")
-    static let back = Notification.Name("back")
 }
