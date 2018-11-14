@@ -11,10 +11,11 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var noFriendsYet: UILabel!
+    
     let formatter = DateFormatter()
     let notificationHelper = NotificationHelper.instance
     let NO_FRIEND_TAG = 1;
-
     var friends: [Friend] = []
     var friendNames: [String] = []
     var flower: [String] = ["F_12.png","F_11.png", "F_10.png", "F_09.png", "F_08.png", "F_07.png", "F_06.png", "F_05.png", "F_04.png", "F_03.png", "F_02.png", "F_01.png", "F_00.png"]
@@ -31,7 +32,6 @@ class ViewController: UIViewController {
         formatter.dateFormat = "dd/mm/yyyy"
         formatter.dateStyle = .long
         notificationHelper.setupPermissions()
-        
         self.navigationItem.hidesBackButton = true
         self.reload()
         
@@ -54,6 +54,13 @@ class ViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         reload()
+        
+        if(friends.count == 0) {
+            noFriendsYet.isHidden = false
+        } else {
+            noFriendsYet.isHidden = true
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,20 +70,6 @@ class ViewController: UIViewController {
     func reload() {
         getFriends()
         collectionView.reloadData()
-        
-        // create no friends label
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-        label.center = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height/2)
-        label.textAlignment = .center
-        label.text = "No friends yet, add some!"
-        label.isHidden = true
-        
-        self.view.addSubview(label)
-        
-        if(friends.count == 0) {
-           label.isHidden = false
-        }
-    
     }
     
     // You really should get some friends 🔥 (sick burn)

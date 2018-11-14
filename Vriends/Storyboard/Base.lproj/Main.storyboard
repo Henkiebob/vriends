@@ -85,9 +85,17 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No friends yet, add some!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gB6-V5-Xhn">
+                                <rect key="frame" x="89" y="40" width="197" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="gB6-V5-Xhn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="47i-K9-LCZ"/>
+                            <constraint firstItem="gB6-V5-Xhn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="CgO-WE-Nzd"/>
                             <constraint firstItem="sMc-hn-Z88" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="EHS-Ec-A3I"/>
                             <constraint firstItem="sMc-hn-Z88" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="FpU-JV-14P"/>
                             <constraint firstItem="sMc-hn-Z88" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="5" id="WEU-1M-maZ"/>
@@ -112,6 +120,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="collectionView" destination="sMc-hn-Z88" id="IJx-dH-hi1"/>
+                        <outlet property="noFriendsYet" destination="gB6-V5-Xhn" id="VEH-kO-ZXa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1155,6 +1164,7 @@ That's up to you!</string>
         <image name="onboarding-1" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="in8-hi-E6Y"/>
         <segue reference="VkS-YF-xVx"/>
         <segue reference="JiF-7Z-E3d"/>
     </inferredMetricsTieBreakers>
