@@ -54,13 +54,11 @@ class VriendViewController: UIViewController, UITableViewDataSource, UITableView
         
     }
     
-    func setBackBarButtonCustom()
-    {
+    func setBackBarButtonCustom() {
         //Back button
         let btnLeftMenu: UIButton = UIButton()
-        //        btnLeftMenu.setImage(image, for: .normal)
-        btnLeftMenu.setTitle("Back", for: .normal)
-        btnLeftMenu.setTitleColor(.black ,for: .normal)
+        let image = UIImage(named: "back-button")
+        btnLeftMenu.setImage(image, for: .normal)
         btnLeftMenu.sizeToFit()
         btnLeftMenu.addTarget(self, action: #selector(self.onClickBack), for: UIControl.Event.touchUpInside)
         btnLeftMenu.frame = CGRect(x: 0, y: 0, width: 33/2, height: 27/2)

@@ -12,7 +12,6 @@ import UIKit
 class PageViewController: UIPageViewController {
     
     var pageControl = UIPageControl()
-    var lastPageButton = UIButton()
     
     fileprivate lazy var pages: [UIViewController] = {
         return [
@@ -39,11 +38,12 @@ class PageViewController: UIPageViewController {
         if let firstVC = pages.first {
             setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         }
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        self.navigationController?.isNavigationBarHidden = false
+        //self.navigationController?.isNavigationBarHidden = false
     }
     
     @objc func buttonAction(_ sender: Any){
@@ -82,8 +82,7 @@ extension PageViewController: UIPageViewControllerDelegate, UIPageViewController
         guard let viewControllerIndex = pages.index(of: viewController) else { return nil }
         
         let nextIndex = viewControllerIndex + 1
-        
-        
+
         guard nextIndex < pages.count
             else {
                 return pages.first
@@ -94,7 +93,7 @@ extension PageViewController: UIPageViewControllerDelegate, UIPageViewController
         
         return pages[nextIndex]
     }
-    
+  
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let pageContentViewController = pageViewController.viewControllers![0]
         self.pageControl.currentPage = pages.index(of: pageContentViewController)!
@@ -108,11 +107,11 @@ extension PageViewController: UIPageViewControllerDelegate, UIPageViewController
             
             self.dismiss(animated: true, completion: {})
             self.navigationController?.isNavigationBarHidden = false
-           
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.navigationController?.popViewController(animated: true)
-            }
-
         }
+    }
+    
+    @IBAction func GoToHome(_ sender: UIButton) {
+        NSLog("log")
+        self.navigationController?.popViewController(animated: true)
     }
 }

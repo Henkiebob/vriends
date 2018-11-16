@@ -71,7 +71,6 @@ class CoreDataStack {
     
     func storeGifts(withTitle title:String, withText text:String, withFriend friend:Friend){
         let gift = Gift(context: managedObjectContext)
-        print(title, text, friend)
         gift.note = text
         gift.title = title
         storeFriend(withGift: gift, withFriend: friend)

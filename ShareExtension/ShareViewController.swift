@@ -28,35 +28,10 @@ class ShareViewController: SLComposeServiceViewController {
     }
 
     override func didSelectPost() {
-        
         let friend = vriends[getFriendIndex()]
-        
-//        let context = CoreDataStack.instance.managedObjectContext
-//        let gift = Gift(context: context)
-        
-        
         guard let giftText = textView.text else {return}
         
-        
-        store.storeGifts(withTitle: "test", withText: giftText, withFriend: friend)
-        
-//        let extensionItem = extensionContext?.inputItems.first as! NSExtensionItem
-//        let itemProvider = extensionItem.attachments?.first as! NSItemProvider
-//        let propertyList = String(kUTTypePropertyList)
-//        if itemProvider.hasItemConformingToTypeIdentifier(propertyList) {
-//            itemProvider.loadItem(forTypeIdentifier: propertyList, options: nil, completionHandler: { (item, error) -> Void in
-//                guard let dictionary = item as? NSDictionary else { return }
-//                OperationQueue.main.addOperation {
-//                    if let results = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
-//                        let urlString = results["URL"] as? String,
-//                        let _ = NSURL(string: urlString) {
-//                        self.selectedDeck?.url = urlString
-//                    }
-//                }
-//            })
-//        }
-    
-        // Inform the host that we're done, so it un-blocks its UI. Note: Alternatively you could call super's -didSelectPost, which will similarly complete the extension context.
+        store.storeGifts(withTitle: "from safari", withText: giftText, withFriend: friend)
         self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
     }
     
