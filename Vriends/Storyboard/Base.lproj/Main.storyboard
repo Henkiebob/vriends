@@ -1143,7 +1143,6 @@ That's up to you!</string>
         <image name="watering-can" width="151" height="108"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Oss-Cn-h2T"/>
         <segue reference="7pl-NP-qHE"/>
         <segue reference="JiF-7Z-E3d"/>
     </inferredMetricsTieBreakers>
