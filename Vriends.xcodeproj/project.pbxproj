@@ -27,6 +27,8 @@
 		0A9FA036204446A7002D993F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9FA034204446A7002D993F /* Main.storyboard */; };
 		0A9FA038204446A7002D993F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9FA037204446A7002D993F /* Assets.xcassets */; };
 		0A9FA03B204446A7002D993F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9FA039204446A7002D993F /* LaunchScreen.storyboard */; };
+		0AAC3FEF21A4150100181EE7 /* VriendsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC3FEE21A4150100181EE7 /* VriendsUITests.swift */; };
+		0AAC3FF721A415B800181EE7 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC3FF621A415B800181EE7 /* SnapshotHelper.swift */; };
 		C36BEEF90DECFF9BF629C95A /* Pods_Vriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E05015356F756ED0385AE29 /* Pods_Vriends.framework */; };
 		DA1D98842048C9620004BB78 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D98832048C9620004BB78 /* FriendCell.swift */; };
 		DA37D3B720CA8E7B002D7E16 /* vriends.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A54CB6320456116007B68A4 /* vriends.xcdatamodeld */; };
@@ -49,6 +51,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0A02326E20BF1F0700FC9E5E;
 			remoteInfo = ShareExtension;
+		};
+		0AAC3FF121A4150100181EE7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A9FA025204446A7002D993F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A9FA02C204446A7002D993F;
+			remoteInfo = Vriends;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -90,6 +99,10 @@
 		0A9FA037204446A7002D993F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A9FA03A204446A7002D993F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A9FA03C204446A7002D993F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AAC3FEC21A4150100181EE7 /* VriendsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VriendsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AAC3FEE21A4150100181EE7 /* VriendsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VriendsUITests.swift; sourceTree = "<group>"; };
+		0AAC3FF021A4150100181EE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AAC3FF621A415B800181EE7 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		1E05015356F756ED0385AE29 /* Pods_Vriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C1ADF9FD174AD04EFDCB62 /* Pods-Vriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vriends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vriends/Pods-Vriends.debug.xcconfig"; sourceTree = "<group>"; };
 		85AE63D7385B757ED98F0E8B /* Pods-Vriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vriends.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vriends/Pods-Vriends.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +131,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C36BEEF90DECFF9BF629C95A /* Pods_Vriends.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AAC3FE921A4150100181EE7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +212,7 @@
 			children = (
 				0A9FA02F204446A7002D993F /* Vriends */,
 				0A02327020BF1F0700FC9E5E /* ShareExtension */,
+				0AAC3FED21A4150100181EE7 /* VriendsUITests */,
 				0A9FA02E204446A7002D993F /* Products */,
 				86F48F2EA5F48B11A0718C5D /* Pods */,
 				2C43B9CCBDBD77AC3F22996A /* Frameworks */,
@@ -203,6 +224,7 @@
 			children = (
 				0A9FA02D204446A7002D993F /* Vriends.app */,
 				0A02326F20BF1F0700FC9E5E /* ShareExtension.appex */,
+				0AAC3FEC21A4150100181EE7 /* VriendsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -227,6 +249,16 @@
 				0A9FA037204446A7002D993F /* Assets.xcassets */,
 			);
 			path = Vriends;
+			sourceTree = "<group>";
+		};
+		0AAC3FED21A4150100181EE7 /* VriendsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0AAC3FF621A415B800181EE7 /* SnapshotHelper.swift */,
+				0AAC3FEE21A4150100181EE7 /* VriendsUITests.swift */,
+				0AAC3FF021A4150100181EE7 /* Info.plist */,
+			);
+			path = VriendsUITests;
 			sourceTree = "<group>";
 		};
 		2C43B9CCBDBD77AC3F22996A /* Frameworks */ = {
@@ -287,13 +319,31 @@
 			productReference = 0A9FA02D204446A7002D993F /* Vriends.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0AAC3FEB21A4150100181EE7 /* VriendsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AAC3FF521A4150100181EE7 /* Build configuration list for PBXNativeTarget "VriendsUITests" */;
+			buildPhases = (
+				0AAC3FE821A4150100181EE7 /* Sources */,
+				0AAC3FE921A4150100181EE7 /* Frameworks */,
+				0AAC3FEA21A4150100181EE7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0AAC3FF221A4150100181EE7 /* PBXTargetDependency */,
+			);
+			name = VriendsUITests;
+			productName = VriendsUITests;
+			productReference = 0AAC3FEC21A4150100181EE7 /* VriendsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		0A9FA025204446A7002D993F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Tjerk Dijkstra";
 				TargetAttributes = {
@@ -320,6 +370,11 @@
 							};
 						};
 					};
+					0AAC3FEB21A4150100181EE7 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0A9FA02C204446A7002D993F;
+					};
 				};
 			};
 			buildConfigurationList = 0A9FA028204446A7002D993F /* Build configuration list for PBXProject "Vriends" */;
@@ -337,6 +392,7 @@
 			targets = (
 				0A9FA02C204446A7002D993F /* Vriends */,
 				0A02326E20BF1F0700FC9E5E /* ShareExtension */,
+				0AAC3FEB21A4150100181EE7 /* VriendsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -359,6 +415,13 @@
 				0A9FA03B204446A7002D993F /* LaunchScreen.storyboard in Resources */,
 				0A9FA038204446A7002D993F /* Assets.xcassets in Resources */,
 				0A9FA036204446A7002D993F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AAC3FEA21A4150100181EE7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +514,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0AAC3FE821A4150100181EE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AAC3FEF21A4150100181EE7 /* VriendsUITests.swift in Sources */,
+				0AAC3FF721A415B800181EE7 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -458,6 +530,11 @@
 			isa = PBXTargetDependency;
 			target = 0A02326E20BF1F0700FC9E5E /* ShareExtension */;
 			targetProxy = 0A51B3BB20C188F300DF28DF /* PBXContainerItemProxy */;
+		};
+		0AAC3FF221A4150100181EE7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0A9FA02C204446A7002D993F /* Vriends */;
+			targetProxy = 0AAC3FF121A4150100181EE7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -694,6 +771,43 @@
 			};
 			name = Release;
 		};
+		0AAC3FF321A4150100181EE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P9KK68PA63;
+				INFOPLIST_FILE = VriendsUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = NHL.VriendsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Vriends;
+			};
+			name = Debug;
+		};
+		0AAC3FF421A4150100181EE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P9KK68PA63;
+				INFOPLIST_FILE = VriendsUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = NHL.VriendsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Vriends;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -720,6 +834,15 @@
 			buildConfigurations = (
 				0A9FA040204446A7002D993F /* Debug */,
 				0A9FA041204446A7002D993F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0AAC3FF521A4150100181EE7 /* Build configuration list for PBXNativeTarget "VriendsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AAC3FF321A4150100181EE7 /* Debug */,
+				0AAC3FF421A4150100181EE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -143,7 +143,7 @@ extension EditFriendViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let parent = collectionView
-        return CGSize(width: (parent.frame.width / 6) - 20, height: (parent.frame.width / 6) - 20)
+        return CGSize(width: (parent.frame.height / 2) - 20, height: (parent.frame.height / 2) - 20)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
