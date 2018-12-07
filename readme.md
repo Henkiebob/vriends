@@ -47,7 +47,7 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
 @tjerkdijkstra at twitter or use the issue list of this repository.
 
 
-** Anti Facebook License ***
+**Anti Facebook License**
 
 If you are Facebook, and you want to use this codebase, idea or concept.
 You have to pay 100 billion dollars: https://www.youtube.com/watch?v=jTmXHvGZiSY
