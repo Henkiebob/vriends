@@ -46,6 +46,13 @@ I may update our Privacy Policy from time to time. Thus, you are advised to revi
 If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me.
 @tjerkdijkstra at twitter or use the issue list of this repository.
 
+
+**Anti Facebook License**
+
+If you are Facebook, and you want to use this codebase, idea or concept.
+You have to pay 100 billion dollars: https://youtu.be/jTmXHvGZiSY?t=32
+
+
 **Beerware**
 
 /*
@@ -53,6 +60,6 @@ If you have any questions or suggestions about my Privacy Policy, do not hesitat
  * "THE BEER-WARE LICENSE" (Revision 42):
  * <phk@FreeBSD.ORG> wrote this file.  As long as you retain this notice you
  * can do whatever you want with this stuff. If we meet some day, and you think
- * this stuff is worth it, you can buy me a beer in return.   Tjerk Dijkstra
+ * this stuff is worth it, you can buy me a beer in return.   Tjerk Dijkstra, Geart Otten, Jeroen Schaper
  * ----------------------------------------------------------------------------
  */
