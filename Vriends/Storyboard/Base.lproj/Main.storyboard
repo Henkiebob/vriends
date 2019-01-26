@@ -1139,7 +1139,8 @@ That's up to you!</string>
         <image name="watering-can" width="151" height="108"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7pl-NP-qHE"/>
+        <segue reference="in8-hi-E6Y"/>
+        <segue reference="VkS-YF-xVx"/>
         <segue reference="JiF-7Z-E3d"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
