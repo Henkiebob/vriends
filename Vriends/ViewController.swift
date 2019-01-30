@@ -34,7 +34,6 @@ class ViewController: UIViewController {
         notificationHelper.setupPermissions()
         self.navigationItem.hidesBackButton = true
         self.reload()
-        
     }
     
     func isAppAlreadyLaunchedOnce()->Bool {

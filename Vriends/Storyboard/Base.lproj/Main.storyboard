@@ -104,6 +104,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Vriends" id="iDc-9A-t20">
+                        <barButtonItem key="leftBarButtonItem" title="♥︎" style="plain" id="it2-bn-V5u">
+                            <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                            <connections>
+                                <segue destination="YyA-eb-ijs" kind="show" id="Pgo-JN-Dpi"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem style="done" systemItem="add" id="7dt-6B-6Mc">
                                 <connections>
@@ -451,6 +457,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vua-Kd-cL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1880.8" y="124.58770614692655"/>
+        </scene>
+        <!--Feedback Controller-->
+        <scene sceneID="rui-Jh-wHd">
+            <objects>
+                <viewController id="YyA-eb-ijs" customClass="FeedbackController" customModule="Vriends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="urs-mR-gar">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="p9T-G9-e67"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J5S-zC-XDH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-340" y="-555"/>
         </scene>
         <!--Friend profile-->
         <scene sceneID="uOQ-wS-ahU">
@@ -1139,9 +1160,8 @@ That's up to you!</string>
         <image name="watering-can" width="151" height="108"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="in8-hi-E6Y"/>
         <segue reference="VkS-YF-xVx"/>
-        <segue reference="JiF-7Z-E3d"/>
+        <segue reference="x0S-HN-jaP"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

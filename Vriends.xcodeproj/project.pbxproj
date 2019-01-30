@@ -14,6 +14,8 @@
 		0A02328320BF343300FC9E5E /* ShareSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A02328220BF343300FC9E5E /* ShareSelectViewController.swift */; };
 		0A08405920B815EA00CF1F43 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A08405820B815EA00CF1F43 /* Friend.swift */; };
 		0A0C42F620C1981D00BB0F89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9FA037204446A7002D993F /* Assets.xcassets */; };
+		0A33AFC42201F833008E147E /* FeedbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A33AFC32201F833008E147E /* FeedbackController.swift */; };
+		0A33AFC62201F8A9008E147E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A33AFC52201F8A9008E147E /* Colors.swift */; };
 		0A51B3BD20C18A7100DF28DF /* ShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0A02326F20BF1F0700FC9E5E /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0A54CB6220455D38007B68A4 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A54CB6120455D38007B68A4 /* AddFriendViewController.swift */; };
 		0A54CB6520456116007B68A4 /* vriends.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A54CB6320456116007B68A4 /* vriends.xcdatamodeld */; };
@@ -84,6 +86,8 @@
 		0A02328020BF33FC00FC9E5E /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		0A02328220BF343300FC9E5E /* ShareSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSelectViewController.swift; sourceTree = "<group>"; };
 		0A08405820B815EA00CF1F43 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		0A33AFC32201F833008E147E /* FeedbackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackController.swift; sourceTree = "<group>"; };
+		0A33AFC52201F8A9008E147E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0A51B3BF20C1971100DF28DF /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension.entitlements; sourceTree = "<group>"; };
 		0A54CB6120455D38007B68A4 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		0A54CB6420456116007B68A4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -247,6 +251,8 @@
 				0A9FA03C204446A7002D993F /* Info.plist */,
 				0A77457820C185A600F4EADE /* Vriends.entitlements */,
 				0A9FA037204446A7002D993F /* Assets.xcassets */,
+				0A33AFC32201F833008E147E /* FeedbackController.swift */,
+				0A33AFC52201F8A9008E147E /* Colors.swift */,
 			);
 			path = Vriends;
 			sourceTree = "<group>";
@@ -502,12 +508,14 @@
 				DA87D43820E3A03300BBFC2F /* LastPageViewController.swift in Sources */,
 				DA37D3B920CC5176002D7E16 /* UIViewExtension.swift in Sources */,
 				0A54CB6220455D38007B68A4 /* AddFriendViewController.swift in Sources */,
+				0A33AFC62201F8A9008E147E /* Colors.swift in Sources */,
 				DA9F634C20C1850D009C84C8 /* GiftViewController.swift in Sources */,
 				DA53848820B9E3730055D5BD /* RoundedView.swift in Sources */,
 				DA3C808720D326BB009B36E9 /* IntExtension.swift in Sources */,
 				DA556E4820E3809200733585 /* PageViewController.swift in Sources */,
 				0A9FA031204446A7002D993F /* AppDelegate.swift in Sources */,
 				DAEA897920C037BA00D439AE /* NoteViewController.swift in Sources */,
+				0A33AFC42201F833008E147E /* FeedbackController.swift in Sources */,
 				0A54CB6520456116007B68A4 /* vriends.xcdatamodeld in Sources */,
 				0A59361B20C9C7EC002A6AAC /* CoreDataStack.swift in Sources */,
 				0A08405920B815EA00CF1F43 /* Friend.swift in Sources */,
