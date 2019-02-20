@@ -14,7 +14,6 @@ class FeedbackController: UIViewController {
     var madeWithView: UIView!
     var madeWithLabel: UILabel!
     var nameLabel: UILabel!
-    var line: UIView!
     var feedbackTitleLabel: UILabel!
     var feedbackChannelLabel: UILabel!
     var supportLabel: UILabel!
@@ -32,7 +31,6 @@ class FeedbackController: UIViewController {
         madeWithView = UIView().add(in: view)
         madeWithLabel = UILabel().add(in: view)
         feedbackTitleLabel = UILabel().add(in: view)
-        feedbackChannelLabel = UILabel().add(in: view)
         supportLabel = UILabel().add(in: view)
         coffeeLabel = UILabel().add(in: view)
         
@@ -78,6 +76,7 @@ class FeedbackController: UIViewController {
         feedbackTitleLabel.textAlignment = .center
         feedbackTitleLabel.font = UIFont.systemFont(ofSize: 25.0)
         feedbackTitleLabel.textColor = standardBlue
+
         
         var topAnchorOfFeedbackChannels = feedbackTitleLabel.bottomAnchor
         for i in 0...2{
@@ -87,6 +86,8 @@ class FeedbackController: UIViewController {
             feedbackChannelLabel.textAlignment = .center
             feedbackChannelLabel.text = feedbackChannels[i]
             feedbackChannelLabel.textColor = grayTextColor
+            // feedbackChannelLabel.isEditable = false
+            // feedbackChannelLabel.dataDetectorTypes = .link
             topAnchorOfFeedbackChannels = feedbackChannelLabel.bottomAnchor
         }
         
@@ -97,6 +98,7 @@ class FeedbackController: UIViewController {
         supportLabel.text = "Want to support us?"
         supportLabel.textAlignment = .center
         supportLabel.font = UIFont.systemFont(ofSize: 25.0)
+        supportLabel.textColor = standardBlue
         
         coffeeLabel.topAnchor.constraint(equalTo: supportLabel.bottomAnchor, constant: 20).isActive = true
         coffeeLabel.centerXAnchor.constraint(equalTo: madeWithLabel.centerXAnchor).isActive = true
@@ -104,6 +106,7 @@ class FeedbackController: UIViewController {
         coffeeLabel.text = "Buy us a beer :)"
         coffeeLabel.textAlignment = .center
         coffeeLabel.font = UIFont.systemFont(ofSize: 13.0)
+        coffeeLabel.textColor = standardBlue
         
     }
     

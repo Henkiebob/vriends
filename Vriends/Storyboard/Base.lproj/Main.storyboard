@@ -104,7 +104,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Vriends" id="iDc-9A-t20">
-                        <barButtonItem key="leftBarButtonItem" title="♥︎" style="plain" id="it2-bn-V5u">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="follow_heart" landscapeImage="follow_heart" largeContentSizeImage="follow_heart" style="plain" id="it2-bn-V5u">
                             <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
                             <connections>
                                 <segue destination="YyA-eb-ijs" kind="show" id="Pgo-JN-Dpi"/>
@@ -1154,6 +1154,7 @@ That's up to you!</string>
         <image name="3" width="290" height="290"/>
         <image name="4" width="290" height="290"/>
         <image name="birthday-gift" width="128" height="128"/>
+        <image name="follow_heart" width="37.5" height="37.5"/>
         <image name="handshake" width="128" height="128"/>
         <image name="last-seen" width="128" height="128"/>
         <image name="onboarding-1" width="512" height="512"/>
